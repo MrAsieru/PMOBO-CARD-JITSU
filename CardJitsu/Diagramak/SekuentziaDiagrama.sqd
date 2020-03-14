@@ -4178,7 +4178,7 @@ hemen gauzatu.</old>
           </source>
           <target class="net.java.amateras.uml.sequencediagram.model.ActivationModel" reference="../../.."/>
           <bendpoints/>
-          <name>partidarenIrabazleaKonprobatu(): void</name>
+          <name>partidarenIrabazleaKonprobatu(): Jokalaria</name>
           <direction>true</direction>
           <order>18</order>
           <oldOrder>18</oldOrder>
