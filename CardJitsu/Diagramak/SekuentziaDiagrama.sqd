@@ -3819,7 +3819,7 @@ hemen gauzatu.</old>
                                                 <net.java.amateras.uml.sequencediagram.model.LifeLineModel reference="../../.."/>
                                               </children>
                                               <filterProperty/>
-                                              <name>Jokalekua</name>
+                                              <name>Kontrolatzaile</name>
                                               <lifeLine reference="../.."/>
                                               <root reference="../../../../../../../../../../../../../../../../../../../../../../.."/>
                                             </owner>

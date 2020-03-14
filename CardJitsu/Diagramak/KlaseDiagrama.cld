@@ -1638,7 +1638,7 @@ KenduUrdinBat</old>
                                           </java.beans.PropertyChangeSupport>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../../targetConnections/net.java.amateras.uml.classdiagram.model.AggregationModel/source/children/net.java.amateras.uml.classdiagram.model.AttributeModel/visibility"/>
-                                        <name>Jokalekua</name>
+                                        <name>Kontrolatzaile</name>
                                         <type>void</type>
                                         <params/>
                                         <isAbstract>false</isAbstract>
@@ -1660,7 +1660,7 @@ KenduUrdinBat</old>
                                           </java.beans.PropertyChangeSupport>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
-                                        <name>getNireJokalekua</name>
+                                        <name>getNireKontrolatzaile</name>
                                         <type>void</type>
                                         <params/>
                                         <isAbstract>false</isAbstract>
@@ -1724,8 +1724,8 @@ KenduUrdinBat</old>
                                           </java.beans.PropertyChangeSupport>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../../targetConnections/net.java.amateras.uml.classdiagram.model.AggregationModel/source/children/net.java.amateras.uml.classdiagram.model.AttributeModel/visibility"/>
-                                        <name>nireJokalekua</name>
-                                        <type>Jokalekua</type>
+                                        <name>nireKontrolatzaile</name>
+                                        <type>Kontrolatzaile</type>
                                         <isStatic>true</isStatic>
                                         <isFinal>false</isFinal>
                                         <isEnumCst>false</isEnumCst>
@@ -1959,7 +1959,7 @@ KenduUrdinBat</old>
                                       </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                                     </propertyDescriptors>
                                     <stereoType></stereoType>
-                                    <name>Jokalekua</name>
+                                    <name>Kontrolatzaile</name>
                                     <path></path>
                                     <isAbstract>false</isAbstract>
                                   </target>
