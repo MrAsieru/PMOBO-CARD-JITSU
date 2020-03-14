@@ -120,7 +120,7 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>990</x>
+                    <x>959</x>
                     <y>1063</y>
                   </constraint>
                   <sourceConnections/>
@@ -204,8 +204,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>998</x>
-                    <y>1175</y>
+                    <x>966</x>
+                    <y>1174</y>
                   </constraint>
                   <sourceConnections/>
                   <targetConnections>
@@ -441,8 +441,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>881</x>
-                          <y>1349</y>
+                          <x>776</x>
+                          <y>1380</y>
                         </constraint>
                         <sourceConnections>
                           <net.java.amateras.uml.classdiagram.model.GeneralizationModel>
@@ -490,8 +490,8 @@
                               <constraint>
                                 <height>-1</height>
                                 <width>-1</width>
-                                <x>1162</x>
-                                <y>144</y>
+                                <x>1056</x>
+                                <y>155</y>
                               </constraint>
                               <sourceConnections>
                                 <net.java.amateras.uml.classdiagram.model.AggregationModel>
@@ -556,8 +556,8 @@
                                           <constraint>
                                             <height>-1</height>
                                             <width>-1</width>
-                                            <x>39</x>
-                                            <y>94</y>
+                                            <x>43</x>
+                                            <y>111</y>
                                           </constraint>
                                           <sourceConnections>
                                             <net.java.amateras.uml.classdiagram.model.AggregationModel reference="../../.."/>
@@ -813,8 +813,8 @@
                                                 <constraint>
                                                   <height>56</height>
                                                   <width>100</width>
-                                                  <x>997</x>
-                                                  <y>1096</y>
+                                                  <x>966</x>
+                                                  <y>1099</y>
                                                 </constraint>
                                                 <sourceConnections/>
                                                 <targetConnections/>
@@ -843,8 +843,8 @@ Ura</content>
                                                 <constraint>
                                                   <height>102</height>
                                                   <width>100</width>
-                                                  <x>997</x>
-                                                  <y>1208</y>
+                                                  <x>966</x>
+                                                  <y>1207</y>
                                                 </constraint>
                                                 <sourceConnections/>
                                                 <targetConnections/>
@@ -1082,8 +1082,8 @@ Berdea&#xd;
                                                 <constraint>
                                                   <height>371</height>
                                                   <width>121</width>
-                                                  <x>1258</x>
-                                                  <y>75</y>
+                                                  <x>1153</x>
+                                                  <y>50</y>
                                                 </constraint>
                                                 <sourceConnections/>
                                                 <targetConnections/>
@@ -1811,7 +1811,7 @@ KenduUrdinBat</old>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
                                         <name>partidarenIrabazleaKonprobatu</name>
-                                        <type>void</type>
+                                        <type>Jokalaria</type>
                                         <params>
                                           <net.java.amateras.uml.classdiagram.model.Argument>
                                             <name>pJokalari</name>
