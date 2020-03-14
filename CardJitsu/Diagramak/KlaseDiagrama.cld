@@ -1613,7 +1613,7 @@ KenduUrdinBat</old>
                                           <stereoType></stereoType>
                                           <name>Jokalaria</name>
                                           <path></path>
-                                          <isAbstract>false</isAbstract>
+                                          <isAbstract>true</isAbstract>
                                         </source>
                                         <target class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
                                         <bendpoints/>
