@@ -1,0 +1,176 @@
+import json
+import urllib.request
+
+with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\cards.json', 'r') as f:
+    c_dict = json.load(f)
+
+def idEguneratu():
+    i = 1
+    print("[")
+    for card in c_dict:
+        print("{")
+        print("\"card_id\": \"%s\","%i)
+        print("\"set_id\": \"%s\","%card["set_id"])
+        print("\"power_id\": \"%s\","%card["power_id"])
+        print("\"element\": \"%s\","%card["element"])
+        print("\"name\": \"%s\","%card["name"])
+        print("\"color\": \"%s\","%card["color"])
+        print("\"value\": \"%s\","%card["value"])
+        print("\"asset\": \"%s\","%card["asset"])
+        print("\"description\": \"%s\","%efektuaItzuli(card))        
+        print("\"is_active\": \"%s\""%card["is_active"])
+        print("},")
+        i = i+1
+    print("]")
+
+def idKonprobatu():
+    i = 1
+    for card in c_dict:
+        print("%s, %s"%(card["card_id"],i))
+        i = i+1
+def izenaKonprobatu():
+    for card in c_dict:
+        if(card["name"] != card["label"] or card["name"] != card["prompt"] or card["label"] != card["prompt"]):
+           print(card["card_id"])
+def assetKonprobatu():
+    for card in c_dict:
+        if(card["asset"] != ""):
+            print(card["card_id"])
+def kartenKopuruak():
+    normala = 0
+    berezia = 0
+
+    sua = 0
+    ura = 0
+    elurra = 0
+
+    gorria = 0
+    urdina = 0
+    horia = 0
+    berdea = 0
+    laranja = 0
+    morea = 0
+
+    altuak = 0
+
+    set1 = 0
+    set2 = 0
+    set3 = 0
+    set4 = 0
+    set5 = 0
+    set6 = 0
+    set7 = 0
+    set8 = 0
+    for card in c_dict:
+        if card["power_id"] == "0":
+            normala = normala + 1
+        else:
+            berezia = berezia + 1
+
+        if card["element"] == "f":
+            sua = sua + 1
+        elif card["element"] == "w":
+            ura = ura + 1
+        elif card["element"] == "s":
+            elurra = elurra + 1
+
+        if card["color"] == "r":
+            gorria = gorria + 1
+        elif card["color"] == "b":
+            urdina = urdina + 1
+        elif card["color"] == "y":
+            horia = horia + 1
+        elif card["color"] == "g":
+            berdea = berdea + 1
+        elif card["color"] == "o":
+            laranja = laranja + 1
+        elif card["color"] == "p":
+            morea = morea + 1
+
+        if card["set_id"] == "1":
+            set1 = set1 + 1
+        elif card["set_id"] == "2":
+            set2 = set2 + 1
+        elif card["set_id"] == "3":
+            set3 = set3 + 1
+        elif card["set_id"] == "4":
+            set4 = set4 + 1
+        elif card["set_id"] == "5":
+            set5 = set5 + 1
+        elif card["set_id"] == "6":
+            set6 = set6 + 1
+        elif card["set_id"] == "7":
+            set7 = set7 + 1
+        elif card["set_id"] == "8":
+            set8 = set8 + 1
+
+    print("normala: %s"%normala)
+    print("berezia: %s"%berezia)
+    print("sua: %s"%sua)
+    print("ura: %s"%ura)
+    print("elurra: %s"%elurra)
+    print("gorria: %s"%gorria)
+    print("urdina: %s"%urdina)
+    print("horia: %s"%horia)
+    print("berdea: %s"%berdea)
+    print("laranja: %s"%laranja)
+    print("morea: %s"%morea)
+    print("set1: %s"%set1)
+    print("set2: %s"%set2)
+    print("set3: %s"%set3)
+    print("set4: %s"%set4)
+    print("set5: %s"%set5)
+    print("set6: %s"%set6)
+    print("set7: %s"%set7)
+    print("set8: %s"%set8)
+
+def efektuaItzuli(card):
+    if card["description"] == "When this is scored, your card gets +2 for the next round":
+        return "Karta honekin irabaztean, zure hurrengo kartaren balioa +2 izango da.|hurrengo txandan <jokalaria>-ren karta +2 balioko du."
+    elif card["description"] == "When this is scored, your Opponent's card get -2 for the next round."
+        return "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.|hurrengo txandan <jokalaria>-ren karta -2 balioko du."
+    elif card["description"] == "When this card is played, lower values win ties the next round."
+        return "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.|"
+    elif card["description"] == "When this is scored, discard one Opponent's Fire card."
+        return "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.|<jokalaria>-ren sua den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Water card."
+        return "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.|<jokalaria>-ren ura den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Snowball card."
+        return "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.|<jokalaria>-ren elurra den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Red card."
+        return "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.|<jokalaria>-ren gorria den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Blue card."
+        return "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.|<jokalaria>-ren urdina den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Yellow card."
+        return "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.|<jokalaria>-ren horia den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Green card."
+        return "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.|<jokalaria>-ren berdea den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Orange card."
+        return "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.|<jokalaria>-ren laranja den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard one Opponent's Purple card."
+        return "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da."
+    elif card["description"] == "When this is scored, discard Opponent's all Red cards."
+        return "Karta honekin irabaztean, lehiakidearen gorriak diren karta guztiak ezabatu.|<jokalaria>-ren gorriak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is scored, discard Opponent's all Blue cards."
+        return "Karta honekin irabaztean, lehiakidearen urdinak diren karta guztiak ezabatu.|<jokalaria>-ren urdinak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is scored, discard Opponent's all Yellow cards."
+        return "Karta honekin irabaztean, lehiakidearen horiak diren karta guztiak ezabatu.|<jokalaria>-ren horiak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is scored, discard Opponent's all Green cards."
+        return "Karta honekin irabaztean, lehiakidearen berdeak diren karta guztiak ezabatu.|<jokalaria>-ren berdeak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is scored, discard Opponent's all Orange cards."
+        return "Karta honekin irabaztean, lehiakidearen laranjak diren karta guztiak ezabatu.|<jokalaria>-ren laranjak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is scored, discard Opponent's all Purple cards."
+        return "Karta honekin irabaztean, lehiakidearen moreak diren karta guztiak ezabatu.|<jokalaria>-ren moreak diren karta guztiak ezabatuko dira."
+    elif card["description"] == "When this is played, Fire cards become Snowball for this round."
+        return "Karta hau erabiltzean"
+    elif card["description"] == "When this is played, Snowball cards become Water for this round."
+        return ""
+    elif card["description"] == "When this is played, Water cards become Fire for this round."
+        return ""
+    elif card["description"] == "When this is scored, Fire cannot be played next round."
+        return "Karta honekin irabaztean, hurrengo errondan"
+    elif card["description"] == ""
+        return ""
+    elif card["description"] == ""
+        return ""
+    kartenKopuruak()
