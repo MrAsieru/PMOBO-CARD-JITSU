@@ -120,8 +120,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>959</x>
-                    <y>1063</y>
+                    <x>966</x>
+                    <y>1125</y>
                   </constraint>
                   <sourceConnections/>
                   <targetConnections>
@@ -204,8 +204,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>966</x>
-                    <y>1174</y>
+                    <x>973</x>
+                    <y>1236</y>
                   </constraint>
                   <sourceConnections/>
                   <targetConnections>
@@ -441,8 +441,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>776</x>
-                          <y>1380</y>
+                          <x>774</x>
+                          <y>1420</y>
                         </constraint>
                         <sourceConnections>
                           <net.java.amateras.uml.classdiagram.model.GeneralizationModel>
@@ -833,8 +833,8 @@
                                                 <constraint>
                                                   <height>56</height>
                                                   <width>100</width>
-                                                  <x>966</x>
-                                                  <y>1099</y>
+                                                  <x>973</x>
+                                                  <y>1161</y>
                                                 </constraint>
                                                 <sourceConnections/>
                                                 <targetConnections/>
@@ -863,8 +863,8 @@ Ura</content>
                                                 <constraint>
                                                   <height>102</height>
                                                   <width>100</width>
-                                                  <x>966</x>
-                                                  <y>1207</y>
+                                                  <x>973</x>
+                                                  <y>1269</y>
                                                 </constraint>
                                                 <sourceConnections/>
                                                 <targetConnections/>
@@ -1838,7 +1838,7 @@ Berdinketa</content>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
                                         <name>getNireKontrolatzaile</name>
-                                        <type>void</type>
+                                        <type>Kontrolatzaile</type>
                                         <params/>
                                         <isAbstract>false</isAbstract>
                                         <isStatic>true</isStatic>
@@ -2469,7 +2469,7 @@ Berdinketa</content>
                           <null/>
                         </java.beans.PropertyChangeSupport>
                       </listeners>
-                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
+                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                       <name>KartaGuztiak</name>
                       <type>void</type>
                       <params/>
@@ -2818,6 +2818,76 @@ Berdinketa</content>
                 <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../sourceConnections/net.java.amateras.uml.classdiagram.model.AggregationModel[2]/target/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
                 <name>getKolorea</name>
                 <type>KoloreMota</type>
+                <params/>
+                <isAbstract>false</isAbstract>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+              </net.java.amateras.uml.classdiagram.model.OperationModel>
+              <net.java.amateras.uml.classdiagram.model.AttributeModel>
+                <backgroundColor reference="../../../../../../backgroundColor"/>
+                <foregroundColor reference="../../../../../../foregroundColor"/>
+                <showIcon>true</showIcon>
+                <parent class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
+                <listeners serialization="custom">
+                  <java.beans.PropertyChangeSupport>
+                    <default>
+                      <source class="net.java.amateras.uml.classdiagram.model.AttributeModel" reference="../../../.."/>
+                      <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                    </default>
+                    <null/>
+                  </java.beans.PropertyChangeSupport>
+                </listeners>
+                <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
+                <name>erabilgarria</name>
+                <type>boolean</type>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+                <isEnumCst>false</isEnumCst>
+              </net.java.amateras.uml.classdiagram.model.AttributeModel>
+              <net.java.amateras.uml.classdiagram.model.OperationModel>
+                <backgroundColor reference="../../../../../../backgroundColor"/>
+                <foregroundColor reference="../../../../../../foregroundColor"/>
+                <showIcon>true</showIcon>
+                <parent class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
+                <listeners serialization="custom">
+                  <java.beans.PropertyChangeSupport>
+                    <default>
+                      <source class="net.java.amateras.uml.classdiagram.model.OperationModel" reference="../../../.."/>
+                      <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                    </default>
+                    <null/>
+                  </java.beans.PropertyChangeSupport>
+                </listeners>
+                <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
+                <name>setErabilgarria</name>
+                <type>void</type>
+                <params>
+                  <net.java.amateras.uml.classdiagram.model.Argument>
+                    <name>pErabilgarria</name>
+                    <type>int</type>
+                  </net.java.amateras.uml.classdiagram.model.Argument>
+                </params>
+                <isAbstract>false</isAbstract>
+                <isStatic>false</isStatic>
+                <isFinal>false</isFinal>
+              </net.java.amateras.uml.classdiagram.model.OperationModel>
+              <net.java.amateras.uml.classdiagram.model.OperationModel>
+                <backgroundColor reference="../../../../../../backgroundColor"/>
+                <foregroundColor reference="../../../../../../foregroundColor"/>
+                <showIcon>true</showIcon>
+                <parent class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
+                <listeners serialization="custom">
+                  <java.beans.PropertyChangeSupport>
+                    <default>
+                      <source class="net.java.amateras.uml.classdiagram.model.OperationModel" reference="../../../.."/>
+                      <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                    </default>
+                    <null/>
+                  </java.beans.PropertyChangeSupport>
+                </listeners>
+                <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[8]/visibility"/>
+                <name>getErabilgarria</name>
+                <type>boolean</type>
                 <params/>
                 <isAbstract>false</isAbstract>
                 <isStatic>false</isStatic>
