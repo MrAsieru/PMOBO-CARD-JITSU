@@ -578,7 +578,7 @@
                                                 </java.beans.PropertyChangeSupport>
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../../../../net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
-                                              <name>KontsolaKontrolagailua</name>
+                                              <name>KontsolaKontrolatzailea</name>
                                               <type>void</type>
                                               <params/>
                                               <isAbstract>false</isAbstract>
@@ -650,7 +650,7 @@
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
                                               <name>nireKontsolaKontrolagailua</name>
-                                              <type>KontsolaKontrolagailua</type>
+                                              <type>KontsolaKontrolatzailea</type>
                                               <isStatic>true</isStatic>
                                               <isFinal>false</isFinal>
                                               <isEnumCst>false</isEnumCst>
@@ -671,7 +671,7 @@
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../../../../../../../../../../net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
                                               <name>getNireKontsolaKontrolagailua</name>
-                                              <type>KontsolaKontrolagailua</type>
+                                              <type>KontsolaKontrolatzailea</type>
                                               <params/>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>true</isStatic>
@@ -744,7 +744,7 @@
                                             </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                                           </propertyDescriptors>
                                           <stereoType></stereoType>
-                                          <name>KontsolaKontrolagailua</name>
+                                          <name>KontsolaKontrolatzailea</name>
                                           <path></path>
                                           <isAbstract>false</isAbstract>
                                         </source>
@@ -901,7 +901,7 @@ Berdea&#xd;
                                                 <constraint>
                                                   <height>-1</height>
                                                   <width>-1</width>
-                                                  <x>496</x>
+                                                  <x>463</x>
                                                   <y>694</y>
                                                 </constraint>
                                                 <sourceConnections>
@@ -1007,7 +1007,12 @@ Berdea&#xd;
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                                     <name>getNireJokalaria</name>
                                                     <type>JokalariaLOKALA</type>
-                                                    <params/>
+                                                    <params>
+                                                      <net.java.amateras.uml.classdiagram.model.Argument>
+                                                        <name>pIzena</name>
+                                                        <type>String</type>
+                                                      </net.java.amateras.uml.classdiagram.model.Argument>
+                                                    </params>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>true</isStatic>
                                                     <isFinal>false</isFinal>
@@ -1161,7 +1166,7 @@ KenduUrdinBat</old>
                                                 <constraint>
                                                   <height>-1</height>
                                                   <width>-1</width>
-                                                  <x>729</x>
+                                                  <x>762</x>
                                                   <y>694</y>
                                                 </constraint>
                                                 <sourceConnections>
@@ -1241,7 +1246,12 @@ KenduUrdinBat</old>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                                     <name>getNireJokalariaBOT</name>
                                                     <type>JokalariaBOT</type>
-                                                    <params/>
+                                                    <params>
+                                                      <net.java.amateras.uml.classdiagram.model.Argument>
+                                                        <name>pIzena</name>
+                                                        <type>String</type>
+                                                      </net.java.amateras.uml.classdiagram.model.Argument>
+                                                    </params>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>true</isStatic>
                                                     <isFinal>false</isFinal>
@@ -1966,7 +1976,7 @@ Berdinketa</content>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
                                         <name>txandaBerria</name>
-                                        <type>void</type>
+                                        <type>Jokalaria</type>
                                         <params/>
                                         <isAbstract>false</isAbstract>
                                         <isStatic>false</isStatic>
