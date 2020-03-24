@@ -4196,7 +4196,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5744,7 +5744,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.|<jokalaria>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5756,7 +5756,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.|<jokalaria>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5780,7 +5780,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "",
+"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.|",
 "is_active": "1"
 },
 {
@@ -5792,7 +5792,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5804,7 +5804,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.|<jokalaria>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5816,7 +5816,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.|<jokalaria>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5840,7 +5840,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.|<jokalaria>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5888,7 +5888,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.|<jokalaria>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5900,7 +5900,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.|<jokalaria>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5936,7 +5936,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5948,7 +5948,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.|<jokalaria>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5960,7 +5960,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.|<jokalaria>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5984,7 +5984,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.|<jokalaria>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5996,7 +5996,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "",
+"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.|",
 "is_active": "1"
 },
 {
@@ -6020,7 +6020,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.|<jokalaria>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6032,7 +6032,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.|<jokalaria>-ren horia den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6044,7 +6044,7 @@
 "color": "r",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.|<jokalaria>-ren elurra den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6056,7 +6056,7 @@
 "color": "g",
 "value": "11",
 "asset": "",
-"description": "",
+"description": "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.|<jokalaria>-ren berdea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {

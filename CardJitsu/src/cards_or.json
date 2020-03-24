@@ -6744,7 +6744,7 @@
     "color": "b",
     "value": "10",
     "asset": "",
-    "description": "When this is played, Snowball cards become Fire for this round",
+    "description": "When this is played, Snowball cards become Water for this round.",
     "is_active": "1"
   },
   {
@@ -6996,7 +6996,7 @@
     "color": "b",
     "value": "9",
     "asset": "",
-    "description": "When this is played, Fire cards become Water for this round.",
+    "description": "When this is played, Snowball cards become Water for this round.",
     "is_active": "1"
   },
   {
