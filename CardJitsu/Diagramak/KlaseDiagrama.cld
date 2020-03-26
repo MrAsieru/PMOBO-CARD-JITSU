@@ -2083,9 +2083,14 @@ Berdinketa</content>
                                           </java.beans.PropertyChangeSupport>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
-                                        <name>konprobatuAurrekoEfektua</name>
+                                        <name>aplikatuAurrekoEfektua</name>
                                         <type>void</type>
-                                        <params/>
+                                        <params>
+                                          <net.java.amateras.uml.classdiagram.model.Argument>
+                                            <name>pJokalaria</name>
+                                            <type>Jokalaria</type>
+                                          </net.java.amateras.uml.classdiagram.model.Argument>
+                                        </params>
                                         <isAbstract>false</isAbstract>
                                         <isStatic>false</isStatic>
                                         <isFinal>false</isFinal>
