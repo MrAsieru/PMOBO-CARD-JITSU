@@ -113,6 +113,7 @@ public class Kontrolatzaile {
 				minwin = true;
 				break;
 			}
+			break;
 		case 0:
 			switch(aurrekoTxandakoEfektua) 
 			{
@@ -126,6 +127,7 @@ public class Kontrolatzaile {
 				minwin = true;
 				break;
 			}
+			break;
 		}
 		
 		//Nork irabazten du?
