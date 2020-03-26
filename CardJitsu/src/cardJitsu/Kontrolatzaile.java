@@ -1,6 +1,7 @@
 package cardJitsu;
 
 public class Kontrolatzaile {
+	
 	private JokalariaLOKALA jokalari1;
 	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
@@ -50,34 +51,6 @@ public class Kontrolatzaile {
 	private void konprobatuAurrekoEfektua() 
 	{
 		
-	}
-	
-	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
-	{
-		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) 
-		{
-			return true;
-		}
-		else if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.URA) 
-		{
-			return false;
-		}
-		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) 
-		{
-			return true;
-		}
-		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.ELURRA) 
-		{
-			return false;
-		}
-		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) 
-		{
-			return true;
-		}
-		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.SUA) 
-		{
-			return false;
-		}
 	}
 	
 	private JokalariMota kartakKonprobatu() 
@@ -169,8 +142,9 @@ public class Kontrolatzaile {
 		{
 			finala = 1;
 		}
-		
+
 		// Imprimaketa
+		KontsolaKontrolagailua.imprimatu("");
 		
 		//Balioak heman
 		
@@ -187,5 +161,34 @@ public class Kontrolatzaile {
 			return JokalariMota.BERDINKETA;
 		}
 	}
+
+	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
+	{
+		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) 
+		{
+			return true;
+		}
+		else if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.URA) 
+		{
+			return false;
+		}
+		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) 
+		{
+			return true;
+		}
+		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.ELURRA) 
+		{
+			return false;
+		}
+		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) 
+		{
+			return true;
+		}
+		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.SUA) 
+		{
+			return false;
+		}
+	}
+
 }
-	
+
