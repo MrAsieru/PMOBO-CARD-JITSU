@@ -3,7 +3,7 @@ package cardJitsu;
 public class Kontrolatzaile {
 	
 	private JokalariaLOKALA jokalari1;
-	private JokalariaBot jokalari2;
+	private JokalariaBOT jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
 	private Jokalaria aurrekoTxandakoIrabazlea;
 	private Karta JokalariLokalaKarta;
@@ -12,12 +12,13 @@ public class Kontrolatzaile {
 	
 	private Kontrolatzailea() 
 	{
-		this.jokalari1=null;
-		this.jokalari2=null;
-		this.aurrekoTxandakoEfektua=null;
-		this.JokalariBotKarta=null;
-		this.JokalariLokalaKarta=null;
+		this.jokalari1 = null;
+		this.jokalari2 = null;
+		this.aurrekoTxandakoEfektua = null;
+		this.JokalariBotKarta = null;
+		this.JokalariLokalaKarta = null;
 	}
+	//Necesita revision
 	
 	public static Kontrolatzaile getNireKontrolatzailea() 
 	{
@@ -27,31 +28,37 @@ public class Kontrolatzaile {
 		}
 		return nireKontrolatzaile;
 	} 
+	//Necesita revision
 	
 	public void partidaBerriaHasi() 
 	{
 		
 	}
+	//
 	
 	private Jokalaria txandaBerria(Jokalaria pJokalaria) 
 	{
 		
 	}
+	//
 	
 	private Jokalaria partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
 		
 	}
+	//
 	
 	private Karta kartaBatEman(Jokalaria pJokalaria) 
 	{
 		
 	}
+	//
 	
 	private void konprobatuAurrekoEfektua() 
 	{
 		
 	}
+	//
 	
 	private JokalariMota kartakKonprobatu() 
 	{
@@ -161,7 +168,8 @@ public class Kontrolatzaile {
 			return JokalariMota.BERDINKETA;
 		}
 	}
-
+	//Falta print
+	
 	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) 
@@ -189,6 +197,7 @@ public class Kontrolatzaile {
 			return false;
 		}
 	}
-
+	//Hecho
+	
 }
 
