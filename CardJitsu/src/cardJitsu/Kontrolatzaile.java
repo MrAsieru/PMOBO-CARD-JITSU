@@ -1,4 +1,4 @@
-package CardJitsu;
+package cardJitsu;
 
 public class Kontrolatzaile {
 	private JokalariaLOKALA jokalari1;
@@ -42,7 +42,7 @@ public class Kontrolatzaile {
 		
 	}
 	
-	private Karta kartaBatEman() 
+	private Karta kartaBatEman(Jokalaria pJokalaria) 
 	{
 		
 	}
@@ -54,7 +54,8 @@ public class Kontrolatzaile {
 	
 	private JokalariMota kartakKonprobatu() 
 	{
-		
+		this.JokalariBotKarta;
+		this.JokalariLokalaKarta;
 	}
 
 }

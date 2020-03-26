@@ -1,4 +1,4 @@
-package CardJitsu;
+package cardJitsu;
 
 public class KontsolaKontrolatzailea {
 	public static KontsolaKontrolatzailea nireKontsolaKontrolagailua;

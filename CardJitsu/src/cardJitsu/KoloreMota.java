@@ -1,4 +1,4 @@
-package CardJitsu;
+package cardJitsu;
 
 public enum KoloreMota {
 	GORRIA,
