@@ -38,13 +38,13 @@ public class Kontrolatzaile {
 	{
 		
 	}
-	//
+	//Sin hacer
 	
 	private Jokalaria txandaBerria(Jokalaria pJokalaria) 
 	{
 		
 	}
-	//
+	//Sin hacer
 	
 	private boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
@@ -123,7 +123,7 @@ public class Kontrolatzaile {
 		
 		return irabaziDu;
 	}
-	//
+	//Hecho
 	
 	private Karta kartaBatEman(Jokalaria pJokalaria) 
 	{
@@ -335,7 +335,7 @@ public class Kontrolatzaile {
 			break;
 		}
 	}
-	//Necesita revision
+	//Hecho
 	
 	private JokalariMota kartakKonprobatu() 
 	{
