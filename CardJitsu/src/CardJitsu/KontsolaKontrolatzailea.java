@@ -22,9 +22,7 @@ public class KontsolaKontrolatzailea {
 	
 	public void kontsolaGarbitu() 
 	{
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
-		//Es lo primero que he encontrado pero igual no esta bien
+		Runtime.getRuntime().exec("cls");
 	}
 
 }
