@@ -7,14 +7,14 @@ public class KontsolaKontrolatzailea {
 	
 	public KontsolaKontrolatzailea(){}
 	
-	public String stringIrakurri() {
+	public static String stringIrakurri() {
 		Scanner sc = new Scanner(System.in);
 		String sarrera = sc.nextLine();
 
 		return sarrera;
 	}
 	
-	public int zenbakiaIrakurri() {
+	public static int zenbakiaIrakurri() {
 		int sarrera = 0;
 		boolean datuOna = false;
 		while(!datuOna) {
@@ -30,11 +30,11 @@ public class KontsolaKontrolatzailea {
 		return sarrera;
 	}
 	
-	public void imprimatu(String pTestua) {
+	public static void imprimatu(String pTestua) {
 		System.out.println(pTestua);
 	} 
 	
-	public void kontsolaGarbitu() {
+	public static void kontsolaGarbitu() {
 		try {
 			if (System.getProperty("os.name").contains("Windows")) {
 			    Runtime.getRuntime().exec("cls");

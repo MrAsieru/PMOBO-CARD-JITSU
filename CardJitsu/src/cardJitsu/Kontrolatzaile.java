@@ -1,16 +1,20 @@
 package cardJitsu;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
 public class Kontrolatzaile {
 	
-	private JokalariaLOKALA jokalari1;
-	private JokalariaBOT jokalari2;
+	private JokalariaLokala jokalari1;
+	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
 	private Jokalaria aurrekoTxandakoIrabazlea;
 	private Karta JokalariLokalaKarta;
 	private Karta JokalariBotKarta;
 	public static Kontrolatzaile nireKontrolatzaile;
 	
-	private Kontrolatzailea() 
+	private Kontrolatzaile() 
 	{
 		this.jokalari1 = null;
 		this.jokalari2 = null;
@@ -42,9 +46,82 @@ public class Kontrolatzaile {
 	}
 	//
 	
-	private Jokalaria partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
+	private boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
+		boolean irabaziDu = false;
 		
+		ArrayList<Karta> sua = new ArrayList<Karta>();
+		Iterator<Karta> itrSua = sua.iterator();
+		ArrayList<Karta> elurra = new ArrayList<Karta>();
+		Iterator<Karta> itrElurra = sua.iterator();
+		ArrayList<Karta> ura = new ArrayList<Karta>();
+		Iterator<Karta> itrUra = sua.iterator();
+		ArrayList<ArrayList<Karta>> elementuak = new ArrayList<ArrayList<Karta>>();
+		elementuak.add(sua);
+		elementuak.add(elurra);
+		elementuak.add(ura);
+		
+		//Karta guztiak dagozkien listetan sartu
+		for(int i=0;i<pJokalaria.gordetakoKartenKantitatea();i++) {
+			Karta karta = pJokalaria.lortuGordetakoKartaPOSz();
+			
+			switch(karta.getElementua()) {
+			case ElementuMota.SUA:
+				sua.add(karta);
+				break;
+			case ElementuMota.ELURRA:
+				elurra.add(karta);
+				break;
+			case ElementuMota.URA:
+				ura.add(karta);
+				break;
+			}
+		}
+		
+		//Konprobatu elementu bereko kartak
+		for(int i=0;i<elementuak.size();i++) {
+			ArrayList<KoloreMota> koloreak = new ArrayList<KoloreMota>();
+			for(int j=0;j<elementuak.get(i).size();j++) {
+				KoloreMota kKolorea = elementuak.get(i).get(j).getKolorea();
+				if(!koloreak.contains(kKolorea)) {
+					koloreak.add(kKolorea);
+				}
+			}
+			if(koloreak.size() >= 3) {
+				irabaziDu = true;
+				break;
+			}
+		}
+		
+		//Konprobatu elementu desberdineko kartak
+		if(!irabaziDu) {
+			
+			int s = 0;
+			int e = 0;
+			int u = 0;
+			
+			while(itrSua.hasNext() && !irabaziDu) {
+				ArrayList<KoloreMota> koloreak = new ArrayList<KoloreMota>();
+				KoloreMota suKolorea = itrSua.next().getKolorea();
+				koloreak.add(suKolorea);
+				
+				while(itrElurra.hasNext() && !irabaziDu) {
+					KoloreMota elKolorea = itrElurra.next().getKolorea();
+					if(!koloreak.contains(elKolorea)) {
+						koloreak.add(elKolorea);
+						
+						while(itrUra.hasNext() && !irabaziDu) {
+							KoloreMota urKolorea = itrUra.next().getKolorea();
+							if(!koloreak.contains(urKolorea)) {
+								irabaziDu = true;								
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return irabaziDu;
 	}
 	//
 	
