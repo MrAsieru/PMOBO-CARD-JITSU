@@ -105,20 +105,26 @@ public class Kontrolatzaile {
 			{
 			case BIGEHITU:
 				balioaL = balioaL + 2;
+				break;
 			case BIKENDU:
 				balioaB = balioaB-2;
+				break;
 			case ZENBAKIALDAKETA:
 				minwin = true;
+				break;
 			}
 		case 0:
 			switch(aurrekoTxandakoEfektua) 
 			{
 			case BIGEHITU:
 				balioaB = balioaB + 2;
+				break;
 			case BIKENDU:
 				balioaL = balioaL-2;
+				break;
 			case ZENBAKIALDAKETA:
 				minwin = true;
+				break;
 			}
 		}
 		
@@ -165,6 +171,7 @@ public class Kontrolatzaile {
 		// Imprimaketa
 		
 		//Balioak heman
+		
 		if(finala==1) 
 		{
 			return JokalariMota.BOT;
