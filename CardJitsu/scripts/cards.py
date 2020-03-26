@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\cards3.json', 'r') as f:
+with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\cards_or.json', 'r') as f:
     c_dict = json.load(f)
 
 def idEguneratu():
@@ -183,5 +183,5 @@ def efektuaItzuli(card):
         return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.|hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili."
     else:
         return ""
-#idEguneratu()
-kartenKopuruak()
+idEguneratu()
+#kartenKopuruak()

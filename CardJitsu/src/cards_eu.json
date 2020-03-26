@@ -1,3 +1,5 @@
+{
+"KartenLista":
 [
 {
 "card_id": "1",
@@ -2654,25 +2656,25 @@
 {
 "card_id": "222",
 "set_id": "4",
-"power_id": "7",
+"power_id": "19",
 "element": "f",
 "name": "Switchbox 3000",
 "color": "b",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.|<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen gorriak diren karta guztiak ezabatu.|<jokalaria>-ren gorriak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
 "card_id": "223",
 "set_id": "4",
-"power_id": "8",
+"power_id": "20",
 "element": "f",
 "name": "Medieval Party",
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.|<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen urdinak diren karta guztiak ezabatu.|<jokalaria>-ren urdinak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2690,13 +2692,13 @@
 {
 "card_id": "225",
 "set_id": "4",
-"power_id": "9",
+"power_id": "22",
 "element": "f",
 "name": "Cloud Wave",
 "color": "o",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.|<jokalaria>-ren berdea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen berdeak diren karta guztiak ezabatu.|<jokalaria>-ren berdeak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2714,25 +2716,25 @@
 {
 "card_id": "227",
 "set_id": "4",
-"power_id": "12",
+"power_id": "24",
 "element": "s",
 "name": "Cart Surfer",
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen moreak diren karta guztiak ezabatu.|<jokalaria>-ren moreak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
 "card_id": "228",
 "set_id": "4",
-"power_id": "11",
+"power_id": "23",
 "element": "s",
 "name": "Keytar",
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.|<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen laranjak diren karta guztiak ezabatu.|<jokalaria>-ren laranjak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2762,13 +2764,13 @@
 {
 "card_id": "231",
 "set_id": "4",
-"power_id": "10",
+"power_id": "21",
 "element": "w",
 "name": "Gold Viking Helmet",
 "color": "p",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.|<jokalaria>-ren horia den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, lehiakidearen horiak diren karta guztiak ezabatu.|<jokalaria>-ren horiak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -6108,3 +6110,4 @@
 "is_active": "1"
 }
 ]
+}

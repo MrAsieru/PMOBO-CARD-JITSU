@@ -3096,7 +3096,7 @@
   {
     "card_id": "349",
     "set_id": "4",
-    "power_id": "7",
+    "power_id": "19",
     "element": "f",
     "name": "Switchbox 3000",
     "label": "Switchbox 3000",
@@ -3104,13 +3104,13 @@
     "color": "b",
     "value": "11",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Red card.",
+    "description": "When this is scored, discard Opponent's all Red cards.",
     "is_active": "1"
   },
   {
     "card_id": "350",
     "set_id": "4",
-    "power_id": "8",
+    "power_id": "20",
     "element": "f",
     "name": "Medieval Party",
     "label": "Medieval Party",
@@ -3118,7 +3118,7 @@
     "color": "y",
     "value": "10",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Blue card.",
+    "description": "When this is scored, discard Opponent's all Blue cards.",
     "is_active": "1"
   },
   {
@@ -3138,7 +3138,7 @@
   {
     "card_id": "352",
     "set_id": "4",
-    "power_id": "9",
+    "power_id": "22",
     "element": "f",
     "name": "Cloud Wave",
     "label": "Cloud Wave",
@@ -3146,7 +3146,7 @@
     "color": "o",
     "value": "12",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Green card.",
+    "description": "When this is scored, discard Opponent's all Green cards.",
     "is_active": "1"
   },
   {
@@ -3166,7 +3166,7 @@
   {
     "card_id": "354",
     "set_id": "4",
-    "power_id": "12",
+    "power_id": "24",
     "element": "s",
     "name": "Cart Surfer",
     "label": "Cart Surfer",
@@ -3174,13 +3174,13 @@
     "color": "g",
     "value": "10",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Purple card.",
+    "description": "When this is scored, discard Opponent's all Purple cards.",
     "is_active": "1"
   },
   {
     "card_id": "355",
     "set_id": "4",
-    "power_id": "11",
+    "power_id": "23",
     "element": "s",
     "name": "Keytar",
     "label": "Keytar",
@@ -3188,7 +3188,7 @@
     "color": "p",
     "value": "9",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Orange card.",
+    "description": "When this is scored, discard Opponent's all Orange cards.",
     "is_active": "1"
   },
   {
@@ -3222,7 +3222,7 @@
   {
     "card_id": "358",
     "set_id": "4",
-    "power_id": "10",
+    "power_id": "21",
     "element": "w",
     "name": "Gold Viking Helmet",
     "label": "Gold Viking Helmet",
@@ -3230,7 +3230,7 @@
     "color": "p",
     "value": "10",
     "asset": "",
-    "description": "When this is scored, discard one Opponent's Yellow card.",
+    "description": "When this is scored, discard Opponent's all Yellow cards.",
     "is_active": "1"
   },
   {
