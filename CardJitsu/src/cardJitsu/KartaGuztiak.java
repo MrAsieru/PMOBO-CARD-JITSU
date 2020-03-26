@@ -3,15 +3,17 @@ package cardJitsu;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class KartaGuztiak {
-	private static ArrayList<Karta> lista = null;
+	private static List<Karta> lista = null;
 	
 	public KartaGuztiak() {
+		lista = new ArrayList<>();
 	}
 	
 	public static void jsonetikKartetara() {
@@ -168,21 +170,21 @@ public class KartaGuztiak {
 					deskripzioa = (String) jsonObj.get("description");
 					
 					//Karta sartu
+					Karta kartaB;
 					if(kartaBereziaDa) {
-						
+						kartaB = (Karta) new KartaBerezia(elementua,balioa,kolorea,efektua,deskripzioa);
 					} else {
-						
+						kartaB = (Karta) new KartaNormala(elementua,balioa,kolorea);
 					}
-					
+					lista.add(kartaB);					
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-			
+			}			
 		}
 	}
 	
 	public static Karta getKarta(int pPos) {
-		
+		return lista.get(pPos);
 	}
 }
