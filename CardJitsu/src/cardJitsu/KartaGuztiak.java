@@ -20,27 +20,30 @@ public class KartaGuztiak {
 		if (lista == null) {
 			JSONParser parser = new JSONParser();
 			
-			try {
-				Object obj = parser.parse(new FileReader("/src/cards_eu.json"));
-				
-				JSONObject jsonObj = (JSONObject) obj;
+			try {				
+				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("/src/cards_eu.json"));
 				
 				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");
 				
+				/* BESTE ERA BAT
 				Iterator<JSONObject> itr = kartaLista.iterator();
-				
 				while(itr.hasNext()) {
 					JSONObject karta = itr.next();
-					ElementuMota elementua;
+					...
+				}*/				
+				
+				for(int i = 0; i < kartaLista.size(); i++) {
+					JSONObject karta = (JSONObject) kartaLista.get(i);
+					ElementuMota elementua = null;
 					int balioa;
-					KoloreMota kolorea;
+					KoloreMota kolorea = null;
 					boolean erabilgarria;
-					EfektuMota efektua;
+					EfektuMota efektua = null;
 					String deskripzioa;
 					boolean kartaBereziaDa = true;
 					
 					//Elementua
-					switch ((String) jsonObj.get("element")) {
+					switch ((String) karta.get("element")) {
 					case "f":
 						elementua = ElementuMota.SUA;
 						break;
@@ -58,10 +61,10 @@ public class KartaGuztiak {
 					}
 					
 					//Balioa
-					balioa = (int) jsonObj.get("value");
+					balioa = (int) karta.get("value");
 					
 					//Kolorea
-					switch ((String) jsonObj.get("color")) {
+					switch ((String) karta.get("color")) {
 					case "r":
 						kolorea = KoloreMota.GORRIA;
 						break;
@@ -88,7 +91,7 @@ public class KartaGuztiak {
 					erabilgarria = true;
 					
 					//Efektu mota
-					switch((int) jsonObj.get("color")) {
+					switch((int) karta.get("color")) {
 					case 0:
 						kartaBereziaDa = false;
 						break;
@@ -167,16 +170,16 @@ public class KartaGuztiak {
 					}
 					
 					//Deskripzioa
-					deskripzioa = (String) jsonObj.get("description");
+					deskripzioa = (String) karta.get("description");
 					
 					//Karta sartu
 					Karta kartaB;
 					if(kartaBereziaDa) {
-						kartaB = (Karta) new KartaBerezia(elementua,balioa,kolorea,efektua,deskripzioa);
+						kartaB = new KartaBerezia(elementua,balioa,kolorea,efektua,deskripzioa);
 					} else {
 						kartaB = (Karta) new KartaNormala(elementua,balioa,kolorea);
 					}
-					lista.add(kartaB);					
+					lista.add(kartaB);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

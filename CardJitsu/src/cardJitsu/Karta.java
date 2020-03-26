@@ -1,5 +1,8 @@
 package cardJitsu;
 
-public class Karta {
+public abstract class Karta {
 
+	public Karta() {
+		
+	}
 }
