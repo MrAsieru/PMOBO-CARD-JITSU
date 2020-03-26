@@ -135,7 +135,7 @@ public class Kontrolatzaile {
 		
 		pJokalaria.gehituJolastekoKarta(KartaGuztiak.getKarta(randomz));
 	}
-	//
+	//Hecho
 	
 	private void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
 	{
@@ -335,7 +335,7 @@ public class Kontrolatzaile {
 			break;
 		}
 	}
-	//
+	//Necesita revision
 	
 	private JokalariMota kartakKonprobatu() 
 	{
