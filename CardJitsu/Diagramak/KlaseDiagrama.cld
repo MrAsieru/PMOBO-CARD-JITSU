@@ -1547,7 +1547,7 @@ KenduUrdinBat</old>
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[3]/visibility"/>
                                               <name>lortuJolastekoKartaPOSz</name>
-                                              <type>void</type>
+                                              <type>Karta</type>
                                               <params/>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>false</isStatic>
@@ -1569,7 +1569,29 @@ KenduUrdinBat</old>
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[3]/visibility"/>
                                               <name>lortuGordetakoKartaPOSz</name>
-                                              <type>void</type>
+                                              <type>Karta</type>
+                                              <params/>
+                                              <isAbstract>false</isAbstract>
+                                              <isStatic>false</isStatic>
+                                              <isFinal>false</isFinal>
+                                            </net.java.amateras.uml.classdiagram.model.OperationModel>
+                                            <net.java.amateras.uml.classdiagram.model.OperationModel>
+                                              <backgroundColor reference="../../../backgroundColor"/>
+                                              <foregroundColor reference="../../../foregroundColor"/>
+                                              <showIcon>true</showIcon>
+                                              <parent class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
+                                              <listeners serialization="custom">
+                                                <java.beans.PropertyChangeSupport>
+                                                  <default>
+                                                    <source class="net.java.amateras.uml.classdiagram.model.OperationModel" reference="../../../.."/>
+                                                    <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                                                  </default>
+                                                  <null/>
+                                                </java.beans.PropertyChangeSupport>
+                                              </listeners>
+                                              <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
+                                              <name>gordetakoKartenKantitatea</name>
+                                              <type>int</type>
                                               <params/>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>false</isStatic>
