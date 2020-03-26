@@ -2009,7 +2009,7 @@ Berdinketa</content>
                                         </listeners>
                                         <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[4]/visibility"/>
                                         <name>partidarenIrabazleaKonprobatu</name>
-                                        <type>Jokalaria</type>
+                                        <type>boolean</type>
                                         <params>
                                           <net.java.amateras.uml.classdiagram.model.Argument>
                                             <name>pJokalari</name>
