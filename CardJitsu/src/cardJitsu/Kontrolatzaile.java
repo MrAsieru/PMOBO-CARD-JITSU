@@ -127,7 +127,13 @@ public class Kontrolatzaile {
 	
 	private Karta kartaBatEman(Jokalaria pJokalaria) 
 	{
+		int randomz = 1000;
+		while(randomz>509) 
+		{
+			randomz = (int) Math.round(Math.random()*1000);
+		}
 		
+		pJokalaria.gehituJolastekoKarta(KartaGuztiak.getKarta(randomz));
 	}
 	//
 	
