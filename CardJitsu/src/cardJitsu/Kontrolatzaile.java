@@ -82,128 +82,89 @@ public class Kontrolatzaile {
 	
 	private JokalariMota kartakKonprobatu() 
 	{
+		//Baloreak gorde
+		
 		int irabazlea = -1;
-		ElementuMota elementuaW = null;
-		ElementuMota elementuaL = null;
-		int balioaW = -1;
-		int balioaL = -1;
+		ElementuMota elementuaL = JokalariLokalaKarta.getElementua();;
+		ElementuMota elementuaB = JokalariBotKarta.getElementua();
+		int balioaL =  JokalariLokalaKarta.getBalioa();
+		int balioaB =  JokalariBotKarta.getBalioa();
 		boolean minwin = false;
 		int finala = -1;
 		
-		if(this.aurrekoTxandakoIrabazlea instanceof (JokalariaLOKALA)Jokalaria) 
-		{
-			irabazlea = 1;
-			elementuaW = JokalariLokalaKarta.getElementua();
-			elementuaL = JokalariBotKarta.getElementua();
-			balioaW = JokalariLokalaKarta.getBalioa();
-			balioaL = JokalariBotKarta.getBalioa();
-		}
-		else 
-		{
-			irabazlea = 0;
-			elementuaW = JokalariBotKarta.getElementua();
-			elementuaL = JokalariLokalaKarta.getElementua();
-			balioaW = JokalariBotKarta.getBalioa();
-			balioaL = JokalariLokalaKarta.getBalioa();
-		}
+		//Aurreko jokaldia nork irabazi duen jakin
 		
+		if(this.aurrekoTxandakoIrabazlea instanceof (JokalariaLOKALA)Jokalaria) {irabazlea = 1;}else{irabazlea = 0;}
 		
-		switch(aurrekoTxandakoEfektua) 
-		{
-		case BIGEHITU:
-			balioaW = balioaW + 2;
-		case BIKENDU:
-			balioaL = balioaL-2;
-		case ZENBAKIALDAKETA:
-			minwin = true;
-		}
+		//Irabazlearen arabera balioak aldatu
 		
 		switch(irabazlea) 
 		{
+		case 1:
+			switch(aurrekoTxandakoEfektua) 
+			{
+			case BIGEHITU:
+				balioaL = balioaL + 2;
+			case BIKENDU:
+				balioaB = balioaB-2;
+			case ZENBAKIALDAKETA:
+				minwin = true;
+			}
+		case 0:
+			switch(aurrekoTxandakoEfektua) 
+			{
+			case BIGEHITU:
+				balioaB = balioaB + 2;
+			case BIKENDU:
+				balioaL = balioaL-2;
+			case ZENBAKIALDAKETA:
+				minwin = true;
+			}
+		}
 		
-		case 0: //Bot-aren PowerCard
-			
-			if(elementuaW==elementuaL) 
+		//Nork irabazten du?
+		
+		if(elementuaL==elementuaB) 
+		{
+			if(balioaL>balioaB) 
 			{
-				if(balioaW>balioaL) 
+				if(!minwin) 
 				{
-					if(!minwin) 
-					{
-						finala = 2;
-					}
-					else 
-					{
-						finala = 1;
-					}
+					finala = 2;
 				}
-				else if(balioaW<balioaL) 
+				else 
 				{
-					if(!minwin) 
-					{
-						finala = 1;
-					}
-					else 
-					{
-						finala = 2;
-					}
-				}
-				else if(balioaW==balioaL) 
-				{
-					finala = 0;
+					finala = 1;
 				}
 			}
-			else if(elementuaIrabazi(elementuaW,elementuaL)) 
+			else if(balioaL<balioaB) 
 			{
-				finala = 2;
-			}
-			else if(elementuaIrabazi(elementuaL,elementuaW)) 
-			{
-				finala = 1;
-			} 
-			
-		case 1: //Jokalariaren PoweCard
-			
-			if(elementuaW==elementuaL) 
-			{
-				if(balioaW>balioaL) 
+				if(!minwin) 
 				{
-					if(!minwin) 
-					{
-						finala = 1;
-					}
-					else 
-					{
-						finala = 2;
-					}
+					finala = 1;
 				}
-				else if(balioaW<balioaL) 
+				else 
 				{
-					if(!minwin) 
-					{
-						finala = 2;
-					}
-					else 
-					{
-						finala = 1;
-					}
-				}
-				else if(balioaW==balioaL) 
-				{
-					finala = 0;
+					finala = 2;
 				}
 			}
-			else if(elementuaIrabazi(elementuaW,elementuaL)) 
+			else if(balioaL==balioaB) 
 			{
-				finala = 1;
+				finala = 0;
 			}
-			else if(elementuaIrabazi(elementuaL,elementuaW)) 
-			{
-				finala = 2;
-			} 
+		}
+		else if(elementuaIrabazi(elementuaL,elementuaB)) 
+		{
+			finala = 2;
+		}
+		else if(elementuaIrabazi(elementuaB,elementuaL)) 
+		{
+			finala = 1;
 		}
 		
 		// Imprimaketa
 		
+		//Balioak heman
 		if(finala==1) 
 		{
 			return JokalariMota.BOT;
