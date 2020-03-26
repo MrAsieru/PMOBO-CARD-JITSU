@@ -2808,7 +2808,7 @@ Berdinketa</content>
                 <params>
                   <net.java.amateras.uml.classdiagram.model.Argument>
                     <name>pErabilgarria</name>
-                    <type>int</type>
+                    <type>boolean</type>
                   </net.java.amateras.uml.classdiagram.model.Argument>
                 </params>
                 <isAbstract>false</isAbstract>
