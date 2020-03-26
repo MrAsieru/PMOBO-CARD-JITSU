@@ -22,7 +22,7 @@ public class KontsolaKontrolatzailea {
 	
 	public void kontsolaGarbitu() 
 	{
-		Runtime.getRuntime().exec("cls");
+		
 	}
 
 }
