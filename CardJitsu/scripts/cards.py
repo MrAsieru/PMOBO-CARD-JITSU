@@ -134,53 +134,53 @@ def kartenKopuruak():
 
 def efektuaItzuli(card):
     if card["description"].lower() == "When this is scored, your card gets +2 for the next round".lower():
-        return "Karta honekin irabaztean, zure hurrengo kartaren balioa +2 izango da.|hurrengo txandan <jokalaria>-ren karta +2 balioko du."
+        return "Karta honekin irabaztean, zure hurrengo kartaren balioa +2 izango da.#hurrengo txandan <jokalaria>-ren karta +2 balioko du."
     elif card["description"].lower() == "When this is scored, your Opponent's card get -2 for the next round".lower():
-        return "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.|hurrengo txandan <jokalaria>-ren karta -2 balioko du."
+        return "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du."
     elif card["description"].lower() == "When this card is played, lower values win ties the next round.".lower():
-        return "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.|"
+        return "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#"
     elif card["description"].lower() == "When this is scored, discard one Opponent's Fire card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.|<jokalaria>-ren sua den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Water card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.|<jokalaria>-ren ura den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Snowball card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.|<jokalaria>-ren elurra den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.#<jokalaria>-ren elurra den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Red card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.|<jokalaria>-ren gorria den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Blue card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.|<jokalaria>-ren urdina den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Yellow card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.|<jokalaria>-ren horia den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.#<jokalaria>-ren horia den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Green card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.|<jokalaria>-ren berdea den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.#<jokalaria>-ren berdea den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Orange card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.|<jokalaria>-ren laranja den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard one Opponent's Purple card.".lower():
-        return "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.|<jokalaria>-ren morea den karta bat ezabatuko da."
+        return "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Red cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen gorriak diren karta guztiak ezabatu.|<jokalaria>-ren gorriak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen gorriak diren karta guztiak ezabatu.#<jokalaria>-ren gorriak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Blue cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen urdinak diren karta guztiak ezabatu.|<jokalaria>-ren urdinak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen urdinak diren karta guztiak ezabatu.#<jokalaria>-ren urdinak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Yellow cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen horiak diren karta guztiak ezabatu.|<jokalaria>-ren horiak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen horiak diren karta guztiak ezabatu.#<jokalaria>-ren horiak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Green cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen berdeak diren karta guztiak ezabatu.|<jokalaria>-ren berdeak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen berdeak diren karta guztiak ezabatu.#<jokalaria>-ren berdeak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Orange cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen laranjak diren karta guztiak ezabatu.|<jokalaria>-ren laranjak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen laranjak diren karta guztiak ezabatu.#<jokalaria>-ren laranjak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is scored, discard Opponent's all Purple cards.".lower():
-        return "Karta honekin irabaztean, lehiakidearen moreak diren karta guztiak ezabatu.|<jokalaria>-ren moreak diren karta guztiak ezabatuko dira."
+        return "Karta honekin irabaztean, lehiakidearen moreak diren karta guztiak ezabatu.#<jokalaria>-ren moreak diren karta guztiak ezabatuko dira."
     elif card["description"].lower() == "When this is played, Fire cards become Snowball for this round.".lower():
-        return "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.|"
+        return "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#"
     elif card["description"].lower() == "When this is played, Snowball cards become Water for this round.".lower():
-        return "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.|"
+        return "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#"
     elif card["description"].lower() == "When this is played, Water cards become Fire for this round.".lower():
-        return "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.|"
+        return "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#"
     elif card["description"].lower() == "When this is scored, Fire cannot be played next round.".lower():
-        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.|hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili."
+        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili."
     elif card["description"].lower() == "When this is scored, Water cannot be played next round.".lower():
-        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.|hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili."
+        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili."
     elif card["description"].lower() == "When this is scored, Snow cannot be played next round.".lower():
-        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.|hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili."
+        return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili."
     else:
         return ""
 idEguneratu()
