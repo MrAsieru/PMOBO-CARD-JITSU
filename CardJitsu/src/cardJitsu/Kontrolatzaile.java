@@ -10,6 +10,7 @@ public class Kontrolatzaile {
 	private JokalariaLokala jokalari1;
 	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
+	private boolean aurrekoTxandakoEfektuaZenbakia;
 	private Jokalaria aurrekoTxandakoIrabazlea;
 	private Karta jokalariLokalaKarta;
 	private Karta jokalariBotKarta;
@@ -96,7 +97,7 @@ public class Kontrolatzaile {
 		//Txandaren amaiera imprimatu
 		
 	}
-	//Sin hacer
+	//Hecho
 	
 	private boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
@@ -412,9 +413,6 @@ public class Kontrolatzaile {
 			case BIKENDU:
 				balioaB = balioaB-2;
 				break;
-			case ZENBAKIALDAKETA:
-				minwin = true;
-				break;
 			}
 			break;
 		case 0:
@@ -426,11 +424,14 @@ public class Kontrolatzaile {
 			case BIKENDU:
 				balioaL = balioaL-2;
 				break;
-			case ZENBAKIALDAKETA:
-				minwin = true;
-				break;
 			}
 			break;
+		}
+		
+		if(aurrekoTxandakoEfektuaZenbakia) 
+		{
+			minwin=true;
+			aurrekoTxandakoEfektuaZenbakia = false;
 		}
 		
 		//Nork irabazten du?
@@ -491,13 +492,19 @@ public class Kontrolatzaile {
 			irabazlea = JokalariMota.BERDINKETA;
 		}
 		
+		if((jokalariLokalaKarta instanceof KartaBerezia && jokalariLokalaKarta.getEfektua==EfektuMota.ZENBAKIALDAKETA) 
+				|| (jokalariBotKarta instanceof KartaBerezia && jokalariLokalaKarta.getEfektua==EfektuMota.ZENBAKIALDAKETA))
+		{
+			aurrekoTxandakoEfektuaZenbakia = true;
+		}
+		
 		// Imprimaketa
 		KontsolaK.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+(jokalariLokalaKarta instanceof KartaBerezia) ? "Ef: "+jokalariLokalaKarta.getDeskripzioa().split("#")[0]:"");
 		KontsolaK.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+(jokalariBotKarta instanceof KartaBerezia) ? "Ef: "+jokalariBotKarta.getDeskripzioa().split("#")[0]:"");
 		
 		return irabazlea;
 	}
-	//Falta print
+	//Hecho
 	
 	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{
