@@ -3,9 +3,9 @@ package cardJitsu;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class KontsolaKontrolatzailea {
+public class KontsolaK {
 	
-	public KontsolaKontrolatzailea(){}
+	public KontsolaK(){}
 	//Hecho
 	
 	public static String stringIrakurri() {

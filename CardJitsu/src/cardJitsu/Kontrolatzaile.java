@@ -51,22 +51,22 @@ public class Kontrolatzaile {
 		this.aplikatuAurrekoEfektua(jokalari2);
 		
 		//Txanda imprimatu
-		KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+":");
+		KontsolaK.imprimatu(jokalari1.getIzena()+":");
 		for(int i=0;i<jokalari1.gordetakoKartenKantitatea();i++) {
 			Karta karta = jokalari1.lortuGordetakoKartaPOSz(i);
-			KontsolaKontrolatzailea.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+			KontsolaK.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
 		}
-		KontsolaKontrolatzailea.imprimatu(" ");
-		KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+":");
+		KontsolaK.imprimatu(" ");
+		KontsolaK.imprimatu(jokalari2.getIzena()+":");
 		for(int i=0;i<jokalari2.gordetakoKartenKantitatea();i++) {
 			Karta karta = jokalari2.lortuGordetakoKartaPOSz(i);
-			KontsolaKontrolatzailea.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+			KontsolaK.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
 		}
 		
-		KontsolaKontrolatzailea.imprimatu("Zure txanda "+jokalari1.getIzena());
+		KontsolaK.imprimatu("Zure txanda "+jokalari1.getIzena());
 		for(int i=1;i<5;i++) {
 			Karta karta = jokalari2.lortuJolastekoKartaPOSz(i-1);
-			KontsolaKontrolatzailea.imprimatu("["+karta.getErabilgarria() ? "#":i+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+(karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:"");
+			KontsolaK.imprimatu("["+karta.getErabilgarria() ? "#":i+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+(karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:"");
 		}
 		
 		//TODO
@@ -81,16 +81,16 @@ public class Kontrolatzaile {
 			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? jokalariLokalaKarta.getEfektua():null;
 			aurrekoTxandakoIrabazlea = jokalari1;
 			jokalari1.gehituGordetakoKarta(jokalariLokalaKarta);
-			KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+" irabazi du"+(jokalariLokalaKarta instanceof KartaBerezia) ? ", "+jokalariLokalaKarta.getDeskripzioa().split("#")[1]:".");
+			KontsolaK.imprimatu(jokalari1.getIzena()+" irabazi du"+(jokalariLokalaKarta instanceof KartaBerezia) ? ", "+jokalariLokalaKarta.getDeskripzioa().split("#")[1]:".");
 		} else if (txJok == JokalariMota.BOT) {
 			aurrekoTxandakoEfektua = (jokalariBotKarta instanceof KartaBerezia) ? jokalariBotKarta.getEfektua():null;
 			aurrekoTxandakoIrabazlea = jokalari2;
 			jokalari2.gehituGordetakoKarta(jokalariBotKarta);
-			KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+" irabazi du"+(jokalariBotKarta instanceof KartaBerezia) ? ", "+jokalariBotKarta.getDeskripzioa().split("#")[1]:".");
+			KontsolaK.imprimatu(jokalari2.getIzena()+" irabazi du"+(jokalariBotKarta instanceof KartaBerezia) ? ", "+jokalariBotKarta.getDeskripzioa().split("#")[1]:".");
 		} else {
 			aurrekoTxandakoEfektua = null;
 			aurrekoTxandakoIrabazlea = null;
-			KontsolaKontrolatzailea.imprimatu("Berdinketa bat egon da.");
+			KontsolaK.imprimatu("Berdinketa bat egon da.");
 		}
 		
 		//Txandaren amaiera imprimatu
@@ -492,8 +492,8 @@ public class Kontrolatzaile {
 		}
 		
 		// Imprimaketa
-		KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+(jokalariLokalaKarta instanceof KartaBerezia) ? "Ef: "+jokalariLokalaKarta.getDeskripzioa().split("#")[0]:"");
-		KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+(jokalariBotKarta instanceof KartaBerezia) ? "Ef: "+jokalariBotKarta.getDeskripzioa().split("#")[0]:"");
+		KontsolaK.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+(jokalariLokalaKarta instanceof KartaBerezia) ? "Ef: "+jokalariLokalaKarta.getDeskripzioa().split("#")[0]:"");
+		KontsolaK.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+(jokalariBotKarta instanceof KartaBerezia) ? "Ef: "+jokalariBotKarta.getDeskripzioa().split("#")[0]:"");
 		
 		return irabazlea;
 	}
