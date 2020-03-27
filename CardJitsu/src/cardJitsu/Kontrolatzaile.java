@@ -66,7 +66,7 @@ public class Kontrolatzaile {
 		KontsolaK.imprimatu("Zure txanda "+jokalari1.getIzena());
 		for(int i=1;i<5;i++) {
 			Karta karta = jokalari2.lortuJolastekoKartaPOSz(i-1);
-			KontsolaK.imprimatu("["+karta.getErabilgarria() ? "#":i+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+(karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:"");
+			KontsolaK.imprimatu("["+((karta.getErabilgarria()) ? "#":i)+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:""));
 		}
 		
 		//TODO

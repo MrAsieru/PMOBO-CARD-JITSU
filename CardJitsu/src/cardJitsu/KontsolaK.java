@@ -51,4 +51,15 @@ public class KontsolaK {
 		}
 	}
 	//Hecho
+	
+	private void edozeinTeklaPultsatuJarraitzeko()
+	 { 
+	        System.out.println("Edozein tekla pultsatu jarraitzeko...");
+	        try
+	        {
+	            System.in.read();
+	        }  
+	        catch(Exception e)
+	        {}  
+	 }
 }
