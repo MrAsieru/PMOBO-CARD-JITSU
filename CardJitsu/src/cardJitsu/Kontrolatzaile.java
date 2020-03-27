@@ -10,7 +10,7 @@ public class Kontrolatzaile {
 	private JokalariaLokala jokalari1;
 	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
-	private boolean aurrekoTxandakoEfektuaZenbakia;
+	private boolean aurrekoTxandakoEfektuaZenbakia = false;
 	private Jokalaria aurrekoTxandakoIrabazlea;
 	private Karta jokalariLokalaKarta;
 	private Karta jokalariBotKarta;
@@ -47,9 +47,15 @@ public class Kontrolatzaile {
 		this.kartaBatEman(jokalari1);
 		this.kartaBatEman(jokalari2);
 		
-		//Aplikatu aurrreko efektua
-		this.aplikatuAurrekoEfektua(jokalari1);
-		this.aplikatuAurrekoEfektua(jokalari2);
+		//Aplikatu aurrreko efektua aurreko txandan galdu duenari
+		if(aurrekoTxandakoIrabazlea.equals(jokalari1)) 
+		{
+			this.aplikatuAurrekoEfektua(jokalari2);
+		}
+		else if(aurrekoTxandakoIrabazlea.equals(jokalari2)) 
+		{
+			this.aplikatuAurrekoEfektua(jokalari1);
+		}
 		
 		//Txanda imprimatu
 		KontsolaK.imprimatu(jokalari1.getIzena()+":");
@@ -506,6 +512,7 @@ public class Kontrolatzaile {
 	}
 	//Hecho
 	
+
 	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) 
