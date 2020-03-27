@@ -2,6 +2,7 @@ package cardJitsu;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 
 public class Kontrolatzaile {
@@ -10,17 +11,17 @@ public class Kontrolatzaile {
 	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
 	private Jokalaria aurrekoTxandakoIrabazlea;
-	private Karta JokalariLokalaKarta;
-	private Karta JokalariBotKarta;
-	public static Kontrolatzaile nireKontrolatzaile;
+	private Karta jokalariLokalaKarta;
+	private Karta jokalariBotKarta;
+	private static Kontrolatzaile nireKontrolatzaile;
 	
 	private Kontrolatzaile() 
 	{
 		this.jokalari1 = null;
 		this.jokalari2 = null;
 		this.aurrekoTxandakoEfektua = null;
-		this.JokalariBotKarta = null;
-		this.JokalariLokalaKarta = null;
+		this.jokalariBotKarta = null;
+		this.jokalariLokalaKarta = null;
 	}
 	//Necesita revision
 	
@@ -40,8 +41,59 @@ public class Kontrolatzaile {
 	}
 	//Sin hacer
 	
-	private Jokalaria txandaBerria(Jokalaria pJokalaria) 
-	{
+	private Jokalaria txandaBerria(Jokalaria pJokalaria) {
+		//Kartak banatu
+		this.kartaBatEman(jokalari1);
+		this.kartaBatEman(jokalari2);
+		
+		//Aplikatu aurrreko efektua
+		this.aplikatuAurrekoEfektua(jokalari1);
+		this.aplikatuAurrekoEfektua(jokalari2);
+		
+		//Txanda imprimatu
+		KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+":");
+		for(int i=0;i<jokalari1.gordetakoKartenKantitatea();i++) {
+			Karta karta = jokalari1.lortuGordetakoKartaPOSz(i);
+			KontsolaKontrolatzailea.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+		}
+		KontsolaKontrolatzailea.imprimatu(" ");
+		KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+":");
+		for(int i=0;i<jokalari2.gordetakoKartenKantitatea();i++) {
+			Karta karta = jokalari2.lortuGordetakoKartaPOSz(i);
+			KontsolaKontrolatzailea.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+		}
+		
+		KontsolaKontrolatzailea.imprimatu("Zure txanda "+jokalari1.getIzena());
+		for(int i=1;i<5;i++) {
+			Karta karta = jokalari2.lortuJolastekoKartaPOSz(i-1);
+			KontsolaKontrolatzailea.imprimatu("["+karta.getErabilgarria() ? "#":i+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+(karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:"");
+		}
+		
+		//TODO
+		
+		//Jokalariak karta bat aukeratu hau jokatzeko
+		jokalariLokalaKarta = jokalari1.kartaAukeratu();
+		jokalariBotKarta = jokalari2.kartaAukeratu();
+		
+		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
+		JokalariMota txJok = this.kartakKonprobatu();
+		if(txJok == JokalariMota.LOKALA) {
+			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? jokalariLokalaKarta.getEfektua():null;
+			aurrekoTxandakoIrabazlea = jokalari1;
+			jokalari1.gehituGordetakoKarta(jokalariLokalaKarta);
+			KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+" irabazi du"+(jokalariLokalaKarta instanceof KartaBerezia) ? ", "+jokalariLokalaKarta.getDeskripzioa().split("#")[1]:".");
+		} else if (txJok == JokalariMota.BOT) {
+			aurrekoTxandakoEfektua = (jokalariBotKarta instanceof KartaBerezia) ? jokalariBotKarta.getEfektua():null;
+			aurrekoTxandakoIrabazlea = jokalari2;
+			jokalari2.gehituGordetakoKarta(jokalariBotKarta);
+			KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+" irabazi du"+(jokalariBotKarta instanceof KartaBerezia) ? ", "+jokalariBotKarta.getDeskripzioa().split("#")[1]:".");
+		} else {
+			aurrekoTxandakoEfektua = null;
+			aurrekoTxandakoIrabazlea = null;
+			KontsolaKontrolatzailea.imprimatu("Berdinketa bat egon da.");
+		}
+		
+		//Txandaren amaiera imprimatu
 		
 	}
 	//Sin hacer
@@ -125,15 +177,9 @@ public class Kontrolatzaile {
 	}
 	//Hecho
 	
-	private Karta kartaBatEman(Jokalaria pJokalaria) 
+	private void kartaBatEman(Jokalaria pJokalaria) 
 	{
-		int randomz = 1000;
-		while(randomz>509) 
-		{
-			randomz = (int) Math.round(Math.random()*1000);
-		}
-		
-		pJokalaria.gehituJolastekoKarta(KartaGuztiak.getKarta(randomz));
+		pJokalaria.gehituJolastekoKarta(KartaGuztiak.getKarta(new Random().nextInt(KartaGuztiak.getTamaina())));
 	}
 	//Hecho
 	
@@ -341,21 +387,21 @@ public class Kontrolatzaile {
 	{
 		//Baloreak gorde
 		
-		int irabazlea = -1;
-		ElementuMota elementuaL = JokalariLokalaKarta.getElementua();;
-		ElementuMota elementuaB = JokalariBotKarta.getElementua();
-		int balioaL =  JokalariLokalaKarta.getBalioa();
-		int balioaB =  JokalariBotKarta.getBalioa();
+		int aurIrabazlea = -1;
+		ElementuMota elementuaL = jokalariLokalaKarta.getElementua();;
+		ElementuMota elementuaB = jokalariBotKarta.getElementua();
+		int balioaL =  jokalariLokalaKarta.getBalioa();
+		int balioaB =  jokalariBotKarta.getBalioa();
 		boolean minwin = false;
 		int finala = -1;
 		
 		//Aurreko jokaldia nork irabazi duen jakin
 		
-		if(this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) {irabazlea = 1;}else{irabazlea = 0;}
+		if(this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) {aurIrabazlea = 1;}else{aurIrabazlea = 0;}
 		
 		//Irabazlearen arabera balioak aldatu
 		
-		switch(irabazlea) 
+		switch(aurIrabazlea) 
 		{
 		case 1:
 			switch(aurrekoTxandakoEfektua) 
@@ -395,22 +441,22 @@ public class Kontrolatzaile {
 			{
 				if(!minwin) 
 				{
-					finala = 2;
+					finala = 1;
 				}
 				else 
 				{
-					finala = 1;
+					finala = 2;
 				}
 			}
 			else if(balioaL<balioaB) 
 			{
 				if(!minwin) 
 				{
-					finala = 1;
+					finala = 2;
 				}
 				else 
 				{
-					finala = 2;
+					finala = 1;
 				}
 			}
 			else if(balioaL==balioaB) 
@@ -420,30 +466,36 @@ public class Kontrolatzaile {
 		}
 		else if(elementuaIrabazi(elementuaL,elementuaB)) 
 		{
-			finala = 2;
+			finala = 1;
 		}
 		else if(elementuaIrabazi(elementuaB,elementuaL)) 
 		{
-			finala = 1;
+			finala = 2;
 		}
 
-		// Imprimaketa
-		KontsolaKontrolagailua.imprimatu("");
 		
 		//Balioak heman
 		
+		JokalariMota irabazlea;
+		
 		if(finala==1) 
 		{
-			return JokalariMota.BOT;
+			irabazlea = JokalariMota.BOT;
 		}
 		else if(finala==2) 
 		{
-			return JokalariMota.LOKALA;
+			irabazlea = JokalariMota.LOKALA;
 		}
 		else if(finala==0) 
 		{
-			return JokalariMota.BERDINKETA;
+			irabazlea = JokalariMota.BERDINKETA;
 		}
+		
+		// Imprimaketa
+		KontsolaKontrolatzailea.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+(jokalariLokalaKarta instanceof KartaBerezia) ? "Ef: "+jokalariLokalaKarta.getDeskripzioa().split("#")[0]:"");
+		KontsolaKontrolatzailea.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+(jokalariBotKarta instanceof KartaBerezia) ? "Ef: "+jokalariBotKarta.getDeskripzioa().split("#")[0]:"");
+		
+		return irabazlea;
 	}
 	//Falta print
 	

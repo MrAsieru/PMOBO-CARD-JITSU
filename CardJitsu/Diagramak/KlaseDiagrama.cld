@@ -1482,7 +1482,12 @@ KenduUrdinBat</old>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                               <name>kenduJolastekoKarta</name>
                                               <type>void</type>
-                                              <params/>
+                                              <params>
+                                                <net.java.amateras.uml.classdiagram.model.Argument>
+                                                  <name>pKarta</name>
+                                                  <type>karta</type>
+                                                </net.java.amateras.uml.classdiagram.model.Argument>
+                                              </params>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>false</isStatic>
                                               <isFinal>false</isFinal>
@@ -1504,7 +1509,12 @@ KenduUrdinBat</old>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[3]/visibility"/>
                                               <name>gehituGordetakoKarta</name>
                                               <type>void</type>
-                                              <params/>
+                                              <params>
+                                                <net.java.amateras.uml.classdiagram.model.Argument>
+                                                  <name>pKarta</name>
+                                                  <type>Karta</type>
+                                                </net.java.amateras.uml.classdiagram.model.Argument>
+                                              </params>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>false</isStatic>
                                               <isFinal>false</isFinal>
@@ -1526,7 +1536,12 @@ KenduUrdinBat</old>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel[3]/visibility"/>
                                               <name>kenduGordetakoKarta</name>
                                               <type>void</type>
-                                              <params/>
+                                              <params>
+                                                <net.java.amateras.uml.classdiagram.model.Argument>
+                                                  <name>pKarta</name>
+                                                  <type>Karta</type>
+                                                </net.java.amateras.uml.classdiagram.model.Argument>
+                                              </params>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>false</isStatic>
                                               <isFinal>false</isFinal>

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class KontsolaKontrolatzailea {
 	
 	public KontsolaKontrolatzailea(){}
-	//Sin hacer
+	//Hecho
 	
 	public static String stringIrakurri() {
 		Scanner sc = new Scanner(System.in);

@@ -190,4 +190,8 @@ public class KartaGuztiak {
 	public static Karta getKarta(int pPos) {
 		return lista.get(pPos);
 	}
+	
+	public static int getTamaina() {
+		return lista.size();
+	}
 }
