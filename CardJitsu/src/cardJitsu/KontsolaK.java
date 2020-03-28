@@ -8,7 +8,7 @@ public class KontsolaK {
 	public KontsolaK(){}
 	//Hecho
 	
-	public static String stringIrakurri() {
+	public static String testuaIrakurri() {
 		Scanner sc = new Scanner(System.in);
 		String sarrera = sc.nextLine();
 
@@ -52,7 +52,7 @@ public class KontsolaK {
 	}
 	//Hecho
 	
-	private void edozeinTeklaPultsatuJarraitzeko()
+	private void edozeinTekla()
 	 { 
 	        System.out.println("Edozein tekla pultsatu jarraitzeko...");
 	        try

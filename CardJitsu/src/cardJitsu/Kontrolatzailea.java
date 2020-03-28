@@ -5,34 +5,35 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-public class Kontrolatzaile {
+public class Kontrolatzailea {
 	
 	private JokalariaLokala jokalari1;
 	private JokalariaBot jokalari2;
 	private EfektuMota aurrekoTxandakoEfektua;
-	private boolean aurrekoTxandakoEfektuaZenbakia = false;
+	private boolean aurrekoTxandakoEfektuaZenbakia;
 	private Jokalaria aurrekoTxandakoIrabazlea;
 	private Karta jokalariLokalaKarta;
 	private Karta jokalariBotKarta;
-	private static Kontrolatzaile nireKontrolatzaile;
+	private static Kontrolatzailea nireKontrolatzailea;
 	
-	private Kontrolatzaile() 
+	private Kontrolatzailea() 
 	{
 		this.jokalari1 = null;
 		this.jokalari2 = null;
 		this.aurrekoTxandakoEfektua = null;
 		this.jokalariBotKarta = null;
 		this.jokalariLokalaKarta = null;
+		this.aurrekoTxandakoEfektuaZenbakia = false;
 	}
 	//Necesita revision
 	
-	public static Kontrolatzaile getNireKontrolatzailea() 
+	public static Kontrolatzailea getNireKontrolatzailea() 
 	{
-		if(nireKontrolatzaile==null) 
+		if(nireKontrolatzailea==null) 
 		{
-			nireKontrolatzaile = new Kontrolatzaile();
+			nireKontrolatzailea = new Kontrolatzailea();
 		}
-		return nireKontrolatzaile;
+		return nireKontrolatzailea;
 	} 
 	//Necesita revision
 	
@@ -42,7 +43,8 @@ public class Kontrolatzaile {
 	}
 	//Sin hacer
 	
-	private Jokalaria txandaBerria(Jokalaria pJokalaria) {
+	private Jokalaria txandaBerria() {
+		Jokalaria irabazlea;
 		//Kartak banatu
 		this.kartaBatEman(jokalari1);
 		this.kartaBatEman(jokalari2);
@@ -100,8 +102,17 @@ public class Kontrolatzaile {
 			KontsolaK.imprimatu("Berdinketa bat egon da.");
 		}
 		
-		//Txandaren amaiera imprimatu
+		//Partida norbaitek irabazi badu konprobatu
+		if (this.partidarenIrabazleaKonprobatu(jokalari1)) {
+			irabazlea = jokalari1;
+		} else if(this.partidarenIrabazleaKonprobatu(jokalari2)) {
+			irabazlea = jokalari2;
+		} else {
+			//Errekurtsibitatea
+			irabazlea = this.txandaBerria();
+		}
 		
+		return irabazlea;
 	}
 	//Hecho
 	
