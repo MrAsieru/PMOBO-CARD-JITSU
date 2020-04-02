@@ -3,12 +3,20 @@ package cardJitsu;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class KontsolaK {
+public class Kontsola {
+	private static Kontsola nireKontsola;
 	
-	public KontsolaK(){}
+	private Kontsola(){}
 	//Hecho
 	
-	public static String testuaIrakurri() {
+	public static Kontsola getKontsola() {
+		if(nireKontsola == null) {
+			nireKontsola = new Kontsola();
+		}
+		return nireKontsola;
+	}
+	
+	public String testuaIrakurri() {
 		Scanner sc = new Scanner(System.in);
 		String sarrera = sc.nextLine();
 
@@ -16,7 +24,7 @@ public class KontsolaK {
 	}
 	//Hecho
 	
-	public static int zenbakiaIrakurri() {
+	public int zenbakiaIrakurri() {
 		int sarrera = 0;
 		boolean datuOna = false;
 		while(!datuOna) {
@@ -33,12 +41,12 @@ public class KontsolaK {
 	}
 	//Hecho
 	
-	public static void imprimatu(String pTestua) {
+	public void imprimatu(String pTestua) {
 		System.out.println(pTestua);
 	}
 	//Hecho
 	
-	public static void kontsolaGarbitu() {
+	public  void kontsolaGarbitu() {
 		try {
 			if (System.getProperty("os.name").contains("Windows")) {
 			    Runtime.getRuntime().exec("cls");

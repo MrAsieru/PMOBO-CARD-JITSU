@@ -9,14 +9,22 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class KartaGuztiak {
-	private static List<Karta> lista = null;
+public class KartaSorta {
+	private List<Karta> lista = null;
+	private static KartaSorta nireKartaSorta;
 	
-	public KartaGuztiak() {
+	private KartaSorta() {
 		lista = new ArrayList<>();
 	}
 	
-	public static void jsonetikKartetara() {
+	public static KartaSorta getKartaSorta(){
+		if(nireKartaSorta == null) {
+			nireKartaSorta = new KartaSorta();
+		}
+		return nireKartaSorta;
+	}
+	
+	public void jsonetikKartetara() {
 		if (lista == null) {
 			JSONParser parser = new JSONParser();
 			
@@ -187,11 +195,11 @@ public class KartaGuztiak {
 		}
 	}
 	
-	public static Karta getKarta(int pPos) {
+	public Karta getKarta(int pPos) {
 		return lista.get(pPos);
 	}
 	
-	public static int getTamaina() {
+	public int getTamaina() {
 		return lista.size();
 	}
 }

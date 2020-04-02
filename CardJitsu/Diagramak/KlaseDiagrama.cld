@@ -88,7 +88,7 @@
                 <target class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../../../../.."/>
                 <bendpoints/>
                 <stereoType></stereoType>
-                <fromMultiplicity>5</fromMultiplicity>
+                <fromMultiplicity>*</fromMultiplicity>
                 <toMultiplicity>1</toMultiplicity>
               </net.java.amateras.uml.classdiagram.model.AggregationModel>
               <net.java.amateras.uml.classdiagram.model.AssociationModel>
@@ -523,7 +523,7 @@
                                       <height>-1</height>
                                       <width>-1</width>
                                       <x>463</x>
-                                      <y>38</y>
+                                      <y>0</y>
                                     </constraint>
                                     <sourceConnections/>
                                     <targetConnections>
@@ -1407,8 +1407,8 @@ KenduUrdinBat</old>
                                           <constraint>
                                             <height>-1</height>
                                             <width>-1</width>
-                                            <x>597</x>
-                                            <y>395</y>
+                                            <x>593</x>
+                                            <y>403</y>
                                           </constraint>
                                           <sourceConnections>
                                             <net.java.amateras.uml.classdiagram.model.AggregationModel reference="../../.."/>
