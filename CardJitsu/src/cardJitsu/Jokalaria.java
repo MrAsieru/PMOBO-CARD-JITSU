@@ -18,5 +18,7 @@ public abstract class Jokalaria {
 		  {
 			return this.gordetakoKartak;
 		  }
+		
+		
 
 }
