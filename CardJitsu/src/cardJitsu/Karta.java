@@ -5,7 +5,7 @@ public abstract class Karta {
 	public Karta() {
 		//atributuak
 		private ElementuMota elementua;
-		private int balioa;
+		protected int balioa;
 		private KoloreMota kolorea;
 		private boolean erabilgarria;
 		

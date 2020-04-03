@@ -14,10 +14,7 @@ public abstract class Jokalaria {
 		}
 		
 		//gainerako metodoak
-		protected ListaKartak getgordetakoKartak()
-		  {
-			return this.gordetakoKartak;
-		  }
+		
 		
 		
 
