@@ -527,31 +527,15 @@ public class ListaJokalariak {
 	
 
 	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
-	{
-		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) 
-		{
+	{	boolean irabazi=false;
+		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
+			irabazi=true;
+		} else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
+			return true;
+		}else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) {
 			return true;
 		}
-		else if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.URA) 
-		{
-			return false;
-		}
-		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) 
-		{
-			return true;
-		}
-		else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.ELURRA) 
-		{
-			return false;
-		}
-		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) 
-		{
-			return true;
-		}
-		else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.SUA) 
-		{
-			return false;
-		}
+		return irabazi;
 	}
 	//Hecho
 	
