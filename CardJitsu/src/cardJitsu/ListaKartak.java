@@ -46,4 +46,8 @@ public class ListaKartak {
 		if (!aurkitua) {k1=null;}
 		return k1;
 	}
+	
+	public int getTamaina() {
+		return lista.size();
+	}
 }

@@ -531,9 +531,9 @@ public class ListaJokalariak {
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
 			irabazi=true;
 		} else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
-			return true;
+			irabazi= true;
 		}else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) {
-			return true;
+			irabazi=true;
 		}
 		return irabazi;
 	}
