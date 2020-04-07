@@ -37,4 +37,6 @@ public abstract class Karta {
 	public boolean getErabilgarria() {
 		return this.erabilgarria;
 	}
+	
+	public abstract void imprimatu();
 }

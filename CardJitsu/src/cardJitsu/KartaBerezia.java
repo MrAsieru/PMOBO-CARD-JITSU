@@ -12,5 +12,18 @@ public class KartaBerezia extends Karta {
 		super(pElementua, pBalioa, pKolorea);
 		this.efektua=pEfektua;
 		this.deskripzioa=pDeskripzioa;
-	}	
+	}
+	
+	public EfektuMota getEfektua() {
+		return this.efektua;
+	}
+	
+	public String getDeskripzioa() {
+		return this.deskripzioa;
+	}
+	
+	public void imprimatu() {
+		Kontsola k = Kontsola.getKontsola();
+		k.imprimatu(String.format("E: %s B: %s K: %s Ef: %s D: %s", this.getElementua(), this.getBalioa(), this.getKolorea(), this.getEfektua(), this.getDeskripzioa()));
+	}
 }
