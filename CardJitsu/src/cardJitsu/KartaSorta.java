@@ -25,11 +25,11 @@ public class KartaSorta {
 	}
 	
 	public void jsonetikKartetara() {
-		if (lista == null) {
+		/*if (lista == null) {*/
 			JSONParser parser = new JSONParser();
 			
 			try {				
-				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("/src/cards_eu.json"));
+				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("D:\\MrAsieru\\Documents\\GitHub\\PMOBO-CARD-JITSU\\CardJitsu\\src\\Kartak\\cards_eu.json"));
 				
 				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");
 				
@@ -65,11 +65,12 @@ public class KartaSorta {
 						break;
 					default:
 						System.out.println("Ez da aurikitu elementua");
+						//TODO Exception
 						break;
 					}
 					
 					//Balioa
-					balioa = (int) karta.get("value");
+					balioa = Integer.parseInt((String) karta.get("value"));
 					
 					//Kolorea
 					switch ((String) karta.get("color")) {
@@ -99,7 +100,7 @@ public class KartaSorta {
 					erabilgarria = true;
 					
 					//Efektu mota
-					switch((int) karta.get("color")) {
+					switch(Integer.parseInt((String) karta.get("power_id"))) {
 					case 0:
 						kartaBereziaDa = false;
 						break;
@@ -192,7 +193,7 @@ public class KartaSorta {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			
-		}
+		/*}*/
 	}
 	
 	public Karta getKarta(int pPos) {

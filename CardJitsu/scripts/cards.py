@@ -1,9 +1,8 @@
 import json
 import urllib.request
 
-with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\cards_or.json', 'r') as f:
-    c_dict = json.load(f)
-
+with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\Kartak\cards_eu.json', 'r') as f:
+    c_dict = json.load(f)["KartenLista"]
 def idEguneratu():
     i = 1
     print("[")
@@ -183,5 +182,86 @@ def efektuaItzuli(card):
         return "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili."
     else:
         return ""
-idEguneratu()
+        
+def kartakKonprobatu(card):
+	print("E: ", end='')
+	if card["element"] == "f":
+		print("SUA", end='')
+	elif(card["element"] == "s"):
+		print("ELURRA", end='')
+	elif(card["element"] == "w"):
+		print("URA", end='')
+	print(" B: ", end='')
+	print(card["value"], end='')
+	print(" K: ", end='')
+	if(card["color"] == "r"):
+		print("GORRIA", end='')
+	elif(card["color"] == "b"):
+		print("URDINA", end='')
+	elif(card["color"] == "y"):
+		print("HORIA", end='')
+	elif(card["color"] == "g"):
+		print("BERDEA", end='')
+	elif(card["color"] == "o"):
+		print("LARANJA", end='')
+	elif(card["color"] == "p"):
+		print("MOREA", end='')
+	if(card["power_id"] != "0"):
+		print(" Ef: ", end='')
+		if(card["power_id"] == "1"):
+			print("ZENBAKIALDAKETA", end='')
+		elif(card["power_id"] == "2"):
+			print("BIGEHITU", end='')
+		elif(card["power_id"] == "3"):
+			print("BIKENDU", end='')
+		elif(card["power_id"] == "4"):
+			print("KENDUELURRA", end='')
+		elif(card["power_id"] == "5"):
+			print("KENDUURA", end='')
+		elif(card["power_id"] == "6"):
+			print("KENDUSUA", end='')
+		elif(card["power_id"] == "7"):
+			print("KENDUGORRIBAT", end='')
+		elif(card["power_id"] == "8"):
+			print("KENDUURDINBAT", end='')
+		elif(card["power_id"] == "9"):
+			print("KENDUBERDEBAT", end='')
+		elif(card["power_id"] == "10"):
+			print("KENDUHORIBAT", end='')
+		elif(card["power_id"] == "11"):
+			print("KENDULARANJABAT", end='')
+		elif(card["power_id"] == "12"):
+			print("KENDUMOREBAT", end='')
+		elif(card["power_id"] == "13"):
+			print("ELURRABLOKEATU", end='')
+		elif(card["power_id"] == "14"):
+			print("SUABLOKEATU", end='')
+		elif(card["power_id"] == "15"):
+			print("URABLOKEATU", end='')
+		elif(card["power_id"] == "16"):
+			print("URATIKSURA", end='')
+		elif(card["power_id"] == "17"):
+			print("ELURRATIKURARA", end='')
+		elif(card["power_id"] == "18"):
+			print("SUTIKELURRARA", end='')
+		elif(card["power_id"] == "19"):
+			print("KENDUGORRIGUZTIAK", end='')
+		elif(card["power_id"] == "20"):
+			print("KENDUURDINGUZTIAK", end='')
+		elif(card["power_id"] == "21"):
+			print("KENDUHORIGUZTIAK", end='')
+		elif(card["power_id"] == "22"):
+			print("KENDUBERDEGUZTIAK", end='')
+		elif(card["power_id"] == "23"):
+			print("KENDULARANJAGUZTIAK", end='')
+		elif(card["power_id"] == "24"):
+			print("KENDUMOREGUZTIAK", end='')
+		print(" D: ", end='')
+		print(card["description"])
+	else:
+		print("")
+#idEguneratu()
 #kartenKopuruak()
+
+for card in c_dict:
+	kartakKonprobatu(card)
