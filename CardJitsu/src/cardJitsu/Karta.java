@@ -11,9 +11,9 @@ public abstract class Karta {
 	//metodo eraikitzailea
 	public Karta (ElementuMota pElementua, int pBalioa, KoloreMota pKolorea) {
 		this.balioa=pBalioa;
-		this.erabilgarria=true;
 		this.elementua=pElementua;
 		this.kolorea=pKolorea;
+		this.erabilgarria=true;
 	}
 	
 	 //gainerako metodoa
