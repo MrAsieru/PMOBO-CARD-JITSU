@@ -1,4 +1,4 @@
-package cardJitsu;
+package cardjitsu;
 
 public class KartaBerezia extends Karta {
 	

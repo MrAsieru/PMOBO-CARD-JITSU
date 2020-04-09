@@ -1,9 +1,10 @@
-package cardJitsu;
+package cardjitsu;
 
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONArray;
@@ -196,8 +197,12 @@ public class KartaSorta {
 		/*}*/
 	}
 	
-	public Karta getKarta(int pPos) {
+	private Karta getKarta(int pPos) {
 		return lista.get(pPos);
+	}
+	
+	public Karta getKarta() {
+		return getKarta(new Random().nextInt(this.getTamaina()));
 	}
 	
 	public int getTamaina() {

@@ -1,6 +1,6 @@
 package test;
 
-import cardJitsu.*;
+import cardjitsu.*;
 
 public class mainC {
 	
