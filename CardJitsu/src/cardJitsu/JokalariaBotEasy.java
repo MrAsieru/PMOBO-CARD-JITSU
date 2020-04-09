@@ -11,6 +11,6 @@ public class JokalariaBotEasy extends JokalariaBot{
 	
 	public Karta kartaAukeratu() 
 	{
-		return lortuJolastekoKarta(new Random().nextInt(5));
+		return lortuJolastekoKartaPOZs(new Random().nextInt(5));
 	}
 }
