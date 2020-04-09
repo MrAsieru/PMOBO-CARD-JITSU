@@ -212,7 +212,7 @@ public class ListaJokalariak {
 		switch(aurrekoTxandakoEfektua) 
 		{
 		case KENDUURA:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getElementua==ElementuMota.URA) 
 				{
@@ -223,7 +223,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUSUA:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getElementua==ElementuMota.SUA) 
 				{
@@ -234,7 +234,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUELURRA:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getElementua==ElementuMota.ELURRA) 
 				{
@@ -245,7 +245,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUGORRIBAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.GORRIA) 
 				{
@@ -255,7 +255,7 @@ public class ListaJokalariak {
 				i++;
 			}
 		case KENDUURDINBAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.URDINA) 
 				{
@@ -266,7 +266,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUHORIBAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.HORIA) 
 				{
@@ -277,7 +277,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUBERDEBAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.BERDEA) 
 				{
@@ -288,7 +288,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDULARANJABAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.LARANJA) 
 				{
@@ -299,7 +299,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUMOREBAT:
-			while(listaTam>=i && !kendua) 
+			while(listaTam>i && !kendua) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.MOREA) 
 				{
@@ -310,7 +310,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUGORRIGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.GORRIA) 
 				{
@@ -320,7 +320,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUURDINGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.URDINA) 
 				{
@@ -330,7 +330,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUHORIGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.HORIA) 
 				{
@@ -340,7 +340,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUBERDEGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.BERDEA) 
 				{
@@ -350,7 +350,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDULARANJAGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.LARANJA) 
 				{
@@ -360,7 +360,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case KENDUMOREGUZTIAK:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuGordetakoKarta(i).getKolorea==KoloreMota.MOREA) 
 				{
@@ -370,7 +370,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case SUABLOKEATU:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuJolastekoKarta(i).getElementua==ElementuMota.SUA) 
 				{
@@ -380,7 +380,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case URABLOKEATU:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuJolastekoKarta(i).getElementua==ElementuMota.URA) 
 				{
@@ -390,7 +390,7 @@ public class ListaJokalariak {
 			}
 			break;
 		case ELURRABLOKEATU:
-			while(listaTam>=i) 
+			while(listaTam>i) 
 			{
 				if(pJokalaria.lortuJolastekoKarta(i).getElementua==ElementuMota.ELURRA) 
 				{
