@@ -1290,7 +1290,12 @@ KenduUrdinBat</old>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
                                                     <name>JokalariaBot</name>
                                                     <type>void</type>
-                                                    <params/>
+                                                    <params>
+                                                      <net.java.amateras.uml.classdiagram.model.Argument>
+                                                        <name>Izena</name>
+                                                        <type>String</type>
+                                                      </net.java.amateras.uml.classdiagram.model.Argument>
+                                                    </params>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>false</isStatic>
                                                     <isFinal>false</isFinal>
@@ -1381,7 +1386,7 @@ KenduUrdinBat</old>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
-                                                    <name>nireJokalariaBOT</name>
+                                                    <name>nireJokalariaBot</name>
                                                     <type>JokalariaBot</type>
                                                     <isStatic>true</isStatic>
                                                     <isFinal>false</isFinal>
