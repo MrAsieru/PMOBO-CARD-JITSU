@@ -601,7 +601,7 @@
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                               <name>getKontsolaKontrolatzailea</name>
-                                              <type>KontsolaKontrolatzailea</type>
+                                              <type>Kontsola</type>
                                               <params/>
                                               <isAbstract>false</isAbstract>
                                               <isStatic>true</isStatic>
@@ -738,7 +738,7 @@
                                               </listeners>
                                               <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
                                               <name>nireKontsolaKontrolatzailea</name>
-                                              <type>KontsolaKontrolatzailea</type>
+                                              <type>Kontsola</type>
                                               <isStatic>false</isStatic>
                                               <isFinal>false</isFinal>
                                               <isEnumCst>false</isEnumCst>
@@ -788,7 +788,7 @@
                                             </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                                           </propertyDescriptors>
                                           <stereoType></stereoType>
-                                          <name>KontsolaKontrolatzailea</name>
+                                          <name>Kontsola</name>
                                           <path></path>
                                           <isAbstract>false</isAbstract>
                                         </source>
@@ -2786,7 +2786,7 @@ Berdinketa</content>
                           <null/>
                         </java.beans.PropertyChangeSupport>
                       </listeners>
-                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
+                      <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                       <name>getKarta</name>
                       <type>Karta</type>
                       <params>
