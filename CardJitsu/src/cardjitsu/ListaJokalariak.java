@@ -157,7 +157,7 @@ public class ListaJokalariak {
 		
 		//Karta guztiak dagozkien listetan sartu
 		for(int i=0;i<pJokalaria.gordetakoKartenKantitatea();i++) {
-			Karta karta = pJokalaria.lortuGordetakoKartaPOSz();
+			Karta karta = pJokalaria.lortuGordetakoKartaPOSz(i);
 			
 			switch(karta.getElementua()) {
 			case ElementuMota.SUA:
@@ -470,6 +470,8 @@ public class ListaJokalariak {
 			break;
 		}
 		
+		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
+		
 		if(aurrekoTxandakoEfektuaZenbakia) 
 		{
 			minwin=true;
@@ -523,11 +525,11 @@ public class ListaJokalariak {
 		
 		if(finala==1) 
 		{
-			irabazlea = JokalariMota.BOT;
+			irabazlea = JokalariMota.LOKALA;
 		}
 		else if(finala==2) 
 		{
-			irabazlea = JokalariMota.LOKALA;
+			irabazlea = JokalariMota.BOT;
 		}
 		else if(finala==0) 
 		{
