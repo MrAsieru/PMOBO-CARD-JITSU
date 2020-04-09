@@ -26,7 +26,7 @@ public class KartaSorta {
 	}
 	
 	public void jsonetikKartetara() {
-		/*if (lista == null) {*/
+		if (this.getTamaina() == 0) {
 			JSONParser parser = new JSONParser();
 			
 			try {				
@@ -194,7 +194,7 @@ public class KartaSorta {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			
-		/*}*/
+		}
 	}
 	
 	public Karta getKarta(int pPos) {

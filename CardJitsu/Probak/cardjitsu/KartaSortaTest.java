@@ -13,6 +13,7 @@ public class KartaSortaTest {
 	@Before
 	public void setUp() throws Exception {
 		kSorta = KartaSorta.getKartaSorta();
+		kSorta.jsonetikKartetara();
 	}
 
 	@After
@@ -20,13 +21,7 @@ public class KartaSortaTest {
 	}
 
 	@Test
-	public void testGetKartaSorta() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testJsonetikKartetara() {
-		kSorta.jsonetikKartetara();
 		
 		int normala = 0;
 		int berezia = 0;
@@ -40,18 +35,8 @@ public class KartaSortaTest {
 		int horia = 0;
 		int berdea = 0;
 		int laranja = 0;
-		int morea = 0;
+		int morea = 0;		
 		
-		int set1 = 0;
-		int set2 = 0;
-		int set3 = 0;
-		int set4 = 0;
-		int set5 = 0;
-		int set6 = 0;
-		int set7 = 0;
-		int set8 = 0;
-		
-		//
 		for (int i = 0; i<kSorta.getTamaina(); i++) {
 			Karta karta = kSorta.getKarta(i);
 			if(karta instanceof KartaNormala) {
@@ -68,7 +53,26 @@ public class KartaSortaTest {
 				break;
 			case ELURRA:
 				elurra++;
-			default:
+				break;
+			}
+			switch(karta.getKolorea()) {
+			case GORRIA:
+				gorria++;
+				break;
+			case URDINA:
+				urdina++;
+				break;
+			case HORIA:
+				horia++;
+				break;
+			case BERDEA:
+				berdea++;
+				break;
+			case LARANJA:
+				laranja++;
+				break;
+			case MOREA:
+				morea++;
 				break;
 			}
 		}
@@ -84,24 +88,16 @@ public class KartaSortaTest {
 		assertEquals(86, berdea);
 		assertEquals(84, laranja);
 		assertEquals(87, morea);
-		assertEquals(94, set1);
-		assertEquals(19, set2);
-		assertEquals(60, set3);
-		assertEquals(60, set4);
-		assertEquals(27, set5);
-		assertEquals(95, set6);
-		assertEquals(150, set7);
-		assertEquals(4, set8);
+
 	}
 
 	@Test
 	public void testGetKarta() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTamaina() {
-		fail("Not yet implemented");
+		Karta karta = kSorta.getKarta(122); //ID 123
+		assertTrue(karta instanceof KartaNormala);
+		assertEquals(ElementuMota.ELURRA, karta.getElementua());
+		assertEquals(KoloreMota.LARANJA,karta.getKolorea());
+		assertEquals(4, karta.getBalioa());
 	}
 
 }
