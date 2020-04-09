@@ -1,4 +1,4 @@
-package cardJitsu;
+package cardjitsu;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,6 +16,7 @@ public class ListaJokalariak {
 	private Karta jokalariBotKarta;
 	private static ListaJokalariak nireListaJokalariak;
 	private Kontsola kontsola;
+	private KartaSorta kSorta;
 	
 	private ListaJokalariak() 
 	{
@@ -26,6 +27,7 @@ public class ListaJokalariak {
 		this.jokalariLokalaKarta = null;
 		this.aurrekoTxandakoEfektuaZenbakia = false;
 		kontsola = Kontsola.getKontsola();
+		kSorta = KartaSorta.getKartaSorta();
 	}
 	//Necesita revision
 	
@@ -39,17 +41,37 @@ public class ListaJokalariak {
 	} 
 	//Necesita revision
 	
-	public void partidaBerriaHasi() 
-	{
+	public void partidaBerriaHasi() {
+		//Titulua imprimatu
+		//TODO
 		
+		//Izena eskatu
+		kontsola.imprimatu("Sartu izena:");
+		String izena = kontsola.testuaIrakurri();
+		
+		//Jokalariak sortu
+		jokalari1 = JokalariaLokala.getNireJokalaria(izena);
+		jokalari2 = JokalariaBot.getNireJokalaria("Sensei");
+		
+		//KartaSorta hasieratu
+		kSorta.jsonetikKartetara();
+		
+		//Kartak banatu
+		for (int i = 0; i<5;i++) {
+			this.kartakBanatu();
+		}
+		
+		Jokalaria irabazlea = this.txandaBerria();
+		
+		//Irabazleari zorionak eman
+		//TODO
 	}
 	//Sin hacer
 	
 	private Jokalaria txandaBerria() {
 		Jokalaria irabazlea;
 		//Kartak banatu
-		this.kartaBatEman(jokalari1);
-		this.kartaBatEman(jokalari2);
+		this.kartakBanatu();
 		
 		//Aplikatu aurrreko efektua aurreko txandan galdu duenari
 		if(aurrekoTxandakoIrabazlea.equals(jokalari1)) 
@@ -197,9 +219,10 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
-	private void kartaBatEman(Jokalaria pJokalaria) 
+	private void kartakBanatu() 
 	{
-		pJokalaria.gehituJolastekoKarta(KartaSorta.getKarta(new Random().nextInt(KartaSorta.getTamaina())));
+		jokalari1.gehituJolastekoKarta(kSorta.getKarta());
+		jokalari2.gehituJolastekoKarta(kSorta.getKarta());
 	}
 	//Hecho
 	

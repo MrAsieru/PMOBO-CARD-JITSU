@@ -1,4 +1,4 @@
-package cardJitsu;
+package cardjitsu;
 
 import java.util.Random;
 
