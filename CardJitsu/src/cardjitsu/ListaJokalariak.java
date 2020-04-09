@@ -98,7 +98,7 @@ public class ListaJokalariak {
 		
 		kontsola.imprimatu("Zure txanda "+jokalari1.getIzena());
 		for(int i=1;i<5;i++) {
-			Karta karta = jokalari2.lortuJolastekoKartaPOSz(i-1);
+			Karta karta = jokalari1.lortuJolastekoKartaPOSz(i-1);
 			kontsola.imprimatu("["+((karta.getErabilgarria()) ? "#":i)+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+karta.getDeskripzioa().split("#")[0]:""));
 		}
 		
