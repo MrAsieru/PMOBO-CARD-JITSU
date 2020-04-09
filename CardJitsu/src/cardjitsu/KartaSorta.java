@@ -197,7 +197,7 @@ public class KartaSorta {
 		/*}*/
 	}
 	
-	private Karta getKarta(int pPos) {
+	public Karta getKarta(int pPos) {
 		return lista.get(pPos);
 	}
 	

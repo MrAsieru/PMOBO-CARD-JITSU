@@ -5,10 +5,8 @@ import cardjitsu.*;
 public class mainC {
 	
 	public static void main(String[] args) {
-		KartaSorta sorta = KartaSorta.getKartaSorta();
-		sorta.jsonetikKartetara();
-		for(int i = 0; i < sorta.getTamaina(); i++) {
-			sorta.getKarta(i).imprimatu();
+		for(int i=0;i<5;i++) {
+			System.out.println(i);
 		}
 	}
 
