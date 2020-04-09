@@ -1002,7 +1002,7 @@ Berdea&#xd;
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
                                                     <name>nireJokalaria</name>
-                                                    <type>JokalariaLOKALA</type>
+                                                    <type>JokalariaLokala</type>
                                                     <isStatic>true</isStatic>
                                                     <isFinal>false</isFinal>
                                                     <isEnumCst>false</isEnumCst>
@@ -1022,7 +1022,7 @@ Berdea&#xd;
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
-                                                    <name>JokalariaLOKALA</name>
+                                                    <name>JokalariaLokala</name>
                                                     <type>void</type>
                                                     <params>
                                                       <net.java.amateras.uml.classdiagram.model.Argument>
@@ -1050,7 +1050,7 @@ Berdea&#xd;
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                                     <name>getNireJokalaria</name>
-                                                    <type>JokalariaLOKALA</type>
+                                                    <type>JokalariaLokala</type>
                                                     <params>
                                                       <net.java.amateras.uml.classdiagram.model.Argument>
                                                         <name>pIzena</name>
@@ -1077,7 +1077,7 @@ Berdea&#xd;
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
                                                     <name>getNireJokalaria</name>
-                                                    <type>JokalariaLOKALA</type>
+                                                    <type>JokalariaLokala</type>
                                                     <params/>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>true</isStatic>
@@ -1150,7 +1150,7 @@ Berdea&#xd;
                                                   </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                                                 </propertyDescriptors>
                                                 <stereoType></stereoType>
-                                                <name>JokalariaLOKALA</name>
+                                                <name>JokalariaLokala</name>
                                                 <path></path>
                                                 <isAbstract>false</isAbstract>
                                               </net.java.amateras.uml.classdiagram.model.ClassModel>
@@ -1618,9 +1618,14 @@ KenduUrdinBat</old>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2"/>
-                                                    <name>JokalariaBOT</name>
+                                                    <name>JokalariaBot</name>
                                                     <type>void</type>
-                                                    <params/>
+                                                    <params>
+                                                      <net.java.amateras.uml.classdiagram.model.Argument>
+                                                        <name>Izena</name>
+                                                        <type>String</type>
+                                                      </net.java.amateras.uml.classdiagram.model.Argument>
+                                                    </params>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>false</isStatic>
                                                     <isFinal>false</isFinal>
@@ -1640,8 +1645,8 @@ KenduUrdinBat</old>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
-                                                    <name>getNireJokalariaBOT</name>
-                                                    <type>JokalariaBOT</type>
+                                                    <name>getNireJokalaria</name>
+                                                    <type>JokalariaBot</type>
                                                     <params>
                                                       <net.java.amateras.uml.classdiagram.model.Argument>
                                                         <name>pIzena</name>
@@ -1666,9 +1671,31 @@ KenduUrdinBat</old>
                                                         <null/>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
+                                                    <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1"/>
+                                                    <name>getNireJokalaria</name>
+                                                    <type>JokalariaBot</type>
+                                                    <params/>
+                                                    <isAbstract>false</isAbstract>
+                                                    <isStatic>true</isStatic>
+                                                    <isFinal>false</isFinal>
+                                                  </net.java.amateras.uml.classdiagram.model.OperationModel>
+                                                  <net.java.amateras.uml.classdiagram.model.OperationModel>
+                                                    <backgroundColor reference="../../../../../../../../../../../../../../../../../../backgroundColor"/>
+                                                    <foregroundColor reference="../../../../../../../../../../../../../../../../../../foregroundColor"/>
+                                                    <showIcon>true</showIcon>
+                                                    <parent class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
+                                                    <listeners serialization="custom">
+                                                      <java.beans.PropertyChangeSupport>
+                                                        <default>
+                                                          <source class="net.java.amateras.uml.classdiagram.model.OperationModel" reference="../../../.."/>
+                                                          <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+                                                        </default>
+                                                        <null/>
+                                                      </java.beans.PropertyChangeSupport>
+                                                    </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../../net.java.amateras.uml.classdiagram.model.ClassModel[6]/children/net.java.amateras.uml.classdiagram.model.OperationModel[2]/visibility"/>
                                                     <name>kartaAukeratu</name>
-                                                    <type>void</type>
+                                                    <type>Karta</type>
                                                     <params/>
                                                     <isAbstract>false</isAbstract>
                                                     <isStatic>false</isStatic>
@@ -1689,8 +1716,8 @@ KenduUrdinBat</old>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$2" reference="../../net.java.amateras.uml.classdiagram.model.OperationModel/visibility"/>
-                                                    <name>nireJokalariaBOT</name>
-                                                    <type>JokalariaBOT</type>
+                                                    <name>nireJokalariaBot</name>
+                                                    <type>JokalariaBot</type>
                                                     <isStatic>true</isStatic>
                                                     <isFinal>false</isFinal>
                                                     <isEnumCst>false</isEnumCst>
@@ -1740,7 +1767,7 @@ KenduUrdinBat</old>
                                                   </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                                                 </propertyDescriptors>
                                                 <stereoType></stereoType>
-                                                <name>JokalariaBOT</name>
+                                                <name>JokalariaBot</name>
                                                 <path></path>
                                                 <isAbstract>false</isAbstract>
                                               </net.java.amateras.uml.classdiagram.model.ClassModel>
