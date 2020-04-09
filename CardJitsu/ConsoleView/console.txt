@@ -13,7 +13,7 @@ Sartu BOT-aren izena:
 Sensei
 
 //CLS
-Aukeratu "difikultatea":
+Aukeratu zailtasuna:
 [1] Erraza
 [2] Ertaina
 [3] Zaila
