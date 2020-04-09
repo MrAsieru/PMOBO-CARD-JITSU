@@ -408,7 +408,7 @@ public class ListaJokalariak {
 		//Baloreak gorde
 		
 		int aurIrabazlea = -1;
-		ElementuMota elementuaL = jokalariLokalaKarta.getElementua();;
+		ElementuMota elementuaL = jokalariLokalaKarta.getElementua();
 		ElementuMota elementuaB = jokalariBotKarta.getElementua();
 		int balioaL =  jokalariLokalaKarta.getBalioa();
 		int balioaB =  jokalariBotKarta.getBalioa();
