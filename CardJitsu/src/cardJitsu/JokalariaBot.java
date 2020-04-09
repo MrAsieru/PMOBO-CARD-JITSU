@@ -2,24 +2,24 @@ package cardJitsu;
 
 public class JokalariaBot extends Jokalaria {
 	
-	public static JokalariaBot nireJokalariaBotEasy;
+	public static JokalariaBot nireJokalariaBot;
 
 	private JokalariaBot() 
 	{
 		super();
 	}
 	
-	public static JokalariaBot nireJokalariaBotEasy() 
+	public static JokalariaBot getNireJokalariaBotEasy() 
 	{
-		if(nireJokalariaBotEasy==null) 
+		if(nireJokalariaBot==null) 
 		{
-			nireJokalariaBotEasy = new JokalariaBot();
+			nireJokalariaBot = new JokalariaBot();
 		}
-		return nireJokalariaBotEasy;
+		return nireJokalariaBot;
 	}
 	
-	public void kartaAukeratu() 
+	public Karta kartaAukeratu() 
 	{
-		
+		return null;
 	}
 }
