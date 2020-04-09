@@ -157,7 +157,7 @@ public class ListaJokalariak {
 		
 		//Karta guztiak dagozkien listetan sartu
 		for(int i=0;i<pJokalaria.gordetakoKartenKantitatea();i++) {
-			Karta karta = pJokalaria.lortuGordetakoKartaPOSz();
+			Karta karta = pJokalaria.lortuGordetakoKartaPOSz(i);
 			
 			switch(karta.getElementua()) {
 			case ElementuMota.SUA:
@@ -470,6 +470,8 @@ public class ListaJokalariak {
 			break;
 		}
 		
+		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
+		
 		if(aurrekoTxandakoEfektuaZenbakia) 
 		{
 			minwin=true;
@@ -516,6 +518,7 @@ public class ListaJokalariak {
 			finala = 2;
 		}
 
+		try {}catch{}
 		
 		//Balioak heman
 		
@@ -523,11 +526,11 @@ public class ListaJokalariak {
 		
 		if(finala==1) 
 		{
-			irabazlea = JokalariMota.BOT;
+			irabazlea = JokalariMota.LOKALA;
 		}
 		else if(finala==2) 
 		{
-			irabazlea = JokalariMota.LOKALA;
+			irabazlea = JokalariMota.BOT;
 		}
 		else if(finala==0) 
 		{
@@ -553,12 +556,22 @@ public class ListaJokalariak {
 	{	boolean irabazi=false;
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
 			irabazi=true;
-		} else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
+		}else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
 			irabazi= true;
 		}else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) {
 			irabazi=true;
 		}
-		return irabazi;
+		
+		//Elementu berdinak badira kartakKonprobatun begiratuko da
+		//Irabazi egiten ez badu galdu egin du
+		
+		try {
+			return irabazi;
+		}
+		catch (Exception e)
+		{
+			kontsola.imprimatu("Error: KonprobatuKartak metodoan errore bat egon da.");
+		}
 	}
 	//Hecho
 	
