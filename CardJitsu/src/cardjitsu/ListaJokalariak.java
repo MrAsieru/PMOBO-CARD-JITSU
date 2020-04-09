@@ -518,6 +518,7 @@ public class ListaJokalariak {
 			finala = 2;
 		}
 
+		try {}catch{}
 		
 		//Balioak heman
 		
@@ -564,7 +565,13 @@ public class ListaJokalariak {
 		//Elementu berdinak badira kartakKonprobatun begiratuko da
 		//Irabazi egiten ez badu galdu egin du
 		
-		return irabazi;
+		try {
+			return irabazi;
+		}
+		catch (Exception e)
+		{
+			kontsola.imprimatu("Error: KonprobatuKartak metodoan errore bat egon da.");
+		}
 	}
 	//Hecho
 	
