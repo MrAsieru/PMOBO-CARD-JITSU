@@ -555,11 +555,15 @@ public class ListaJokalariak {
 	{	boolean irabazi=false;
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
 			irabazi=true;
-		} else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
+		}else if(pElementua1==ElementuMota.URA && pElementua2==ElementuMota.SUA) {
 			irabazi= true;
 		}else if(pElementua1==ElementuMota.ELURRA && pElementua2==ElementuMota.URA) {
 			irabazi=true;
 		}
+		
+		//Elementu berdinak badira kartakKonprobatun begiratuko da
+		//Irabazi egiten ez badu galdu egin du
+		
 		return irabazi;
 	}
 	//Hecho
