@@ -9,7 +9,7 @@ public class JokalariaBot extends Jokalaria {
 		super();
 	}
 	
-	public static JokalariaBot getNireJokalariaBotEasy() 
+	public static JokalariaBot getNireJokalariaBot() 
 	{
 		if(nireJokalariaBot==null) 
 		{
