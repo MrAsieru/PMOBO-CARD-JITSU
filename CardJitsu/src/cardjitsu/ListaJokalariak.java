@@ -87,13 +87,13 @@ public class ListaJokalariak {
 		kontsola.imprimatu(jokalari1.getIzena()+":");
 		for(int i=0;i<jokalari1.gordetakoKartenKantitatea();i++) {
 			Karta karta = jokalari1.lortuGordetakoKartaPOSz(i);
-			kontsola.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
 		}
 		kontsola.imprimatu(" ");
 		kontsola.imprimatu(jokalari2.getIzena()+":");
 		for(int i=0;i<jokalari2.gordetakoKartenKantitatea();i++) {
 			Karta karta = jokalari2.lortuGordetakoKartaPOSz(i);
-			kontsola.imprimatu("E: "+karta.getElementua.name()+"\tK: "+karta.getKolorea());
+			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
 		}
 		
 		kontsola.imprimatu("Zure txanda "+jokalari1.getIzena());
@@ -160,13 +160,13 @@ public class ListaJokalariak {
 			Karta karta = pJokalaria.lortuGordetakoKartaPOSz(i);
 			
 			switch(karta.getElementua()) {
-			case ElementuMota.SUA:
+			case SUA:
 				sua.add(karta);
 				break;
-			case ElementuMota.ELURRA:
+			case ELURRA:
 				elurra.add(karta);
 				break;
-			case ElementuMota.URA:
+			case URA:
 				ura.add(karta);
 				break;
 			}
@@ -565,13 +565,7 @@ public class ListaJokalariak {
 		//Elementu berdinak badira kartakKonprobatun begiratuko da
 		//Irabazi egiten ez badu galdu egin du
 		
-		try {
-			return irabazi;
-		}
-		catch (Exception e)
-		{
-			kontsola.imprimatu("Error: KonprobatuKartak metodoan errore bat egon da.");
-		}
+		return irabazi;
 	}
 	//Hecho
 	
