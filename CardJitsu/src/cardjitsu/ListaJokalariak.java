@@ -430,6 +430,8 @@ public class ListaJokalariak {
 		ElementuMota elementuaB = jokalariBotKarta.getElementua();
 		int balioaL =  jokalariLokalaKarta.getBalioa();
 		int balioaB =  jokalariBotKarta.getBalioa();
+		EfektuMota efektuL = ((KartaBerezia) jokalariLokalaKarta).getEfektua();
+		EfektuMota efektuB = ((KartaBerezia) jokalariBotKarta).getEfektua();
 		boolean minwin = false;
 		int finala = -1;
 		
@@ -437,7 +439,7 @@ public class ListaJokalariak {
 		
 		if(this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) {aurIrabazlea = 1;}else{aurIrabazlea = 0;}
 		
-		//Irabazlearen arabera balioak aldatu
+		//Aurreko irabazlearen arabera aplikatu aurreko efektua
 		
 		switch(aurIrabazlea) 
 		{
@@ -471,6 +473,45 @@ public class ListaJokalariak {
 		{
 			minwin=true;
 			aurrekoTxandakoEfektuaZenbakia = false;
+		}
+		
+		//Karta batek elementua aldatzen badu
+		if(((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.ELURRATIKURARA
+				|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.URATIKSURA
+				|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
+		{
+			EfektuMota efektua = ((KartaBerezia) jokalariLokalaKarta).getEfektua();
+			switch (efektua) 
+			{
+			case ELURRATIKURARA:
+				if(elementuaB==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+				break;
+			case URATIKSURA:
+				if(elementuaB==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+				break;
+			case SUTIKELURRARA:
+				if(elementuaB==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+				break;
+			}
+		}
+		
+		if(((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.ELURRATIKURARA
+				|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.URATIKSURA
+				|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
+		{
+			EfektuMota efektua = ((KartaBerezia) jokalariBotKarta).getEfektua();
+			switch (efektua) 
+			{
+			case ELURRATIKURARA:
+				if(elementuaL==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+				break;
+			case URATIKSURA:
+				if(elementuaL==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+				break;
+			case SUTIKELURRARA:
+				if(elementuaL==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+				break;
+			}
 		}
 		
 		//Nork irabazten du?
