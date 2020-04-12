@@ -22,6 +22,19 @@ public class JokalariaLokala extends Jokalaria {
 	}
 	
 	public Karta kartaAukeratu() {
-		
+		Karta aukeraketa = null;
+		boolean lortuta = false;
+		while(!lortuta) {
+			int sarrera = Kontsola.getKontsola().zenbakiaIrakurri();
+			if (1 <= sarrera && sarrera <= 5) {
+				aukeraketa = this.lortuJolastekoKartaPosz(sarrera);
+				if(aukeraketa.getErabilgarria()) {
+					lortuta = true;
+				}
+			} else {
+				Kontsola.getKontsola().imprimatu("1-etik 5-era den zenbaki bat sartu mesedez.");
+			}
+		}
+		return aukeraketa;
 	}
 }

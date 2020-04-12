@@ -11,7 +11,7 @@ public class JokalariaBot extends Jokalaria {
 		super(pIzena);
 	}
 	
-	public static JokalariaBot getNireJokalariaBot(String pIzena) 
+	public static JokalariaBot getNireJokalaria(String pIzena) 
 	{
 		if(nireJokalariaBot==null) 
 		{
@@ -20,7 +20,7 @@ public class JokalariaBot extends Jokalaria {
 		return nireJokalariaBot;
 	}
 	
-	public static JokalariaBot getNireJokalariaBot() 
+	public static JokalariaBot getNireJokalaria() 
 	{
 		if(nireJokalariaBot==null) 
 		{
