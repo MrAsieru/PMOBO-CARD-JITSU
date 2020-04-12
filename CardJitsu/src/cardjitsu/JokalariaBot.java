@@ -1,25 +1,50 @@
 package cardjitsu;
 
+import java.util.Random;
+
 public class JokalariaBot extends Jokalaria {
 	
-	public static JokalariaBot nireJokalariaBot;
+	private static JokalariaBot nireJokalariaBot;
 
-	private JokalariaBot() 
+	private JokalariaBot(String pIzena) 
 	{
-		super();
+		super(pIzena);
+	}
+	
+	public static JokalariaBot getNireJokalariaBot(String pIzena) 
+	{
+		if(nireJokalariaBot==null) 
+		{
+			nireJokalariaBot = new JokalariaBot(pIzena);
+		}
+		return nireJokalariaBot;
 	}
 	
 	public static JokalariaBot getNireJokalariaBot() 
 	{
 		if(nireJokalariaBot==null) 
 		{
-			nireJokalariaBot = new JokalariaBot();
+			nireJokalariaBot = new JokalariaBot("Sensei");
 		}
 		return nireJokalariaBot;
 	}
 	
 	public Karta kartaAukeratu() 
 	{
-		return null;
+		boolean aukeratuta = false;
+		Karta karta = null;
+		int saiakerak = 0;
+		while(!aukeratuta) {
+			karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
+			saiakerak++;
+			if(karta.getErabilgarria()) {
+				aukeratuta = true;
+			} else {
+				if(saiakerak > 4) {
+					//TODO exception
+				}
+			}
+		}
+		return karta;
 	}
 }

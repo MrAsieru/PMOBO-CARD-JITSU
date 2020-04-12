@@ -1,28 +1,18 @@
-//CLS
 Ongi etorri CardJitsu bideojokura
-   ____              _         _ _ _             
-  / ___|__ _ _ __ __| |       | (_) |_ ___ _   _ 
- | |   / _` | '__/ _` |    _  | | | __/ __| | | |
- | |__| (_| | | | (_| |   | |_| | | |_\__ \ |_| |
-  \____\__,_|_|  \__,_|    \___/|_|\__|___/\__,_|
+  ____              _         _ _ _             
+ / ___|__ _ _ __ __| |       | (_) |_ ___ _   _ 
+| |   / _` | '__/ _` |    _  | | | __/ __| | | |
+| |__| (_| | | | (_| |   | |_| | | |_\__ \ |_| |
+ \____\__,_|_|  \__,_|    \___/|_|\__|___/\__,_|
 
 Sartu zure izena:
-Antonio
-
-Sartu BOT-aren izena:
-Sensei
-
-//CLS
+EHU
+----------------
 Aukeratu zailtasuna:
 [1] Erraza
 [2] Ertaina
 [3] Zaila
-
-//CLS
-//Partida hasi
-
-
-//Txanda bakoitza
+----------------
 [Jokalari1]:
 E: #### K: ####
 E: #### K: ####
@@ -31,19 +21,17 @@ E: #### K: ####
 E: #### K: ####
 E: #### K: ####
 
-Zure txanda [Jokalari2]:
-[1] E: #### B: ## K: ###### Ef: Beste jokalariari sua karta bat kendu
+Zure txanda [Jokalari1]:
+[1] E: #### B: ## K: ###### Ef: <Efektuaren 1.deskripzioa>
 [2] E: #### B: ## K: ###### Ef: Ezer
-[3] E: #### B: ## K: ###### Ef: Hurrengo txandan 2 gehitu
+[3] E: #### B: ## K: ###### Ef: <Efektuaren 1.deskripzioa>
 [4] E: #### B: ## K: ###### Ef: Ezer
 [5] E: #### B: ## K: ###### Ef: Ezer
-
-//karta aukeratzerakoan
-[Jokalari1]: E: #### B: ## K: ###### Ef: Beste jokalariari sua karta bat kendu
+E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.
+----------------
+===========================================================================
+[Jokalari1]: E: #### B: ## K: ###### Ef: <Efektuaren 1.deskripzioa>
 [Jokalari2]: E: #### B: ## K: ###### Ef: Ezer
-[Jokalari#] irabazi du, --efektuaren mezua--
-
-//Beste txanda bat
-
-//Jokalari bat irabazterakoan 
-Zorionak [Jokalari#] irabazi duzu!
+[Jokalari#] irabazi du txanda, <Efektuaren 2.deskripzioa>
+----------------
+Zorionak! [Jokalari#] irabazi egin du partida!
