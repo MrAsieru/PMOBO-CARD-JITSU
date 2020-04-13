@@ -229,6 +229,7 @@ public class ListaJokalariak {
 		boolean kendua = false;
 		KoloreMota kolorea = null;
 		ElementuMota mota = null;
+		boolean guztia = false;
 		
 		switch(aurrekoTxandakoEfektua) 
 		{
@@ -251,14 +252,27 @@ public class ListaJokalariak {
 			}
 			break;
 			
+		case KENDUGORRIGUZTIAK: 
+		case KENDUURDINGUZTIAK:
+		case KENDUHORIGUZTIAK:
+		case KENDUBERDEGUZTIAK:
+		case KENDULARANJAGUZTIAK:
+		case KENDUMOREGUZTIAK:
+			guztia = true;
 		case KENDUGORRIBAT:
 		case KENDUURDINBAT:
 		case KENDUHORIBAT:
 		case KENDUBERDEBAT:
 		case KENDULARANJABAT:
 		case KENDUMOREBAT:
-			
+
 			if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
+			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
 			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
 			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
 			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
@@ -270,31 +284,7 @@ public class ListaJokalariak {
 				if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea) 
 				{
 					pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
-					kendua = true;
-				}
-				i++;
-			}
-			break;
-			
-		case KENDUGORRIGUZTIAK:
-		case KENDUURDINGUZTIAK:
-		case KENDUHORIGUZTIAK:
-		case KENDUBERDEGUZTIAK:
-		case KENDULARANJAGUZTIAK:
-		case KENDUMOREGUZTIAK:
-
-			if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIGUZTIAK){kolorea = KoloreMota.GORRIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINGUZTIAK){kolorea = KoloreMota.URDINA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIGUZTIAK){kolorea = KoloreMota.HORIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEGUZTIAK){kolorea = KoloreMota.BERDEA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJAGUZTIAK){kolorea = KoloreMota.LARANJA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREGUZTIAK){kolorea = KoloreMota.MOREA;}
-			
-			while(listaTam>i) 
-			{
-				if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea) 
-				{
-					pJokalaria.kenduGordetakoKarta(pJokalaria.lortuJolastekoKartaPosz(i));
+					if(!guztia) {kendua = true;}
 				}
 				i++;
 			}
