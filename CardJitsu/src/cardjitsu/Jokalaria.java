@@ -14,36 +14,33 @@ public abstract class Jokalaria {
 		}
 		
 		//gainerako metodoak
-		public void gehituJolastekoKarta(Karta pKarta) {
+		public void gehituJolastekoKarta (Karta pkarta) {
 			this.jolastekoKartak.gehituKarta(pKarta);
 		}
 		
-		public void kenduJolastekoKarta(Karta pKarta) {
-			this.jolastekoKartak.kenduKarta(pKarta);
+		public void kenduJolastekoKarta (Karta pKarta) {
+			this.jolastekoKartak.kenduKarta (pKarta);
 		}
-		
-		public void gehituGordetakoKarta(Karta pKarta) {
+		public void gehituGordetakoKarta (Karta pkarta) {
 			this.gordetakoKartak.gehituKarta(pKarta);
 		}
 		
-		public void kenduGordetakoKarta(Karta pKarta) {
-			this.gordetakoKartak.kenduKarta(pKarta);
+		public void kenduGordetakoKarta (Karta pKarta) {
+			this.gordetakoKartak.kenduKarta (pKarta);
 		}
-		
 		public Karta lortuJolastekoKartaPosz(int pPos) {
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
 		}
-		
 		public Karta lortuGordetakoKartaPosz(int pPos) {
 			return this.gordetakoKartak.lortuKartaPosz(pPos);
 		}
-		
 		public int gordetakoKartenKantitatea() {
 			return this.gordetakoKartak.getTamaina();
 		}
 		
-		public String getIzena() {
+		public string getIzena() {
 			return this.izena;
 		}
+		
 
 }
