@@ -14,14 +14,14 @@ public abstract class Jokalaria {
 		}
 		
 		//gainerako metodoak
-		public void gehituJolastekoKarta (Karta pkarta) {
+		public void gehituJolastekoKarta (Karta pKarta) {
 			this.jolastekoKartak.gehituKarta(pKarta);
 		}
 		
 		public void kenduJolastekoKarta (Karta pKarta) {
 			this.jolastekoKartak.kenduKarta (pKarta);
 		}
-		public void gehituGordetakoKarta (Karta pkarta) {
+		public void gehituGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.gehituKarta(pKarta);
 		}
 		
@@ -38,7 +38,7 @@ public abstract class Jokalaria {
 			return this.gordetakoKartak.getTamaina();
 		}
 		
-		public string getIzena() {
+		public String getIzena() {
 			return this.izena;
 		}
 		

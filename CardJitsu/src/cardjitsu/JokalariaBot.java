@@ -6,7 +6,7 @@ public class JokalariaBot extends Jokalaria {
 	
 	private static JokalariaBot nireJokalariaBot;
 
-	private JokalariaBot(String pIzena) 
+	protected JokalariaBot(String pIzena) 
 	{
 		super(pIzena);
 	}
@@ -45,6 +45,7 @@ public class JokalariaBot extends Jokalaria {
 				}
 			}
 		}
+		this.kenduJolastekoKarta(karta);
 		return karta;
 	}
 }

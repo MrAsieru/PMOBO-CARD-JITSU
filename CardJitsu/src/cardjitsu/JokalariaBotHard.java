@@ -6,7 +6,7 @@ public class JokalariaBotHard extends JokalariaBot{
 
 	public JokalariaBotHard() 
 	{
-		super();
+		super("izena");
 	}
 	
 	public Karta kartaAukeratu() 

@@ -3,6 +3,8 @@ package cardjitsu;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.naming.PartialResultException;
+
 
 public class ListaJokalariak {
 	
@@ -73,11 +75,11 @@ public class ListaJokalariak {
 		this.kartakBanatu();
 		
 		//Aplikatu aurrreko efektua aurreko txandan galdu duenari
-		if(aurrekoTxandakoIrabazlea.equals(jokalari1)) 
+		if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalari1)) 
 		{
 			this.aplikatuAurrekoEfektua(jokalari2);
 		}
-		else if(aurrekoTxandakoIrabazlea.equals(jokalari2)) 
+		else if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalari2)) 
 		{
 			this.aplikatuAurrekoEfektua(jokalari1);
 		}
@@ -98,7 +100,7 @@ public class ListaJokalariak {
 		kontsola.imprimatu("Zure txanda "+jokalari1.getIzena());
 		for(int i=1;i<6;i++) {
 			Karta karta = jokalari1.lortuJolastekoKartaPosz(i-1);
-			kontsola.imprimatu("["+((karta.getErabilgarria()) ? "#":i)+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0]:""));
+			kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0]:""));
 		}
 		
 		//TODO
@@ -144,11 +146,8 @@ public class ListaJokalariak {
 		boolean irabaziDu = false;
 		
 		ArrayList<Karta> sua = new ArrayList<Karta>();
-		Iterator<Karta> itrSua = sua.iterator();
 		ArrayList<Karta> elurra = new ArrayList<Karta>();
-		Iterator<Karta> itrElurra = sua.iterator();
 		ArrayList<Karta> ura = new ArrayList<Karta>();
-		Iterator<Karta> itrUra = sua.iterator();
 		ArrayList<ArrayList<Karta>> elementuak = new ArrayList<ArrayList<Karta>>();
 		elementuak.add(sua);
 		elementuak.add(elurra);
@@ -186,12 +185,17 @@ public class ListaJokalariak {
 			}
 		}
 		
+		Iterator<Karta> itrSua = sua.iterator();
+		Iterator<Karta> itrElurra = sua.iterator();
+		Iterator<Karta> itrUra = sua.iterator();
+		
 		//Konprobatu elementu desberdineko kartak
 		if(!irabaziDu) {
 			
 			while(itrSua.hasNext() && !irabaziDu) {
 				ArrayList<KoloreMota> koloreak = new ArrayList<KoloreMota>();
-				KoloreMota suKolorea = itrSua.next().getKolorea();
+				Karta suKarta = itrSua.next();
+				KoloreMota suKolorea = suKarta.getKolorea();
 				koloreak.add(suKolorea);
 				
 				while(itrElurra.hasNext() && !irabaziDu) {
@@ -231,82 +235,84 @@ public class ListaJokalariak {
 		ElementuMota mota = null;
 		boolean guztia = false;
 		
-		switch(aurrekoTxandakoEfektua) 
-		{
-		case KENDUURA:
-		case KENDUSUA:
-		case KENDUELURRA:
-			
-			if(aurrekoTxandakoEfektua==EfektuMota.KENDUURA){mota = ElementuMota.URA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUSUA){mota = ElementuMota.SUA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUELURRA){mota = ElementuMota.ELURRA;}
-			
-			while(listaTam>i && !kendua) 
+		if(aurrekoTxandakoEfektua != null) {
+			switch(aurrekoTxandakoEfektua) 
 			{
-				if(pJokalaria.lortuGordetakoKartaPosz(i).getElementua()==mota) 
+			case KENDUURA:
+			case KENDUSUA:
+			case KENDUELURRA:
+				
+				if(aurrekoTxandakoEfektua==EfektuMota.KENDUURA){mota = ElementuMota.URA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUSUA){mota = ElementuMota.SUA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUELURRA){mota = ElementuMota.ELURRA;}
+				
+				while(listaTam>i && !kendua) 
 				{
-					pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
-					kendua = true;
+					if(pJokalaria.lortuGordetakoKartaPosz(i).getElementua()==mota) 
+					{
+						pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
+						kendua = true;
+					}
+					i++;
 				}
-				i++;
-			}
-			break;
-			
-		case KENDUGORRIGUZTIAK: 
-		case KENDUURDINGUZTIAK:
-		case KENDUHORIGUZTIAK:
-		case KENDUBERDEGUZTIAK:
-		case KENDULARANJAGUZTIAK:
-		case KENDUMOREGUZTIAK:
-			guztia = true;
-		case KENDUGORRIBAT:
-		case KENDUURDINBAT:
-		case KENDUHORIBAT:
-		case KENDUBERDEBAT:
-		case KENDULARANJABAT:
-		case KENDUMOREBAT:
-
-			if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
-			
-			while(listaTam>i && !kendua) 
-			{
-				if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea) 
+				break;
+				
+			case KENDUGORRIGUZTIAK: 
+			case KENDUURDINGUZTIAK:
+			case KENDUHORIGUZTIAK:
+			case KENDUBERDEGUZTIAK:
+			case KENDULARANJAGUZTIAK:
+			case KENDUMOREGUZTIAK:
+				guztia = true;
+			case KENDUGORRIBAT:
+			case KENDUURDINBAT:
+			case KENDUHORIBAT:
+			case KENDUBERDEBAT:
+			case KENDULARANJABAT:
+			case KENDUMOREBAT:
+	
+				if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
+				
+				while(listaTam>i && !kendua) 
 				{
-					pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
-					if(!guztia) {kendua = true;}
+					if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea) 
+					{
+						pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
+						if(!guztia) {kendua = true;}
+					}
+					i++;
 				}
-				i++;
-			}
-			break;
-			
-		case SUABLOKEATU:
-		case URABLOKEATU:
-		case ELURRABLOKEATU:
-			
-			if(aurrekoTxandakoEfektua==EfektuMota.SUABLOKEATU){mota = ElementuMota.SUA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.URABLOKEATU){mota = ElementuMota.URA;}
-			else if(aurrekoTxandakoEfektua==EfektuMota.ELURRABLOKEATU){mota = ElementuMota.ELURRA;}
-			
-			while(listaTam>i) 
-			{
-				if(pJokalaria.lortuJolastekoKartaPosz(i).getElementua()==mota) 
+				break;
+				
+			case SUABLOKEATU:
+			case URABLOKEATU:
+			case ELURRABLOKEATU:
+				
+				if(aurrekoTxandakoEfektua==EfektuMota.SUABLOKEATU){mota = ElementuMota.SUA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.URABLOKEATU){mota = ElementuMota.URA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.ELURRABLOKEATU){mota = ElementuMota.ELURRA;}
+				
+				while(listaTam>i) 
 				{
-					pJokalaria.lortuJolastekoKartaPosz(i).setErabilgarria(false);
+					if(pJokalaria.lortuJolastekoKartaPosz(i).getElementua()==mota) 
+					{
+						pJokalaria.lortuJolastekoKartaPosz(i).setErabilgarria(false);
+					}
+					i++;
 				}
-				i++;
+				break;
 			}
-			break;
 		}
 	}
 	//Hecho
@@ -320,8 +326,8 @@ public class ListaJokalariak {
 		ElementuMota elementuaB = jokalariBotKarta.getElementua();
 		int balioaL =  jokalariLokalaKarta.getBalioa();
 		int balioaB =  jokalariBotKarta.getBalioa();
-		EfektuMota efektuL = ((KartaBerezia) jokalariLokalaKarta).getEfektua();
-		EfektuMota efektuB = ((KartaBerezia) jokalariBotKarta).getEfektua();
+		EfektuMota efektuL = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua() : null;
+		EfektuMota efektuB = (jokalariBotKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariBotKarta).getEfektua() : null;
 		boolean minwin = false;
 		int finala = -1;
 		
@@ -330,33 +336,33 @@ public class ListaJokalariak {
 		if(this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) {aurIrabazlea = 1;}else{aurIrabazlea = 0;}
 		
 		//Aurreko irabazlearen arabera aplikatu aurreko efektua
-		
-		switch(aurIrabazlea) 
-		{
-		case 1:
-			switch(aurrekoTxandakoEfektua) 
+		if(aurrekoTxandakoEfektua != null) {
+			switch(aurIrabazlea) 
 			{
-			case BIGEHITU:
-				balioaL = balioaL + 2;
+			case 1:
+				switch(aurrekoTxandakoEfektua) 
+				{
+				case BIGEHITU:
+					balioaL = balioaL + 2;
+					break;
+				case BIKENDU:
+					balioaB = balioaB-2;
+					break;
+				}
 				break;
-			case BIKENDU:
-				balioaB = balioaB-2;
+			case 0:
+				switch(aurrekoTxandakoEfektua) 
+				{
+				case BIGEHITU:
+					balioaB = balioaB + 2;
+					break;
+				case BIKENDU:
+					balioaL = balioaL-2;
+					break;
+				}
 				break;
 			}
-			break;
-		case 0:
-			switch(aurrekoTxandakoEfektua) 
-			{
-			case BIGEHITU:
-				balioaB = balioaB + 2;
-				break;
-			case BIKENDU:
-				balioaL = balioaL-2;
-				break;
-			}
-			break;
 		}
-		
 		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
 		
 		if(aurrekoTxandakoEfektuaZenbakia) 
@@ -366,44 +372,46 @@ public class ListaJokalariak {
 		}
 		
 		//Karta batek elementua aldatzen badu
-		if(((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.ELURRATIKURARA
-				|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.URATIKSURA
-				|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
-		{
-			EfektuMota efektua = ((KartaBerezia) jokalariLokalaKarta).getEfektua();
-			switch (efektua) 
+		if(jokalariLokalaKarta instanceof KartaBerezia) {
+			if(((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.ELURRATIKURARA
+					|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.URATIKSURA
+					|| ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
 			{
-			case ELURRATIKURARA:
-				if(elementuaB==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
-				break;
-			case URATIKSURA:
-				if(elementuaB==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
-				break;
-			case SUTIKELURRARA:
-				if(elementuaB==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
-				break;
+				EfektuMota efektua = ((KartaBerezia) jokalariLokalaKarta).getEfektua();
+				switch (efektua) 
+				{
+				case ELURRATIKURARA:
+					if(elementuaB==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+					break;
+				case URATIKSURA:
+					if(elementuaB==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+					break;
+				case SUTIKELURRARA:
+					if(elementuaB==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+					break;
+				}
 			}
 		}
-		
-		if(((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.ELURRATIKURARA
-				|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.URATIKSURA
-				|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
-		{
-			EfektuMota efektua = ((KartaBerezia) jokalariBotKarta).getEfektua();
-			switch (efektua) 
+		if(jokalariBotKarta instanceof KartaBerezia) {
+			if(((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.ELURRATIKURARA
+					|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.URATIKSURA
+					|| ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.SUTIKELURRARA) 
 			{
-			case ELURRATIKURARA:
-				if(elementuaL==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
-				break;
-			case URATIKSURA:
-				if(elementuaL==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
-				break;
-			case SUTIKELURRARA:
-				if(elementuaL==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
-				break;
+				EfektuMota efektua = ((KartaBerezia) jokalariBotKarta).getEfektua();
+				switch (efektua) 
+				{
+				case ELURRATIKURARA:
+					if(elementuaL==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+					break;
+				case URATIKSURA:
+					if(elementuaL==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+					break;
+				case SUTIKELURRARA:
+					if(elementuaL==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+					break;
+				}
 			}
 		}
-		
 		//Nork irabazten du?
 		
 		if(elementuaL==elementuaB) 
@@ -464,7 +472,7 @@ public class ListaJokalariak {
 		}
 		
 		if((jokalariLokalaKarta instanceof KartaBerezia && ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA) 
-				|| (jokalariBotKarta instanceof KartaBerezia && ((KartaBerezia) jokalariLokalaKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA))
+				|| (jokalariBotKarta instanceof KartaBerezia && ((KartaBerezia) jokalariBotKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA))
 		{
 			aurrekoTxandakoEfektuaZenbakia = true;
 		}
@@ -495,5 +503,8 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
+	public static void main(String[] args) {
+		new ListaJokalariak().partidaBerriaHasi();
+	}
 }
 

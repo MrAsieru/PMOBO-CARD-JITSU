@@ -6,7 +6,7 @@ public class JokalariaBotNormal  extends JokalariaBot{
 
 	public JokalariaBotNormal() 
 	{
-		super();
+		super("izena");
 	}
 	
 	public Karta kartaAukeratu() 

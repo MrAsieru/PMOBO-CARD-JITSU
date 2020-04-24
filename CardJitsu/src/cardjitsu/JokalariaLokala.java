@@ -27,7 +27,8 @@ public class JokalariaLokala extends Jokalaria {
 		while(!lortuta) {
 			int sarrera = Kontsola.getKontsola().zenbakiaIrakurri();
 			if (1 <= sarrera && sarrera <= 5) {
-				aukeraketa = this.lortuJolastekoKartaPosz(sarrera);
+				aukeraketa = this.lortuJolastekoKartaPosz(sarrera-1);
+				
 				if(aukeraketa.getErabilgarria()) {
 					lortuta = true;
 				}
@@ -35,6 +36,7 @@ public class JokalariaLokala extends Jokalaria {
 				Kontsola.getKontsola().imprimatu("1-etik 5-era den zenbaki bat sartu mesedez.");
 			}
 		}
+		this.kenduJolastekoKarta(aukeraketa);
 		return aukeraketa;
 	}
 }

@@ -6,11 +6,11 @@ public class JokalariaBotEasy extends JokalariaBot{
 
 	public JokalariaBotEasy() 
 	{
-		super();
+		super("izena");
 	}
 	
-	public Karta kartaAukeratu() 
+	/*public Karta kartaAukeratu() 
 	{
 		return lortuJolastekoKartaPOZs(new Random().nextInt(5));
-	}
+	}*/
 }
