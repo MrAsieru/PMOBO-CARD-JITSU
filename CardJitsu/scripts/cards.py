@@ -4,7 +4,7 @@ import urllib.request
 with open('D:\MrAsieru\Documents\GitHub\PMOBO-CARD-JITSU\CardJitsu\src\Kartak\cards_eu.json', 'r') as f:
     c_dict = json.load(f)["KartenLista"]
 def idEguneratu():
-    i = 1
+    i = 0
     print("[")
     for card in c_dict:
         print("{")
@@ -16,12 +16,11 @@ def idEguneratu():
         print("\"color\": \"%s\","%card["color"])
         print("\"value\": \"%s\","%card["value"])
         print("\"asset\": \"%s\","%card["asset"])
-        print("\"description\": \"%s\","%efektuaItzuli(card))        
+        print("\"description\": \"%s\","%card["description"])     #efektuaItzuli(card)    
         print("\"is_active\": \"%s\""%card["is_active"])
         print("},")
         i = i+1
     print("]")
-
 def idKonprobatu():
     i = 1
     for card in c_dict:
@@ -260,8 +259,8 @@ def kartakKonprobatu(card):
 		print(card["description"])
 	else:
 		print("")
-#idEguneratu()
+idEguneratu()
 #kartenKopuruak()
 
-for card in c_dict:
-	kartakKonprobatu(card)
+#for card in c_dict:
+	#kartakKonprobatu(card)

@@ -141,7 +141,7 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
-	private boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
+	protected boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
 		boolean irabaziDu = false;
 		
@@ -185,27 +185,30 @@ public class ListaJokalariak {
 			}
 		}
 		
-		Iterator<Karta> itrSua = sua.iterator();
-		Iterator<Karta> itrElurra = sua.iterator();
-		Iterator<Karta> itrUra = sua.iterator();
+		
+		
+		
 		
 		//Konprobatu elementu desberdineko kartak
 		if(!irabaziDu) {
+			KoloreMota suKolorea;
+			KoloreMota elKolorea;
+			KoloreMota urKolorea;
 			
+			Iterator<Karta> itrSua = sua.iterator();
 			while(itrSua.hasNext() && !irabaziDu) {
-				ArrayList<KoloreMota> koloreak = new ArrayList<KoloreMota>();
 				Karta suKarta = itrSua.next();
-				KoloreMota suKolorea = suKarta.getKolorea();
-				koloreak.add(suKolorea);
-				
+				suKolorea = suKarta.getKolorea();
+				Iterator<Karta> itrElurra = elurra.iterator();
 				while(itrElurra.hasNext() && !irabaziDu) {
-					KoloreMota elKolorea = itrElurra.next().getKolorea();
-					if(!koloreak.contains(elKolorea)) {
-						koloreak.add(elKolorea);
-						
+					Karta elKarta = itrElurra.next();
+					elKolorea = elKarta.getKolorea();
+					if(elKolorea != suKolorea) {
+						Iterator<Karta> itrUra = ura.iterator();
 						while(itrUra.hasNext() && !irabaziDu) {
-							KoloreMota urKolorea = itrUra.next().getKolorea();
-							if(!koloreak.contains(urKolorea)) {
+							Karta urKarta = itrUra.next();
+							urKolorea = urKarta.getKolorea();
+							if(urKolorea != suKolorea && urKolorea != elKolorea) {
 								irabaziDu = true;								
 							}
 						}
