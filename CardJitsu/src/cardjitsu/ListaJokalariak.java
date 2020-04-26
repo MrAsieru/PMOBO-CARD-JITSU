@@ -306,7 +306,7 @@ public class ListaJokalariak {
 				else if(aurrekoTxandakoEfektua==EfektuMota.URABLOKEATU){mota = ElementuMota.URA;}
 				else if(aurrekoTxandakoEfektua==EfektuMota.ELURRABLOKEATU){mota = ElementuMota.ELURRA;}
 				
-				while(listaTam>i) 
+				while(i<=5) 
 				{
 					if(pJokalaria.lortuJolastekoKartaPosz(i).getElementua()==mota) 
 					{
