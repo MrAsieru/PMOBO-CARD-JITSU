@@ -44,7 +44,11 @@ public class ListaJokalariak {
 	
 	public void partidaBerriaHasi() {
 		//Titulua imprimatu
-		//TODO
+		kontsola.imprimatu("   ____              _           _ _ _             ");
+		kontsola.imprimatu("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ");
+		kontsola.imprimatu(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |");
+		kontsola.imprimatu(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |");
+		kontsola.imprimatu("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|");
 		
 		//Izena eskatu
 		kontsola.imprimatu("Sartu izena:");
@@ -66,10 +70,13 @@ public class ListaJokalariak {
 		
 		//Irabazleari zorionak eman
 		//TODO
+		kontsola.imprimatu("Zorionak "+irabazlea.getIzena()+"!");
 	}
 	//Sin hacer
 	
 	private Jokalaria txandaBerria() {
+		//TODO jar egiterakoan garbitu hau aktibatu 
+		//kontsola.kontsolaGarbitu();
 		Jokalaria irabazlea;
 		//Kartak banatu
 		this.kartakBanatu();
@@ -99,7 +106,13 @@ public class ListaJokalariak {
 		
 		kontsola.imprimatu("Zure txanda "+jokalari1.getIzena());
 		for(int i=1;i<6;i++) {
-			Karta karta = jokalari1.lortuJolastekoKartaPosz(i-1);
+			Karta karta = null;
+			try {
+				karta = jokalari1.lortuJolastekoKartaPosz(i-1);
+			} catch (TartetikKanpoException e) {
+				//Ez da ezer egin behar (For barruan)
+			}
+			
 			kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0]:""));
 		}
 		
@@ -134,6 +147,7 @@ public class ListaJokalariak {
 			irabazlea = jokalari2;
 		} else {
 			//Errekurtsibitatea
+			kontsola.enterTekla();
 			irabazlea = this.txandaBerria();
 		}
 		
