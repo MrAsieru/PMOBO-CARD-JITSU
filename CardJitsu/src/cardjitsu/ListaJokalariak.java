@@ -129,7 +129,7 @@ public class ListaJokalariak {
 		JokalariMota txJok = this.kartakKonprobatu();
 		
 		if(txJok == JokalariMota.LOKALA) {
-			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua():null;
+			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua():null; 
 			aurrekoTxandakoIrabazlea = jokalari1;
 			jokalari1.gehituGordetakoKarta(jokalariLokalaKarta);
 			kontsola.imprimatu(jokalari1.getIzena()+" irabazi du"+((jokalariLokalaKarta instanceof KartaBerezia) ? (", "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena())):"."));
@@ -246,7 +246,7 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
-	private void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
+	void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
 	{
 		
 		int listaTam = pJokalaria.gordetakoKartenKantitatea(); 
@@ -591,6 +591,13 @@ public class ListaJokalariak {
 	
 	public static void main(String[] args) {
 		new ListaJokalariak().partidaBerriaHasi();
+	}
+	
+	//Junitak erabiltzen duten metodoak
+	
+	void aldatuEfektua(EfektuMota pEfektua) 
+	{
+		aurrekoTxandakoEfektua = pEfektua;
 	}
 }
 
