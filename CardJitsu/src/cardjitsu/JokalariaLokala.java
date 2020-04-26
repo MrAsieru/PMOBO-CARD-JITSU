@@ -25,14 +25,11 @@ public class JokalariaLokala extends Jokalaria {
 		Karta aukeraketa = null;
 		boolean lortuta = false;
 		while(!lortuta) {
-			int sarrera = Kontsola.getKontsola().zenbakiaIrakurri();
-			if (1 <= sarrera && sarrera <= 5) {
+			try {
+				int sarrera = Kontsola.getKontsola().zenbakiaIrakurri();
 				aukeraketa = this.lortuJolastekoKartaPosz(sarrera-1);
-				
-				if(aukeraketa.getErabilgarria()) {
-					lortuta = true;
-				}
-			} else {
+				lortuta = true;
+			} catch (TartetikKanpoException e) {
 				Kontsola.getKontsola().imprimatu("1-etik 5-era den zenbaki bat sartu mesedez.");
 			}
 		}

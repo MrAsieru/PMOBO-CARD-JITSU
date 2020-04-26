@@ -850,7 +850,7 @@
 "color": "r",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -862,7 +862,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta ura izatetik sua izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -874,7 +874,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -886,7 +886,7 @@
 "color": "o",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.#<jokalaria>-ren elurra den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren elurra den karta bat ezabatu.#<jokalariaL>-ren elurra den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -898,7 +898,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -910,7 +910,7 @@
 "color": "g",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.#<jokalaria>-ren horia den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren horia den karta bat ezabatu.#<jokalariaL>-ren horia den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -934,7 +934,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -946,7 +946,7 @@
 "color": "r",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -958,7 +958,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta sua izatetik elurra izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -970,7 +970,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -982,7 +982,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -994,7 +994,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.#<jokalaria>-ren berdea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren berdea den karta bat ezabatu.#<jokalariaL>-ren berdea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1006,7 +1006,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1030,7 +1030,7 @@
 "color": "o",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -1042,7 +1042,7 @@
 "color": "r",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -1054,7 +1054,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -1066,7 +1066,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -1078,7 +1078,7 @@
 "color": "o",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1090,7 +1090,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1102,7 +1102,7 @@
 "color": "g",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1126,7 +1126,7 @@
 "color": "y",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -1138,7 +1138,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.#<jokalaria>-ren horia den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren horia den karta bat ezabatu.#<jokalariaL>-ren horia den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1150,7 +1150,7 @@
 "color": "r",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.#<jokalaria>-ren elurra den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren elurra den karta bat ezabatu.#<jokalariaL>-ren elurra den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1162,7 +1162,7 @@
 "color": "g",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.#<jokalaria>-ren berdea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren berdea den karta bat ezabatu.#<jokalariaL>-ren berdea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1942,7 +1942,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta ura izatetik sua izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -1954,7 +1954,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -1966,7 +1966,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1978,7 +1978,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -1990,7 +1990,7 @@
 "color": "o",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -2002,7 +2002,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta sua izatetik elurra izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -2014,7 +2014,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -2026,7 +2026,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -2038,7 +2038,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -2050,7 +2050,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -2062,7 +2062,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -2074,7 +2074,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -2662,7 +2662,7 @@
 "color": "b",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorriak diren karta guztiak ezabatu.#<jokalaria>-ren gorriak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorriak diren karta guztiak ezabatu.#<jokalariaL>-ren gorriak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2674,7 +2674,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdinak diren karta guztiak ezabatu.#<jokalaria>-ren urdinak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdinak diren karta guztiak ezabatu.#<jokalariaL>-ren urdinak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2686,7 +2686,7 @@
 "color": "r",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -2698,7 +2698,7 @@
 "color": "o",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen berdeak diren karta guztiak ezabatu.#<jokalaria>-ren berdeak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren berdeak diren karta guztiak ezabatu.#<jokalariaL>-ren berdeak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2710,7 +2710,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -2722,7 +2722,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen moreak diren karta guztiak ezabatu.#<jokalaria>-ren moreak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren moreak diren karta guztiak ezabatu.#<jokalariaL>-ren moreak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2734,7 +2734,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranjak diren karta guztiak ezabatu.#<jokalaria>-ren laranjak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranjak diren karta guztiak ezabatu.#<jokalariaL>-ren laranjak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2770,7 +2770,7 @@
 "color": "p",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen horiak diren karta guztiak ezabatu.#<jokalaria>-ren horiak diren karta guztiak ezabatuko dira.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren horiak diren karta guztiak ezabatu.#<jokalariaL>-ren horiak diren karta guztiak ezabatuko dira.",
 "is_active": "1"
 },
 {
@@ -2794,7 +2794,7 @@
 "color": "g",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalaria>-ren karta -2 balioko du.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren hurrengo kartaren balioa -2 izango da.#hurrengo txandan <jokalariaL>-ren karta -2 balioko du.",
 "is_active": "1"
 },
 {
@@ -3118,7 +3118,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.#<jokalaria>-ren elurra den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren elurra den karta bat ezabatu.#<jokalariaL>-ren elurra den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -3982,7 +3982,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta ura izatetik sua izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -3994,7 +3994,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4006,7 +4006,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4018,7 +4018,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4030,7 +4030,7 @@
 "color": "o",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4042,7 +4042,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta sua izatetik elurra izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -4054,7 +4054,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4066,7 +4066,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4078,7 +4078,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4090,7 +4090,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4102,7 +4102,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4114,7 +4114,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -4126,7 +4126,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta ura izatetik sua izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -4138,7 +4138,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4150,7 +4150,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4162,7 +4162,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4174,7 +4174,7 @@
 "color": "o",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4186,7 +4186,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta sua izatetik elurra izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -4198,7 +4198,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4210,7 +4210,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4222,7 +4222,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4234,7 +4234,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -4246,7 +4246,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -4258,7 +4258,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -5746,7 +5746,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5758,7 +5758,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5770,7 +5770,7 @@
 "color": "o",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -5782,7 +5782,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -5794,7 +5794,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5806,7 +5806,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5818,7 +5818,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5830,7 +5830,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -5842,7 +5842,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5854,7 +5854,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -5866,7 +5866,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta ura izatetik sua izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta ura izatetik sua izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -5878,7 +5878,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -5890,7 +5890,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5902,7 +5902,7 @@
 "color": "r",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen laranja den karta bat ezabatu.#<jokalaria>-ren laranja den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren laranja den karta bat ezabatu.#<jokalariaL>-ren laranja den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5914,7 +5914,7 @@
 "color": "o",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du ura den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du ura den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du ura den karta erabili.",
 "is_active": "1"
 },
 {
@@ -5926,7 +5926,7 @@
 "color": "b",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta sua izatetik elurra izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta sua izatetik elurra izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -5938,7 +5938,7 @@
 "color": "y",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen morea den karta bat ezabatu.#<jokalaria>-ren morea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren morea den karta bat ezabatu.#<jokalariaL>-ren morea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5950,7 +5950,7 @@
 "color": "p",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen ura den karta bat ezabatu.#<jokalaria>-ren ura den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren ura den karta bat ezabatu.#<jokalariaL>-ren ura den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5962,7 +5962,7 @@
 "color": "p",
 "value": "9",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen urdina den karta bat ezabatu.#<jokalaria>-ren urdina den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren urdina den karta bat ezabatu.#<jokalariaL>-ren urdina den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5974,7 +5974,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du sua den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du sua den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du sua den karta erabili.",
 "is_active": "1"
 },
 {
@@ -5986,7 +5986,7 @@
 "color": "o",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen sua den karta bat ezabatu.#<jokalaria>-ren sua den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren sua den karta bat ezabatu.#<jokalariaL>-ren sua den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -5998,7 +5998,7 @@
 "color": "b",
 "value": "9",
 "asset": "",
-"description": "Karta hau erabiltzean, lehiakidearen karta elurra izatetik ura izatera pasatzen da.#",
+"description": "Karta hau erabiltzean, <jokalariaL>-ren karta elurra izatetik ura izatera pasatzen da.#ez dauka efekturik hurrengo txandan.",
 "is_active": "1"
 },
 {
@@ -6010,7 +6010,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta honekin irabaztean, hurrengo errondan lehiakidea ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalaria> ezin izango du elurra den karta erabili.",
+"description": "Karta honekin irabaztean, hurrengo errondan <jokalariaL> ezingo du elurra den karta bat erabili.#hurrengo txandan, <jokalariaL> ezin izango du elurra den karta erabili.",
 "is_active": "1"
 },
 {
@@ -6022,7 +6022,7 @@
 "color": "p",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen gorria den karta bat ezabatu.#<jokalaria>-ren gorria den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren gorria den karta bat ezabatu.#<jokalariaL>-ren gorria den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6034,7 +6034,7 @@
 "color": "b",
 "value": "12",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen horia den karta bat ezabatu.#<jokalaria>-ren horia den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren horia den karta bat ezabatu.#<jokalariaL>-ren horia den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6046,7 +6046,7 @@
 "color": "r",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen elurra den karta bat ezabatu.#<jokalaria>-ren elurra den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren elurra den karta bat ezabatu.#<jokalariaL>-ren elurra den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {
@@ -6058,7 +6058,7 @@
 "color": "g",
 "value": "11",
 "asset": "",
-"description": "Karta honekin irabaztean, lehiakidearen berdea den karta bat ezabatu.#<jokalaria>-ren berdea den karta bat ezabatuko da.",
+"description": "Karta honekin irabaztean, <jokalariaL>-ren berdea den karta bat ezabatu.#<jokalariaL>-ren berdea den karta bat ezabatuko da.",
 "is_active": "1"
 },
 {

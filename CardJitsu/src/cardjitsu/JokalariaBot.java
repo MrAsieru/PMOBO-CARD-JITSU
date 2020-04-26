@@ -35,7 +35,11 @@ public class JokalariaBot extends Jokalaria {
 		Karta karta = null;
 		int saiakerak = 0;
 		while(!aukeratuta) {
-			karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
+			try {
+				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
+			} catch (TartetikKanpoException e) {
+				Kontsola.getKontsola().imprimatu(this.getIzena()+"-k ezin izan du karta aukeratu. TartetikKanpoException");
+			}
 			saiakerak++;
 			if(karta.getErabilgarria()) {
 				aukeratuta = true;

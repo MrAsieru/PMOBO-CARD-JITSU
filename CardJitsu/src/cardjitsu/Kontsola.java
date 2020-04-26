@@ -19,7 +19,6 @@ public class Kontsola {
 	public String testuaIrakurri() {
 		Scanner sc = new Scanner(System.in);
 		String sarrera = sc.nextLine();
-
 		return sarrera;
 	}
 	//Hecho
@@ -32,11 +31,11 @@ public class Kontsola {
 				Scanner sc = new Scanner(System.in);
 				sarrera = Integer.parseInt(sc.nextLine());
 				datuOna = true;
+				
 			} catch (NumberFormatException e) {
 				imprimatu("Zenbaki bat sartu");
 			}
 		}
-		
 		return sarrera;
 	}
 	//Hecho
@@ -60,9 +59,9 @@ public class Kontsola {
 	}
 	//Hecho
 	
-	private void edozeinTekla()
+	public void enterTekla()
 	 { 
-	        System.out.println("Edozein tekla pultsatu jarraitzeko...");
+	        System.out.println("Pultsatu ENTER tekla jarraitzeko...");
 	        try
 	        {
 	            System.in.read();

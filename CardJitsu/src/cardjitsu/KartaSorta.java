@@ -66,7 +66,6 @@ public class KartaSorta {
 						break;
 					default:
 						System.out.println("Ez da aurikitu elementua");
-						//TODO Exception
 						break;
 					}
 					

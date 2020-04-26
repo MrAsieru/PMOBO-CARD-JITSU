@@ -15,7 +15,11 @@ public abstract class Jokalaria {
 		
 		//gainerako metodoak
 		public void gehituJolastekoKarta (Karta pKarta) {
-			this.jolastekoKartak.gehituKarta(pKarta);
+			if (jolastekoKartak.getTamaina() <= 5) {
+				this.jolastekoKartak.gehituKarta(pKarta);
+			} else {
+				Kontsola.getKontsola().imprimatu("Ezin dira izan 5 karta baino gehiago!");
+			}			
 		}
 		
 		public void kenduJolastekoKarta (Karta pKarta) {
@@ -28,11 +32,17 @@ public abstract class Jokalaria {
 		public void kenduGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.kenduKarta (pKarta);
 		}
-		public Karta lortuJolastekoKartaPosz(int pPos) {
+		public Karta lortuJolastekoKartaPosz(int pPos) throws TartetikKanpoException {
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
 		}
-		public Karta lortuGordetakoKartaPosz(int pPos) {
-			return this.gordetakoKartak.lortuKartaPosz(pPos);
+		public Karta lortuGordetakoKartaPosz(int pPos){
+			Karta karta = null;
+			try {
+				karta = this.gordetakoKartak.lortuKartaPosz(pPos);
+			} catch (TartetikKanpoException e) {
+				//Ez da ezer egin behar
+			}
+			return karta;
 		}
 		public int gordetakoKartenKantitatea() {
 			return this.gordetakoKartak.getTamaina();
