@@ -246,7 +246,7 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
-	private void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
+	void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
 	{
 		
 		int listaTam = pJokalaria.gordetakoKartenKantitatea(); 
@@ -591,6 +591,13 @@ public class ListaJokalariak {
 	
 	public static void main(String[] args) {
 		new ListaJokalariak().partidaBerriaHasi();
+	}
+	
+	//Junitak erabiltzen duten metodoak
+	
+	void aldatuEfektua(EfektuMota pEfektua) 
+	{
+		aurrekoTxandakoEfektua = pEfektua;
 	}
 }
 
