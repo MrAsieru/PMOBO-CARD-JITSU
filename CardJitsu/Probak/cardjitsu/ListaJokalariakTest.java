@@ -1168,4 +1168,59 @@ public class ListaJokalariakTest {
 		assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
 		assertFalse(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
 	}
+	
+	public void testKartakKonprobatu() 
+	{
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(1));
+		assertEquals(JokalariMota.BERDINKETA,listaJ.kartakKonprobatu());
+		
+		//Irabazlea LOKALA
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(10));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(10),KartaSorta.getKartaSorta().getKarta(20));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(20),KartaSorta.getKartaSorta().getKarta(1));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(0),KartaSorta.getKartaSorta().getKarta(1));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		//Irabazlea BOT
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(10),KartaSorta.getKartaSorta().getKarta(1));
+		assertEquals(JokalariMota.BOT,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(20),KartaSorta.getKartaSorta().getKarta(10));
+		assertEquals(JokalariMota.BOT,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(20));
+		assertEquals(JokalariMota.BOT,listaJ.kartakKonprobatu());
+		
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(0));
+		assertEquals(JokalariMota.BOT,listaJ.kartakKonprobatu());
+		
+		//Irabazleak bikendu/gehitu efektuaren arabera
+		
+		listaJ.aldatuAurrekoIrabazlea(0);
+		listaJ.aldatuEfektua(EfektuMota.BIGEHITU);
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(0));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		listaJ.aldatuAurrekoIrabazlea(0);
+		listaJ.aldatuEfektua(EfektuMota.BIKENDU);
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(0));
+		assertEquals(JokalariMota.LOKALA,listaJ.kartakKonprobatu());
+		
+		listaJ.aldatuAurrekoIrabazlea(1);
+		listaJ.aldatuEfektua(EfektuMota.BIKENDU);
+		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(0));
+		assertEquals(JokalariMota.BOT,listaJ.kartakKonprobatu());
+		
+		//Irabazleak elementu aldaketa efektuaren arabera
+		
+		//Irabazleak elementu aldaketa eta bigehitu/kendu arabera
+	}
 }

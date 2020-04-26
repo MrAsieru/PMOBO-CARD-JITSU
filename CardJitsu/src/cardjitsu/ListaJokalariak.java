@@ -342,7 +342,7 @@ public class ListaJokalariak {
 	}
 	//Hecho
 	
-	private JokalariMota kartakKonprobatu() 
+	JokalariMota kartakKonprobatu() 
 	{
 		//Baloreak gorde
 		
@@ -598,6 +598,24 @@ public class ListaJokalariak {
 	void aldatuEfektua(EfektuMota pEfektua) 
 	{
 		aurrekoTxandakoEfektua = pEfektua;
+	}
+	
+	void kartakAldatu(Karta p1,Karta p2) 
+	{
+		jokalariLokalaKarta = p1;
+		jokalariBotKarta = p2;
+	}
+	
+	void aldatuAurrekoIrabazlea(int p1) 
+	{
+		if(p1==0) {aurrekoTxandakoIrabazlea=jokalari1;}
+		if(p1==1) {aurrekoTxandakoIrabazlea=jokalari2;}
+		
+	}
+	
+	void aldatuZenbakiEfektua (boolean p1) 
+	{
+		aurrekoTxandakoEfektuaZenbakia = p1;
 	}
 }
 
