@@ -1030,7 +1030,7 @@ public class ListaJokalariakTest {
 		}
 	}
 	
-
+	@Test
 	public void testAplikatuAurrekoEfektua() 
 	{
 		//Elementu bat duen karta bat kendu
@@ -1152,9 +1152,13 @@ public class ListaJokalariakTest {
 		jok.gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta(10));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
-		assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
-		assertTrue(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
+		try {
+			assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
+			assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
+			assertTrue(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
+		} catch (TartetikKanpoException e) {
+			
+		}		
 		
 		gordetakoKartakEzabatu();
 		
@@ -1164,11 +1168,17 @@ public class ListaJokalariakTest {
 		jok.gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta(3));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
-		assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
-		assertFalse(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
+		try {
+			assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
+			assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
+			assertFalse(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
+		} catch (TartetikKanpoException e) {
+			
+		}
+
 	}
 	
+	@Test
 	public void testKartakKonprobatu() 
 	{
 		listaJ.kartakAldatu(KartaSorta.getKartaSorta().getKarta(1),KartaSorta.getKartaSorta().getKarta(1));
@@ -1222,5 +1232,18 @@ public class ListaJokalariakTest {
 		//Irabazleak elementu aldaketa efektuaren arabera
 		
 		//Irabazleak elementu aldaketa eta bigehitu/kendu arabera
+	}
+	
+	@Test
+	public void testElementuaIrabazi() {
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.SUA, ElementuMota.SUA));
+		assertTrue(listaJ.elementuaIrabazi(ElementuMota.SUA, ElementuMota.ELURRA));
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.SUA, ElementuMota.URA));
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.ELURRA, ElementuMota.SUA));
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.ELURRA, ElementuMota.ELURRA));
+		assertTrue(listaJ.elementuaIrabazi(ElementuMota.ELURRA, ElementuMota.URA));
+		assertTrue(listaJ.elementuaIrabazi(ElementuMota.URA, ElementuMota.SUA));
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.URA, ElementuMota.ELURRA));
+		assertFalse(listaJ.elementuaIrabazi(ElementuMota.URA, ElementuMota.URA));
 	}
 }

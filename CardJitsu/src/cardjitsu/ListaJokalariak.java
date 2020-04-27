@@ -511,7 +511,7 @@ public class ListaJokalariak {
 	//Hecho
 	
 
-	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
+	boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{	boolean irabazi=false;
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
 			irabazi=true;
