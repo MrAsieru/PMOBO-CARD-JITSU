@@ -1080,26 +1080,23 @@ public class ListaJokalariakTest {
 		listaJ.aldatuEfektua(EfektuMota.KENDUBERDEGUZTIAK);
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(0));
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(1));
-
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(2));
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(3));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
 		assertEquals(KartaSorta.getKartaSorta().getKarta(0),jok.lortuGordetakoKartaPosz(0));
 		assertEquals(KartaSorta.getKartaSorta().getKarta(3),jok.lortuGordetakoKartaPosz(1));
-		assertNull(jok.lortuGordetakoKartaPosz(24));
-		assertNull(jok.lortuGordetakoKartaPosz(33));
-		assertNull(jok.lortuGordetakoKartaPosz(23));
-		assertEquals(1,jok.gordetakoKartenKantitatea());
+		assertNotEquals(KartaSorta.getKartaSorta().getKarta(1),jok.lortuGordetakoKartaPosz(1));
+		assertEquals(3,jok.gordetakoKartenKantitatea());
 		
 		gordetakoKartakEzabatu();
 		
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(24));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(33));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(40));
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(1));
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(2));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		assertNull(jok.lortuGordetakoKartaPosz(24));
-		assertNull(jok.lortuGordetakoKartaPosz(33));
-		assertNull(jok.lortuGordetakoKartaPosz(23));
+		assertNotEquals(KartaSorta.getKartaSorta().getKarta(1),jok.lortuGordetakoKartaPosz(0));
+		assertNotEquals(KartaSorta.getKartaSorta().getKarta(2),jok.lortuGordetakoKartaPosz(1));
 		assertEquals(0,jok.gordetakoKartenKantitatea());
 		
 		gordetakoKartakEzabatu();

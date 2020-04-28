@@ -23,7 +23,7 @@ public abstract class Jokalaria {
 		}
 		
 		public void kenduJolastekoKarta (Karta pKarta) {
-			this.jolastekoKartak.kenduKarta (pKarta);
+			this.jolastekoKartak.kenduKarta(pKarta);
 		}
 		public void gehituGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.gehituKarta(pKarta);

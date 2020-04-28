@@ -306,13 +306,9 @@ public class ListaJokalariak {
 					{
 						pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
 						if(!guztia) {kendua = true;}
-						
+						else {listaTam = listaTam-1;}
 					}
-					else 
-					{
-						i++;
-					}
-					
+					i++;
 				}
 				break;
 				
