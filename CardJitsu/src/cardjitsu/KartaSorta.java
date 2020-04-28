@@ -30,7 +30,7 @@ public class KartaSorta {
 			JSONParser parser = new JSONParser();
 			
 			try {				
-				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("D:\\MrAsieru\\Documents\\GitHub\\PMOBO-CARD-JITSU\\CardJitsu\\src\\Kartak\\cards_eu.json"));
+				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("res/Kartak/cards_eu.json"));
 				
 				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");
 				
