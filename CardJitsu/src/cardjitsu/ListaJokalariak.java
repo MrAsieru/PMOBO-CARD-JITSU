@@ -31,7 +31,6 @@ public class ListaJokalariak {
 		kontsola = Kontsola.getKontsola();
 		kSorta = KartaSorta.getKartaSorta();
 	}
-	//Necesita revision
 	
 	public static ListaJokalariak getNireListaJokalariak() 
 	{
@@ -40,8 +39,7 @@ public class ListaJokalariak {
 			nireListaJokalariak = new ListaJokalariak();
 		}
 		return nireListaJokalariak;
-	} 
-	//Necesita revision
+	}
 	
 	public void partidaBerriaHasi() {
 		//Titulua imprimatu
@@ -73,8 +71,7 @@ public class ListaJokalariak {
 		//TODO irabazlea
 		kontsola.imprimatu("Zorionak "+irabazlea.getIzena()+"!");
 	}
-	//Sin hacer
-	
+
 	private Jokalaria txandaBerria() {
 		//TODO jar egiterakoan garbitu hau aktibatu 
 		//kontsola.kontsolaGarbitu();
@@ -158,8 +155,7 @@ public class ListaJokalariak {
 		
 		return irabazlea;
 	}
-	//Hecho
-	
+
 	boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
 		boolean irabaziDu = false;
@@ -238,15 +234,13 @@ public class ListaJokalariak {
 		
 		return irabaziDu;
 	}
-	//Hecho
-	
+
 	private void kartakBanatu() 
 	{
 		jokalari1.gehituJolastekoKarta(kSorta.getKarta());
 		jokalari2.gehituJolastekoKarta(kSorta.getKarta());
 	}
-	//Hecho
-	
+
 	void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
 	{
 		
@@ -308,7 +302,11 @@ public class ListaJokalariak {
 						if(!guztia) {kendua = true;}
 						else {listaTam = listaTam-1;}
 					}
-					i++;
+					else 
+					{
+						i++;
+					}
+					
 				}
 				break;
 				
@@ -320,12 +318,13 @@ public class ListaJokalariak {
 				else if(aurrekoTxandakoEfektua==EfektuMota.URABLOKEATU){mota = ElementuMota.URA;}
 				else if(aurrekoTxandakoEfektua==EfektuMota.ELURRABLOKEATU){mota = ElementuMota.ELURRA;}
 				
-				while(i<=5) 
+				while(i<5) 
 				{
 					try {
 						if(pJokalaria.lortuJolastekoKartaPosz(i).getElementua()==mota) 
 						{
 							pJokalaria.lortuJolastekoKartaPosz(i).setErabilgarria(false);
+							System.out.println("i: "+i+". Blokeatua");
 						}
 					} catch (TartetikKanpoException e) {
 						//Ez da ezer egin behar (While barruan)
@@ -336,8 +335,7 @@ public class ListaJokalariak {
 			}
 		}
 	}
-	//Hecho
-	
+
 	JokalariMota kartakKonprobatu() 
 	{
 		//Baloreak gorde
@@ -354,7 +352,7 @@ public class ListaJokalariak {
 		
 		//Aurreko jokaldia nork irabazi duen jakin
 		
-		if(this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) {aurIrabazlea = 1;}else{aurIrabazlea = 0;}
+		aurIrabazlea = (aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? 1 : 0;
 		
 		//Aurreko irabazlearen arabera aplikatu aurreko efektua
 		if(aurrekoTxandakoEfektua != null) {
@@ -422,13 +420,13 @@ public class ListaJokalariak {
 				switch (efektua) 
 				{
 				case ELURRATIKURARA:
-					if(elementuaL==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+					if(elementuaL==ElementuMota.ELURRA) {elementuaL=ElementuMota.URA;}
 					break;
 				case URATIKSURA:
-					if(elementuaL==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+					if(elementuaL==ElementuMota.URA) {elementuaL=ElementuMota.SUA;}
 					break;
 				case SUTIKELURRARA:
-					if(elementuaL==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+					if(elementuaL==ElementuMota.SUA) {elementuaL=ElementuMota.ELURRA;}
 					break;
 				}
 			}
@@ -459,7 +457,7 @@ public class ListaJokalariak {
 					finala = 1;
 				}
 			}
-			else if(balioaL==balioaB) 
+			else 
 			{
 				finala = 0;
 			}
@@ -472,8 +470,6 @@ public class ListaJokalariak {
 		{
 			finala = 2;
 		}
-
-		//try {}catch{}
 		
 		//Balioak heman
 		
@@ -499,13 +495,11 @@ public class ListaJokalariak {
 		}
 		
 		// Imprimaketa
-		kontsola.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena()):""));
-		kontsola.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena()):""));
+		//kontsola.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena()):""));
+		//kontsola.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena()):""));
 		
 		return irabazlea;
 	}
-	//Hecho
-	
 
 	boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{	boolean irabazi=false;
@@ -522,7 +516,6 @@ public class ListaJokalariak {
 		
 		return irabazi;
 	}
-	
 	
 	private void gordetakoKartakImprimatu(Jokalaria pJok) {
 		ArrayList<Karta> kartaGuztiak = new ArrayList<Karta>();
@@ -585,7 +578,6 @@ public class ListaJokalariak {
 		
 	}
 	
-	
 	public static void main(String[] args) {
 		new ListaJokalariak().partidaBerriaHasi();
 	}
@@ -605,10 +597,12 @@ public class ListaJokalariak {
 	
 	void aldatuAurrekoIrabazlea(int p1) 
 	{
-		if(p1==0) {aurrekoTxandakoIrabazlea=jokalari1;}
-		if(p1==1) {aurrekoTxandakoIrabazlea=jokalari2;}
-		
+		if(p1==0) {aurrekoTxandakoIrabazlea=JokalariaLokala.getNireJokalaria("");}
+		if(p1==1) {aurrekoTxandakoIrabazlea=JokalariaBot.getNireJokalaria("Sensei");}
 	}
+	
+	void aldatuZenbakiTxikiarenEfektua(boolean p1) 
+	{aurrekoTxandakoEfektuaZenbakia=p1;}
 	
 	void aldatuZenbakiEfektua (boolean p1) 
 	{
