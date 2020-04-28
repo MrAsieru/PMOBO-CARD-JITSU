@@ -1042,8 +1042,8 @@ public class ListaJokalariakTest {
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(10));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		assertNull(jok.lortuGordetakoKartaPosz(11));
-		assertNotNull(jok.lortuGordetakoKartaPosz(10));
+		assertNotEquals(KartaSorta.getKartaSorta().getKarta(11),jok.lortuGordetakoKartaPosz(0));
+		assertEquals(KartaSorta.getKartaSorta().getKarta(10),jok.lortuGordetakoKartaPosz(3));
 		assertEquals(4,jok.gordetakoKartenKantitatea());
 		
 		gordetakoKartakEzabatu();
@@ -1069,63 +1069,22 @@ public class ListaJokalariakTest {
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(10));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		assertNull(jok.lortuGordetakoKartaPosz(1));
-		assertNotNull(jok.lortuGordetakoKartaPosz(2));
+		assertEquals(KartaSorta.getKartaSorta().getKarta(7),jok.lortuGordetakoKartaPosz(0));
+		assertNotEquals(KartaSorta.getKartaSorta().getKarta(1),jok.lortuGordetakoKartaPosz(1));
+		assertEquals(KartaSorta.getKartaSorta().getKarta(2),jok.lortuGordetakoKartaPosz(1));
 		assertEquals(4,jok.gordetakoKartenKantitatea());
 		
 		gordetakoKartakEzabatu();
 		
-		//Elementu bateko karta guztiak kendu
-		listaJ.aldatuEfektua(EfektuMota.KENDUURA);
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(20));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(21));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(22));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(23));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(10));
-		listaJ.aplikatuAurrekoEfektua(jok);
-		
-		assertNull(jok.lortuGordetakoKartaPosz(20));
-		assertNull(jok.lortuGordetakoKartaPosz(21));
-		assertNull(jok.lortuGordetakoKartaPosz(22));
-		assertNull(jok.lortuGordetakoKartaPosz(23));
-		assertNotNull(jok.lortuGordetakoKartaPosz(10));
-		assertEquals(1,jok.gordetakoKartenKantitatea());
-		
-		gordetakoKartakEzabatu();
-
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(1));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(2));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(3));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(4));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(5));
-		listaJ.aplikatuAurrekoEfektua(jok);
-		
-		assertNotNull(jok.lortuGordetakoKartaPosz(1));
-		assertNotNull(jok.lortuGordetakoKartaPosz(2));
-		assertNotNull(jok.lortuGordetakoKartaPosz(3));
-		assertNotNull(jok.lortuGordetakoKartaPosz(4));
-		assertNotNull(jok.lortuGordetakoKartaPosz(5));
-		assertEquals(5,jok.gordetakoKartenKantitatea());
-		
-		gordetakoKartakEzabatu();
-		
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(20));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(21));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(22));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(23));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(24));
-		listaJ.aplikatuAurrekoEfektua(jok);
-		
-		assertEquals(0,jok.gordetakoKartenKantitatea());
-		
 		//Kolore bateko karta guztiak kendu
-		listaJ.aldatuEfektua(EfektuMota.KENDULARANJAGUZTIAK);
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(24));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(33));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(40));
-		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(23));
+		listaJ.aldatuEfektua(EfektuMota.KENDUBERDEGUZTIAK);
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(0));
+		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(1));
+
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
+		assertEquals(KartaSorta.getKartaSorta().getKarta(0),jok.lortuGordetakoKartaPosz(0));
+		assertEquals(KartaSorta.getKartaSorta().getKarta(3),jok.lortuGordetakoKartaPosz(1));
 		assertNull(jok.lortuGordetakoKartaPosz(24));
 		assertNull(jok.lortuGordetakoKartaPosz(33));
 		assertNull(jok.lortuGordetakoKartaPosz(23));

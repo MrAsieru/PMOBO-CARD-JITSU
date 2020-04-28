@@ -30,7 +30,7 @@ public abstract class Jokalaria {
 		}
 		
 		public void kenduGordetakoKarta (Karta pKarta) {
-			this.gordetakoKartak.kenduKarta (pKarta);
+			this.gordetakoKartak.kenduKarta(pKarta);
 		}
 		public Karta lortuJolastekoKartaPosz(int pPos) throws TartetikKanpoException {
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
@@ -51,6 +51,4 @@ public abstract class Jokalaria {
 		public String getIzena() {
 			return this.izena;
 		}
-		
-
 }

@@ -293,27 +293,26 @@ public class ListaJokalariak {
 			case KENDULARANJABAT:
 			case KENDUMOREBAT:
 	
-				if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT){kolorea = KoloreMota.GORRIA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT){kolorea = KoloreMota.URDINA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT){kolorea = KoloreMota.HORIA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT){kolorea = KoloreMota.BERDEA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT){kolorea = KoloreMota.LARANJA;}
-				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT){kolorea = KoloreMota.MOREA;}
+				if(aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIBAT || aurrekoTxandakoEfektua==EfektuMota.KENDUGORRIGUZTIAK){kolorea = KoloreMota.GORRIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUURDINBAT || aurrekoTxandakoEfektua==EfektuMota.KENDUURDINGUZTIAK){kolorea = KoloreMota.URDINA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUHORIBAT || aurrekoTxandakoEfektua==EfektuMota.KENDUHORIGUZTIAK){kolorea = KoloreMota.HORIA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEBAT || aurrekoTxandakoEfektua==EfektuMota.KENDUBERDEGUZTIAK){kolorea = KoloreMota.BERDEA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDULARANJABAT || aurrekoTxandakoEfektua==EfektuMota.KENDULARANJAGUZTIAK){kolorea = KoloreMota.LARANJA;}
+				else if(aurrekoTxandakoEfektua==EfektuMota.KENDUMOREBAT || aurrekoTxandakoEfektua==EfektuMota.KENDUMOREGUZTIAK){kolorea = KoloreMota.MOREA;}
 				
 				while(listaTam>i && !kendua) 
 				{
-					if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea) 
+					if(pJokalaria.lortuGordetakoKartaPosz(i).getKolorea()==kolorea)
 					{
 						pJokalaria.kenduGordetakoKarta(pJokalaria.lortuGordetakoKartaPosz(i));
 						if(!guztia) {kendua = true;}
+						
 					}
-					i++;
+					else 
+					{
+						i++;
+					}
+					
 				}
 				break;
 				
@@ -527,7 +526,8 @@ public class ListaJokalariak {
 		
 		return irabazi;
 	}
-	//Hecho
+	
+	
 	private void gordetakoKartakImprimatu(Jokalaria pJok) {
 		ArrayList<Karta> kartaGuztiak = new ArrayList<Karta>();
 		ArrayList<Karta> suKartak = new ArrayList<Karta>();
