@@ -1,6 +1,7 @@
 package cardjitsu;
 
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,7 +31,8 @@ public class KartaSorta {
 			JSONParser parser = new JSONParser();
 			
 			try {				
-				JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("res/Kartak/cards_eu.json"));
+				//JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("/cards_eu.json"));
+				JSONObject jsonObj = (JSONObject) parser.parse(new InputStreamReader(getClass().getResourceAsStream("/cards_eu.json"), "UTF-8"));
 				
 				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");
 				

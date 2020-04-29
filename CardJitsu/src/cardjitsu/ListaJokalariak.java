@@ -74,7 +74,7 @@ public class ListaJokalariak {
 
 	private Jokalaria txandaBerria() {
 		//TODO jar egiterakoan garbitu hau aktibatu 
-		//kontsola.kontsolaGarbitu();
+		kontsola.kontsolaGarbitu();
 		Jokalaria irabazlea;
 		//Kartak banatu
 		this.kartakBanatu();

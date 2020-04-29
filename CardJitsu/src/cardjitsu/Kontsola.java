@@ -48,12 +48,14 @@ public class Kontsola {
 	public  void kontsolaGarbitu() {
 		try {
 			if (System.getProperty("os.name").contains("Windows")) {
-			    Runtime.getRuntime().exec("cls");
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 			}
 			else {
 			    Runtime.getRuntime().exec("clear");
 			}
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
