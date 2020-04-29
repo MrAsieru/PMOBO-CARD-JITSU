@@ -28,7 +28,11 @@ public class JokalariaLokala extends Jokalaria {
 			try {
 				int sarrera = Kontsola.getKontsola().zenbakiaIrakurri();
 				aukeraketa = this.lortuJolastekoKartaPosz(sarrera-1);
-				lortuta = true;
+				if (aukeraketa.getErabilgarria()) {
+					lortuta = true;
+				} else {
+					Kontsola.getKontsola().imprimatu("Erabili ahal den karta bat aukeratu mesedez.");
+				}
 			} catch (TartetikKanpoException e) {
 				Kontsola.getKontsola().imprimatu("1-etik 5-era den zenbaki bat sartu mesedez.");
 			}
