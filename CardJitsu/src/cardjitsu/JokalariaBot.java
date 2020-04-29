@@ -46,10 +46,13 @@ public class JokalariaBot extends Jokalaria {
 			} else {
 				if(saiakerak > 4) {
 					//TODO exception
+					Kontsola.getKontsola().imprimatu(this.getIzena()+"-k ezin izan du karta aukeratu. 5 saiakera");
 				}
 			}
 		}
 		this.kenduJolastekoKarta(karta);
+		System.out.print("[INFO]");
+		karta.imprimatu();
 		return karta;
 	}
 }
