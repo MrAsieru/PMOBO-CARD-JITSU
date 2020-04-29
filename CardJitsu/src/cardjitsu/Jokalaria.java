@@ -51,4 +51,6 @@ public abstract class Jokalaria {
 		public String getIzena() {
 			return this.izena;
 		}
+		
+		public abstract Karta kartaAukeratu();
 }
