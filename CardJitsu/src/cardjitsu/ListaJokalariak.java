@@ -507,9 +507,9 @@ public class ListaJokalariak {
 			aurrekoTxandakoEfektuaZenbakia = true;
 		}
 		
-		// Imprimaketa
-		kontsola.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K: "+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena()):""));
-		kontsola.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K: "+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef: "+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena()):""));
+		//Imprimaketa
+		kontsola.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K:"+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena()):""));
+		kontsola.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K:"+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena()):""));
 		
 		return irabazlea;
 	}

@@ -1021,6 +1021,16 @@ public class ListaJokalariakTest {
 			jok.kenduGordetakoKarta(jok.lortuGordetakoKartaPosz(0));
 		}
 	}
+	
+	private void jolastekoKartakEzabatu() {
+		try {
+			while(jok.jolastekoKartenKantitatea()!=0) {
+				jok.kenduJolastekoKarta(jok.lortuJolastekoKartaPosz(0));
+			}
+		} catch(TartetikKanpoException e) {
+			e.printStackTrace();
+		}		
+	}
 	private void imprimatuKartak(String pTitulua) {
 		System.out.println(pTitulua);
 		for(int i = 0; i < jok.gordetakoKartenKantitatea(); i++) {
@@ -1090,6 +1100,7 @@ public class ListaJokalariakTest {
 		assertNotEquals(KartaSorta.getKartaSorta().getKarta(1),jok.lortuGordetakoKartaPosz(1));
 		
 		gordetakoKartakEzabatu();
+		jolastekoKartakEzabatu();
 		
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(1));
 		jok.gehituGordetakoKarta(KartaSorta.getKartaSorta().getKarta(2));
@@ -1117,6 +1128,7 @@ public class ListaJokalariakTest {
 		}		
 		
 		gordetakoKartakEzabatu();
+		jolastekoKartakEzabatu();
 		
 		listaJ.aldatuEfektua(EfektuMota.SUABLOKEATU);
 		jok.gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta(1));

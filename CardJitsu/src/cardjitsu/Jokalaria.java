@@ -48,6 +48,10 @@ public abstract class Jokalaria {
 			return this.gordetakoKartak.getTamaina();
 		}
 		
+		public int jolastekoKartenKantitatea() {
+			return this.jolastekoKartak.getTamaina();
+		}
+		
 		public String getIzena() {
 			return this.izena;
 		}

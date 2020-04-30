@@ -67,7 +67,7 @@ public class KartaSorta {
 						elementua = ElementuMota.URA;
 						break;
 					default:
-						System.out.println("Ez da aurikitu elementua");
+						Kontsola.getKontsola().imprimatu("Ez da aurkitu elementua");
 						break;
 					}
 					

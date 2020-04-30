@@ -51,8 +51,6 @@ public class JokalariaBot extends Jokalaria {
 			}
 		}
 		this.kenduJolastekoKarta(karta);
-		System.out.print("[INFO]");
-		karta.imprimatu();
 		return karta;
 	}
 }

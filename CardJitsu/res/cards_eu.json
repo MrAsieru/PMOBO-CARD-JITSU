@@ -874,7 +874,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#hurrengo txandan balio txikiko karta irabaziko du.",
 "is_active": "1"
 },
 {
@@ -970,7 +970,7 @@
 "color": "g",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#hurrengo txandan balio txikiko karta irabaziko du.",
 "is_active": "1"
 },
 {
@@ -1066,7 +1066,7 @@
 "color": "y",
 "value": "10",
 "asset": "",
-"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#ez dauka efekturik hurrengo txandan.",
+"description": "Karta hau erabiltzean, hurrengo txandan balio txikiko karta irabaziko du.#hurrengo txandan balio txikiko karta irabaziko du.",
 "is_active": "1"
 },
 {
