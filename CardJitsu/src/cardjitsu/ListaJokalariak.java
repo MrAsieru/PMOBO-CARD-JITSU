@@ -63,7 +63,7 @@ public class ListaJokalariak {
 		kSorta.jsonetikKartetara();
 		
 		//Kartak banatu
-		for (int i = 0; i<5;i++) {
+		for (int i = 0; i<4;i++) {
 			this.kartakBanatu();
 		}
 		
@@ -72,6 +72,7 @@ public class ListaJokalariak {
 		//Irabazleari zorionak eman
 		//TODO irabazlea
 		kontsola.imprimatu("Zorionak "+irabazlea.getIzena()+"!");
+		kontsola.enterTekla();
 	}
 
 	private Jokalaria txandaBerria() {
