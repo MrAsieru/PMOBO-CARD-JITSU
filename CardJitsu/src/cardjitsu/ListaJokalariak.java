@@ -110,11 +110,11 @@ public class ListaJokalariak {
 			Karta karta = null;
 			try {
 				karta = jokalari1.lortuJolastekoKartaPosz(i-1);
+				kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalari2.getIzena()):""));
 			} catch (TartetikKanpoException e) {
 				//Ez da ezer egin behar (For barruan)
 			}
 			
-			kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalari2.getIzena()):""));
 		}
 		
 		kontsola.imprimatu("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");

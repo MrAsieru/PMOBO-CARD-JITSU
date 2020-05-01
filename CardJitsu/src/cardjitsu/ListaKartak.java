@@ -27,15 +27,11 @@ public class ListaKartak {
 		this.lista.remove(pKarta);
 	}
 
-	public void kenduKarta (int pPos) throws TartetikKanpoException {
+	public void kenduKarta (int pPos) {
 		this.lista.remove(this.lortuKartaPosz(pPos));
 	}
 	
-	public Karta lortuKartaPosz (int pPos) throws TartetikKanpoException {
-		if(pPos >= this.getTamaina()) {
-			throw new TartetikKanpoException();
-		}
-		
+	public Karta lortuKartaPosz (int pPos) {
 		Karta k1=null;
 		int lag=0;
 		boolean aurkitua=false;

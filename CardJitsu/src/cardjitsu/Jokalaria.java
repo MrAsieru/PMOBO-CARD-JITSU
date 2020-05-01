@@ -33,16 +33,13 @@ public abstract class Jokalaria {
 			this.gordetakoKartak.kenduKarta(pKarta);
 		}
 		public Karta lortuJolastekoKartaPosz(int pPos) throws TartetikKanpoException {
+			if(pPos < 0 || 4 < pPos) {
+				throw new TartetikKanpoException();
+			}
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
 		}
 		public Karta lortuGordetakoKartaPosz(int pPos){
-			Karta karta = null;
-			try {
-				karta = this.gordetakoKartak.lortuKartaPosz(pPos);
-			} catch (TartetikKanpoException e) {
-				//Ez da ezer egin behar
-			}
-			return karta;
+			return this.gordetakoKartak.lortuKartaPosz(pPos);
 		}
 		public int gordetakoKartenKantitatea() {
 			return this.gordetakoKartak.getTamaina();

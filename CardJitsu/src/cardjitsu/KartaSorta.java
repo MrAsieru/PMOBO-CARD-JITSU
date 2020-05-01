@@ -12,11 +12,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class KartaSorta {
-	private List<Karta> lista = null;
+	private ListaKartak lista = null;
 	private static KartaSorta nireKartaSorta;
 	
 	private KartaSorta() {
-		lista = new ArrayList<>();
+		lista = new ListaKartak();
 	}
 	
 	public static KartaSorta getKartaSorta(){
@@ -190,7 +190,7 @@ public class KartaSorta {
 					} else {
 						kartaB = (Karta) new KartaNormala(elementua,balioa,kolorea);
 					}
-					lista.add(kartaB);
+					lista.gehituKarta(kartaB);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -199,7 +199,7 @@ public class KartaSorta {
 	}
 	
 	public Karta getKarta(int pPos) {
-		return lista.get(pPos);
+		return lista.lortuKartaPosz(pPos);
 	}
 	
 	public Karta getKarta() {
@@ -207,6 +207,6 @@ public class KartaSorta {
 	}
 	
 	public int getTamaina() {
-		return lista.size();
+		return lista.getTamaina();
 	}
 }

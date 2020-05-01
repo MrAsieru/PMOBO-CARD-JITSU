@@ -63,12 +63,11 @@ public class ListaKartakTest {
 		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
 		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
 		assertEquals(6,lis1.getTamaina());
-		try {
-			lis1.kenduKarta(2);
-			lis1.kenduKarta(0);
-			lis1.kenduKarta(0);
-		} catch (TartetikKanpoException e) {
-		}
+		
+		lis1.kenduKarta(2);
+		lis1.kenduKarta(0);
+		lis1.kenduKarta(0);
+		
 		assertEquals(3,lis1.getTamaina());
 	}
 
@@ -84,12 +83,9 @@ public class ListaKartakTest {
 		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
 		lis1.gehituKarta(k3);
 		
-		try {
-			assertEquals(k1,lis1.lortuKartaPosz(0));
-			assertEquals(k2,lis1.lortuKartaPosz(3));
-			assertEquals(k3,lis1.lortuKartaPosz(5));
-		} catch (TartetikKanpoException e) {
-		}
+		assertEquals(k1,lis1.lortuKartaPosz(0));
+		assertEquals(k2,lis1.lortuKartaPosz(3));
+		assertEquals(k3,lis1.lortuKartaPosz(5));
 
 	}
 	
