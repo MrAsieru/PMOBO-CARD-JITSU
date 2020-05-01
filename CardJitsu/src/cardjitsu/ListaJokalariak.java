@@ -39,6 +39,10 @@ public class ListaJokalariak {
 		return nireListaJokalariak;
 	}
 	
+	public static void main(String[] args) {
+		new ListaJokalariak().partidaBerriaHasi();
+	}
+	
 	public void partidaBerriaHasi() {
 		//Titulua imprimatu
 		kontsola.imprimatu("   ____              _           _ _ _             ");
@@ -587,10 +591,6 @@ public class ListaJokalariak {
 			kontsola.imprimatu(sua+((sua.length()!=0)?("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra))):("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra)))));
 		}
 		
-	}
-	
-	public static void main(String[] args) {
-		new ListaJokalariak().partidaBerriaHasi();
 	}
 	
 	//Junitak erabiltzen duten metodoak

@@ -38,7 +38,7 @@
         </java.beans.PropertyChangeSupport>
       </listeners>
       <constraint>
-        <height>729</height>
+        <height>724</height>
         <width>5</width>
         <x>148</x>
         <y>20</y>
@@ -61,7 +61,7 @@
             </java.beans.PropertyChangeSupport>
           </listeners>
           <constraint>
-            <height>603</height>
+            <height>598</height>
             <width>10</width>
             <x>143</x>
             <y>116</y>
@@ -94,7 +94,7 @@
                   </java.beans.PropertyChangeSupport>
                 </listeners>
                 <constraint>
-                  <height>593</height>
+                  <height>588</height>
                   <width>10</width>
                   <x>353</x>
                   <y>116</y>
@@ -188,7 +188,7 @@
                           </java.beans.PropertyChangeSupport>
                         </listeners>
                         <constraint>
-                          <height>729</height>
+                          <height>724</height>
                           <width>5</width>
                           <x>550</x>
                           <y>20</y>
@@ -280,7 +280,7 @@
                               <height>30</height>
                               <width>10</width>
                               <x>545</x>
-                              <y>669</y>
+                              <y>664</y>
                             </constraint>
                             <sourceConnections>
                               <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -440,7 +440,7 @@
                           </java.beans.PropertyChangeSupport>
                         </listeners>
                         <constraint>
-                          <height>729</height>
+                          <height>724</height>
                           <width>5</width>
                           <x>734</x>
                           <y>20</y>
@@ -497,10 +497,10 @@
                                     </java.beans.PropertyChangeSupport>
                                   </listeners>
                                   <constraint>
-                                    <height>127</height>
+                                    <height>123</height>
                                     <width>10</width>
                                     <x>358</x>
-                                    <y>441</y>
+                                    <y>436</y>
                                   </constraint>
                                   <sourceConnections>
                                     <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -552,7 +552,7 @@
                                           <height>30</height>
                                           <width>10</width>
                                           <x>927</x>
-                                          <y>528</y>
+                                          <y>519</y>
                                         </constraint>
                                         <sourceConnections>
                                           <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -593,7 +593,7 @@
                                             </java.beans.PropertyChangeSupport>
                                           </listeners>
                                           <constraint>
-                                            <height>729</height>
+                                            <height>724</height>
                                             <width>5</width>
                                             <x>932</x>
                                             <y>20</y>
@@ -619,7 +619,7 @@
                                                 <height>30</height>
                                                 <width>10</width>
                                                 <x>927</x>
-                                                <y>291</y>
+                                                <y>286</y>
                                               </constraint>
                                               <sourceConnections>
                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -752,7 +752,7 @@
                                       </java.beans.PropertyChangeSupport>
                                     </listeners>
                                     <constraint>
-                                      <height>729</height>
+                                      <height>724</height>
                                       <width>5</width>
                                       <x>358</x>
                                       <y>20</y>
@@ -922,7 +922,7 @@
                           </java.beans.PropertyChangeSupport>
                         </listeners>
                         <constraint>
-                          <height>729</height>
+                          <height>724</height>
                           <width>5</width>
                           <x>1140</x>
                           <y>20</y>
@@ -1005,7 +1005,7 @@
                         <height>30</height>
                         <width>10</width>
                         <x>358</x>
-                        <y>614</y>
+                        <y>609</y>
                       </constraint>
                       <sourceConnections/>
                       <targetConnections>
@@ -1265,33 +1265,6 @@ ArrayList batean sartu</content>
         </java.beans.PropertyChangeSupport>
       </listeners>
       <constraint>
-        <height>54</height>
-        <width>100</width>
-        <x>1090</x>
-        <y>501</y>
-      </constraint>
-      <sourceConnections/>
-      <targetConnections/>
-      <children/>
-      <filterProperty/>
-      <content>5 aldiz errepikatu, bakoitzak 5 karta izateko</content>
-      <old></old>
-    </net.java.amateras.uml.model.NoteModel>
-    <net.java.amateras.uml.model.NoteModel>
-      <backgroundColor reference="../../../backgroundColor"/>
-      <foregroundColor reference="../../../foregroundColor"/>
-      <showIcon>true</showIcon>
-      <parent class="net.java.amateras.uml.sequencediagram.model.InteractionModel" reference="../../.."/>
-      <listeners serialization="custom">
-        <java.beans.PropertyChangeSupport>
-          <default>
-            <source class="net.java.amateras.uml.model.NoteModel" reference="../../../.."/>
-            <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
-          </default>
-          <null/>
-        </java.beans.PropertyChangeSupport>
-      </listeners>
-      <constraint>
         <height>42</height>
         <width>100</width>
         <x>738</x>
@@ -1350,7 +1323,7 @@ karta bat eman</old>
         <height>41</height>
         <width>223</width>
         <x>399</x>
-        <y>608</y>
+        <y>596</y>
       </constraint>
       <sourceConnections/>
       <targetConnections/>
