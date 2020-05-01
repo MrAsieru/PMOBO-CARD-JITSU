@@ -9,8 +9,7 @@ import javax.naming.PartialResultException;
 
 public class ListaJokalariak {
 	
-	private JokalariaLokala jokalari1;
-	private JokalariaBot jokalari2;
+	private Jokalaria[] jokalariak;
 	private EfektuMota aurrekoTxandakoEfektua;
 	private boolean aurrekoTxandakoEfektuaZenbakia;
 	private Jokalaria aurrekoTxandakoIrabazlea;
@@ -22,8 +21,7 @@ public class ListaJokalariak {
 	
 	private ListaJokalariak() 
 	{
-		this.jokalari1 = null;
-		this.jokalari2 = null;
+		this.jokalariak = new Jokalaria[2];
 		this.aurrekoTxandakoEfektua = null;
 		this.jokalariBotKarta = null;
 		this.jokalariLokalaKarta = null;
@@ -54,8 +52,8 @@ public class ListaJokalariak {
 		String izena = kontsola.testuaIrakurri();
 		
 		//Jokalariak sortu
-		jokalari1 = JokalariaLokala.getNireJokalaria(izena);
-		jokalari2 = JokalariaBot.getNireJokalaria("Sensei");
+		jokalariak[0] = JokalariaLokala.getNireJokalaria(izena);
+		jokalariak[1] = JokalariaBot.getNireJokalaria("Sensei");
 		
 		//KartaSorta hasieratu
 		kSorta.jsonetikKartetara();
@@ -80,37 +78,37 @@ public class ListaJokalariak {
 		this.kartakBanatu();
 		
 		//Aplikatu aurrreko efektua aurreko txandan galdu duenari
-		if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalari1)) 
+		if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalariak[0])) 
 		{
-			this.aplikatuAurrekoEfektua(jokalari2);
+			this.aplikatuAurrekoEfektua(jokalariak[1]);
 		}
-		else if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalari2)) 
+		else if(aurrekoTxandakoIrabazlea != null && aurrekoTxandakoIrabazlea.equals(jokalariak[1])) 
 		{
-			this.aplikatuAurrekoEfektua(jokalari1);
+			this.aplikatuAurrekoEfektua(jokalariak[0]);
 		}
 		
 		//Txanda imprimatu
-		kontsola.imprimatu(jokalari1.getIzena()+":");
-		/*for(int i=0;i<jokalari1.gordetakoKartenKantitatea();i++) {
-			Karta karta = jokalari1.lortuGordetakoKartaPosz(i);
+		kontsola.imprimatu(jokalariak[0].getIzena()+":");
+		/*for(int i=0;i<jokalariak[0].gordetakoKartenKantitatea();i++) {
+			Karta karta = jokalariak[0].lortuGordetakoKartaPosz(i);
 			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
 		}*/
-		gordetakoKartakImprimatu(jokalari1);
+		gordetakoKartakImprimatu(jokalariak[0]);
 		kontsola.imprimatu(" ");
 		
-		kontsola.imprimatu(jokalari2.getIzena()+":");
-		/*for(int i=0;i<jokalari2.gordetakoKartenKantitatea();i++) {
-			Karta karta = jokalari2.lortuGordetakoKartaPosz(i);
+		kontsola.imprimatu(jokalariak[1].getIzena()+":");
+		/*for(int i=0;i<jokalariak[1].gordetakoKartenKantitatea();i++) {
+			Karta karta = jokalariak[1].lortuGordetakoKartaPosz(i);
 			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
 		}*/
-		gordetakoKartakImprimatu(jokalari2);
+		gordetakoKartakImprimatu(jokalariak[1]);
 		kontsola.imprimatu(" ");
-		kontsola.imprimatu("Zure txanda "+jokalari1.getIzena());
+		kontsola.imprimatu("Zure txanda "+jokalariak[0].getIzena());
 		for(int i=1;i<6;i++) {
 			Karta karta = null;
 			try {
-				karta = jokalari1.lortuJolastekoKartaPosz(i-1);
-				kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalari2.getIzena()):""));
+				karta = jokalariak[0].lortuJolastekoKartaPosz(i-1);
+				kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
 			} catch (TartetikKanpoException e) {
 				//Ez da ezer egin behar (For barruan)
 			}
@@ -120,22 +118,22 @@ public class ListaJokalariak {
 		kontsola.imprimatu("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
-		jokalariLokalaKarta = jokalari1.kartaAukeratu();
-		jokalariBotKarta = jokalari2.kartaAukeratu();
+		jokalariLokalaKarta = jokalariak[0].kartaAukeratu();
+		jokalariBotKarta = jokalariak[1].kartaAukeratu();
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();
 		
 		if(txJok == JokalariMota.LOKALA) {
 			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua():null;
-			aurrekoTxandakoIrabazlea = jokalari1;
-			jokalari1.gehituGordetakoKarta(jokalariLokalaKarta);
-			kontsola.imprimatu(jokalari1.getIzena()+" irabazi du"+((jokalariLokalaKarta instanceof KartaBerezia) ? (", "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena())):"."));
+			aurrekoTxandakoIrabazlea = jokalariak[0];
+			jokalariak[0].gehituGordetakoKarta(jokalariLokalaKarta);
+			kontsola.imprimatu(jokalariak[0].getIzena()+" irabazi du"+((jokalariLokalaKarta instanceof KartaBerezia) ? (", "+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].replaceFirst("<jokalaria>", jokalariak[0].getIzena()).replaceFirst("<jokalariaL>", jokalariak[1].getIzena())):"."));
 		} else if (txJok == JokalariMota.BOT) {
 			aurrekoTxandakoEfektua = (jokalariBotKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariBotKarta).getEfektua():null;
-			aurrekoTxandakoIrabazlea = jokalari2;
-			jokalari2.gehituGordetakoKarta(jokalariBotKarta);
-			kontsola.imprimatu(jokalari2.getIzena()+" irabazi du"+((jokalariBotKarta instanceof KartaBerezia) ? (", "+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena())):"."));
+			aurrekoTxandakoIrabazlea = jokalariak[1];
+			jokalariak[1].gehituGordetakoKarta(jokalariBotKarta);
+			kontsola.imprimatu(jokalariak[1].getIzena()+" irabazi du"+((jokalariBotKarta instanceof KartaBerezia) ? (", "+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].replaceFirst("<jokalaria>", jokalariak[1].getIzena()).replaceFirst("<jokalariaL>", jokalariak[0].getIzena())):"."));
 		} else {
 			aurrekoTxandakoEfektua = null;
 			aurrekoTxandakoIrabazlea = null;
@@ -143,14 +141,14 @@ public class ListaJokalariak {
 		}
 		
 		//Erabilgarri ez diren kartak erabilgarri izatera bueltatu
-		erabilgarriBueltatu(jokalari1);
-		erabilgarriBueltatu(jokalari2);
+		erabilgarriBueltatu(jokalariak[0]);
+		erabilgarriBueltatu(jokalariak[1]);
 		
 		//Partida norbaitek irabazi badu konprobatu
-		if (this.partidarenIrabazleaKonprobatu(jokalari1)) {
-			irabazlea = jokalari1;
-		} else if(this.partidarenIrabazleaKonprobatu(jokalari2)) {
-			irabazlea = jokalari2;
+		if (this.partidarenIrabazleaKonprobatu(jokalariak[0])) {
+			irabazlea = jokalariak[0];
+		} else if(this.partidarenIrabazleaKonprobatu(jokalariak[1])) {
+			irabazlea = jokalariak[1];
 		} else {
 			//Errekurtsibitatea
 			kontsola.enterTekla();
@@ -241,8 +239,8 @@ public class ListaJokalariak {
 
 	private void kartakBanatu() 
 	{
-		jokalari1.gehituJolastekoKarta(kSorta.getKarta());
-		jokalari2.gehituJolastekoKarta(kSorta.getKarta());
+		jokalariak[0].gehituJolastekoKarta(kSorta.getKarta());
+		jokalariak[1].gehituJolastekoKarta(kSorta.getKarta());
 	}
 	
 	private void erabilgarriBueltatu(Jokalaria pJokalaria) {
@@ -508,8 +506,8 @@ public class ListaJokalariak {
 		}
 		
 		//Imprimaketa
-		kontsola.imprimatu(jokalari1.getIzena()+": E:"+elementuaL+" B:"+balioaL+" K:"+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari1.getIzena()).replaceFirst("<jokalariaL>", jokalari2.getIzena()):""));
-		kontsola.imprimatu(jokalari2.getIzena()+": E:"+elementuaB+" B:"+balioaB+" K:"+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalari2.getIzena()).replaceFirst("<jokalariaL>", jokalari1.getIzena()):""));
+		kontsola.imprimatu(jokalariak[0].getIzena()+": E:"+elementuaL+" B:"+balioaL+" K:"+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalariak[0].getIzena()).replaceFirst("<jokalariaL>", jokalariak[1].getIzena()):""));
+		kontsola.imprimatu(jokalariak[1].getIzena()+": E:"+elementuaB+" B:"+balioaB+" K:"+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalariak[1].getIzena()).replaceFirst("<jokalariaL>", jokalariak[0].getIzena()):""));
 		
 		return irabazlea;
 	}
