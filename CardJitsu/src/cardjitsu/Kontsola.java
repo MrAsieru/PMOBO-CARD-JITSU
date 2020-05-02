@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Kontsola {
 	private static Kontsola nireKontsola;
+	Scanner sc = new Scanner(System.in);
 	
 	private Kontsola(){}
 	//Hecho
@@ -17,7 +18,6 @@ public class Kontsola {
 	}
 	
 	public String testuaIrakurri() {
-		Scanner sc = new Scanner(System.in);
 		String sarrera = sc.nextLine();
 		return sarrera;
 	}
@@ -28,10 +28,8 @@ public class Kontsola {
 		boolean datuOna = false;
 		while(!datuOna) {
 			try {
-				Scanner sc = new Scanner(System.in);
 				sarrera = Integer.parseInt(sc.nextLine());
 				datuOna = true;
-				
 			} catch (NumberFormatException e) {
 				imprimatu("Zenbaki bat sartu");
 			}

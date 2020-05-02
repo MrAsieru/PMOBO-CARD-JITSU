@@ -71,12 +71,11 @@ public class ListaJokalariak {
 		
 		//Irabazleari zorionak eman
 		//TODO irabazlea
-		kontsola.imprimatu("Zorionak "+irabazlea.getIzena()+"!");
+		kontsola.imprimatu("Zorionak "+irabazlea.getIzena()+" partida irabazi duzu!");
 		kontsola.enterTekla();
 	}
 
-	private Jokalaria txandaBerria() {
-		//TODO jar egiterakoan garbitu hau aktibatu 
+	private Jokalaria txandaBerria() { 
 		kontsola.kontsolaGarbitu();
 		Jokalaria irabazlea;
 		//Kartak banatu
@@ -94,18 +93,10 @@ public class ListaJokalariak {
 		
 		//Txanda imprimatu
 		kontsola.imprimatu(jokalariak[0].getIzena()+":");
-		/*for(int i=0;i<jokalariak[0].gordetakoKartenKantitatea();i++) {
-			Karta karta = jokalariak[0].lortuGordetakoKartaPosz(i);
-			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
-		}*/
 		gordetakoKartakImprimatu(jokalariak[0]);
 		kontsola.imprimatu(" ");
 		
 		kontsola.imprimatu(jokalariak[1].getIzena()+":");
-		/*for(int i=0;i<jokalariak[1].gordetakoKartenKantitatea();i++) {
-			Karta karta = jokalariak[1].lortuGordetakoKartaPosz(i);
-			kontsola.imprimatu("E: "+karta.getElementua().name()+"\tK: "+karta.getKolorea());
-		}*/
 		gordetakoKartakImprimatu(jokalariak[1]);
 		kontsola.imprimatu(" ");
 		kontsola.imprimatu("Zure txanda "+jokalariak[0].getIzena());
@@ -121,6 +112,16 @@ public class ListaJokalariak {
 		}
 		
 		kontsola.imprimatu("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");
+		
+		//Karta erabilgarriak daudela konprobatu
+		/*if(!erabilgarritasunaKonprobatu(jokalariak[0])) {
+			kontsola.imprimatu(jokalariak[0].getIzena()+" ezin du kartak erabili, "+jokalariak[1].getIzena()+" irabazi du partida.");
+			return jokalariak[1];
+		}
+		if(!erabilgarritasunaKonprobatu(jokalariak[1])) {
+			kontsola.imprimatu(jokalariak[1].getIzena()+" ezin du kartak erabili, "+jokalariak[0].getIzena()+" irabazi du partida.");
+			return jokalariak[0];
+		}*/
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		jokalariLokalaKarta = jokalariak[0].kartaAukeratu();
@@ -248,9 +249,24 @@ public class ListaJokalariak {
 		jokalariak[1].gehituJolastekoKarta(kSorta.getKarta());
 	}
 	
+	private boolean erabilgarritasunaKonprobatu(Jokalaria pJokalaria) {
+		int i = 0;
+		boolean erabilgarriDago = false;
+		try {
+			while (i<5 && !erabilgarriDago) {
+				erabilgarriDago = pJokalaria.lortuJolastekoKartaPosz(i).getErabilgarria();
+				i++;
+			}
+		} catch (TartetikKanpoException e) {
+			//Ez da behar, for barruan
+		}
+		return erabilgarriDago;
+			
+	}
+	
 	private void erabilgarriBueltatu(Jokalaria pJokalaria) {
 		try {
-			for (int i = 0; i<5; i++) {
+			for (int i = 0; i<4; i++) {
 				pJokalaria.lortuJolastekoKartaPosz(i).setErabilgarria(true);
 			}
 		} catch(TartetikKanpoException e) {
