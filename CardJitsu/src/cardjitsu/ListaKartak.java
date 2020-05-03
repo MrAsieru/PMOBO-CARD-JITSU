@@ -32,19 +32,11 @@ public class ListaKartak {
 	}
 	
 	public Karta lortuKartaPosz (int pPos) {
-		Karta k1=null;
-		int lag=0;
-		boolean aurkitua=false;
-		Iterator<Karta> itr=this.getIteradorea();
-		while (itr.hasNext() && !aurkitua) {
-			k1=itr.next();
-			if (lag==pPos) {
-				aurkitua=true;
-			}
-			lag=lag+1;
-		} 
-		if (!aurkitua) {k1=null;}
-		return k1;
+		Karta emaitza = null;
+		if(0<=pPos && pPos <= this.getTamaina()-1) {
+			emaitza = this.lista.get(pPos);
+		}
+		return emaitza;
 	}
 	
 	public int getTamaina() {

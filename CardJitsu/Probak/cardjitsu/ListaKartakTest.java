@@ -88,21 +88,6 @@ public class ListaKartakTest {
 		assertEquals(k3,lis1.lortuKartaPosz(5));
 
 	}
-	
-	@Test(expected = TartetikKanpoException.class)
-	public void testLortuKartaPoszException() throws Exception {
-		Karta k1 = KartaSorta.getKartaSorta().getKarta();
-		Karta k2 = KartaSorta.getKartaSorta().getKarta();
-		Karta k3 = KartaSorta.getKartaSorta().getKarta();
-		lis1.gehituKarta(k1);
-		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
-		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
-		lis1.gehituKarta(k2);
-		lis1.gehituKarta(KartaSorta.getKartaSorta().getKarta());
-		lis1.gehituKarta(k3);
-		
-		lis1.lortuKartaPosz(6);
-	}
 
 	@Test
 	public void testGetTamaina() {
