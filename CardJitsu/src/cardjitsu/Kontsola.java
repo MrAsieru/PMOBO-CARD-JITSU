@@ -67,6 +67,8 @@ public class Kontsola {
 	            System.in.read();
 	        }  
 	        catch(Exception e)
-	        {}  
+	        {
+	        	e.printStackTrace();
+	        }  
 	 }
 }

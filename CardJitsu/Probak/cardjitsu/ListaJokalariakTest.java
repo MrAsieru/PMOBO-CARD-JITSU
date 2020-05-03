@@ -1023,12 +1023,8 @@ public class ListaJokalariakTest {
 	}
 	
 	private void jolastekoKartakEzabatu() {
-		try {
-			while(jok.jolastekoKartenKantitatea()!=0) {
-				jok.kenduJolastekoKarta(jok.lortuJolastekoKartaPosz(0));
-			}
-		} catch(TartetikKanpoException e) {
-			e.printStackTrace();
+		while(jok.jolastekoKartenKantitatea()!=0) {
+			jok.kenduJolastekoKarta(jok.lortuJolastekoKartaPosz(0));
 		}		
 	}
 	private void imprimatuKartak(String pTitulua) {
@@ -1119,13 +1115,9 @@ public class ListaJokalariakTest {
 		jok.gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta(10));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		try {
-			assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
-			assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
-			assertTrue(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
-		} catch (TartetikKanpoException e) {
-			
-		}		
+		assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
+		assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
+		assertTrue(jok.lortuJolastekoKartaPosz(2).getErabilgarria());	
 		
 		gordetakoKartakEzabatu();
 		jolastekoKartakEzabatu();
@@ -1138,13 +1130,9 @@ public class ListaJokalariakTest {
 		jok.gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta(5));
 		listaJ.aplikatuAurrekoEfektua(jok);
 		
-		try {
-			assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
-			assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
-			assertFalse(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
-		} catch (TartetikKanpoException e) {
-			
-		}
+		assertFalse(jok.lortuJolastekoKartaPosz(0).getErabilgarria());
+		assertFalse(jok.lortuJolastekoKartaPosz(1).getErabilgarria());
+		assertFalse(jok.lortuJolastekoKartaPosz(2).getErabilgarria());
 
 	}
 	

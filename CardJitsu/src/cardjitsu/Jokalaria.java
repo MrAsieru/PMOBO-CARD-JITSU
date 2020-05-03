@@ -32,10 +32,7 @@ public abstract class Jokalaria {
 		public void kenduGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.kenduKarta(pKarta);
 		}
-		public Karta lortuJolastekoKartaPosz(int pPos) throws TartetikKanpoException {
-			if(pPos < 0 || 4 < pPos) {
-				throw new TartetikKanpoException();
-			}
+		public Karta lortuJolastekoKartaPosz(int pPos) {
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
 		}
 		public Karta lortuGordetakoKartaPosz(int pPos){
