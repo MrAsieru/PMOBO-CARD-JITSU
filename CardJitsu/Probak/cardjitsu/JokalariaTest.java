@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class JokalariaTest {
 	
-	Jokalaria j1,j2;
+	Jokalaria j1;
 	ListaKartak gk,jk;
 	Karta k1,k2,k3;
 	
@@ -31,6 +31,9 @@ public class JokalariaTest {
 	@After
 	public void tearDown() throws Exception {
 		j1=null;
+		k1=null;
+		k2=null;
+		k3=null;
 	}
 
 	@Test
@@ -41,11 +44,12 @@ public class JokalariaTest {
 	@Test
 	public void testGehituJolastekoKarta() {
 		assertEquals(j1.jolastekoKartenKantitatea(),0);
-		j1.gehituJolastekoKarta(k1);
+		j1.kenduGordetakoKarta(k2);
+		j1.kenduGordetakoKarta(k1);
 		assertEquals(j1.jolastekoKartenKantitatea(),1);
-		j1.gehituJolastekoKarta(k3);
-		j1.gehituJolastekoKarta(k2);
-		assertEquals(j1.jolastekoKartenKantitatea(),3);
+		j1.gehituJolastekoKarta(k1);
+		assertEquals(j1.jolastekoKartenKantitatea(),2);
+		
 	}
 
 	@Test
