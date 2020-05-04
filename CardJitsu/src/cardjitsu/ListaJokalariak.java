@@ -62,7 +62,7 @@ public class ListaJokalariak {
 		//KartaSorta hasieratu
 		kSorta.jsonetikKartetara();
 		
-		//Kartak banatu
+		//Kartakbanatu
 		for (int i = 0; i<4;i++) {
 			this.kartakBanatu();
 		}
@@ -132,6 +132,7 @@ public class ListaJokalariak {
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();
+		kontsola.imprimatu("");
 		
 		if(txJok == JokalariMota.LOKALA) {
 			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua():null;
