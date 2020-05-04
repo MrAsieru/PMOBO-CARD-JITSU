@@ -65,7 +65,6 @@ public class JokalariaTest {
 
 	@Test
 	public void testGehituGordetakoKarta() {
-		assertEquals(j1.gordetakoKartenKantitatea(),0);
 		j1.gehituGordetakoKarta(k1);
 		j1.gehituGordetakoKarta(k2);
 		assertEquals(j1.gordetakoKartenKantitatea(),2);
@@ -93,9 +92,9 @@ public class JokalariaTest {
 	public void testLortuGordetakoKartaPosz() {
 		j1.gehituGordetakoKarta(k3);
 		j1.gehituGordetakoKarta(k2);
-		assertEquals(j1.lortuGordetakoKartaPosz(1),k3);
+		assertEquals(j1.lortuGordetakoKartaPosz(0),k3);
 		j1.kenduGordetakoKarta(k3);
-		assertEquals(j1.lortuGordetakoKartaPosz(1),k2);
+		assertEquals(j1.lortuGordetakoKartaPosz(0),k2);
 	}
 
 	@Test
@@ -110,9 +109,8 @@ public class JokalariaTest {
 
 	@Test
 	public void testJolastekoKartenKantitatea() {
-		assertEquals(j1.jolastekoKartenKantitatea(),0);
-		j1.gehituGordetakoKarta(k2);
-		assertEquals(j1.gordetakoKartenKantitatea(),1);
+		j1.gehituJolastekoKarta(k2);
+		assertEquals(j1.jolastekoKartenKantitatea(),1);
 	}
 
 	@Test
