@@ -36,6 +36,7 @@ public class JokalariaBot extends Jokalaria {
 		boolean aukeratuta = false;
 		Karta karta = null;
 		float randomness = new Random().nextFloat();
+		//Elementu berdina kolore desberdina irabazi sahiatu
 		if(randomness<=0.65 & (elementuBerdinak(ElementuMota.ELURRA).size()>=2 || elementuBerdinak(ElementuMota.SUA).size()>=2 || elementuBerdinak(ElementuMota.URA).size()>=2)) 
 		{
 			ArrayList<Karta> elem = elementuBerdinak(ElementuMota.ELURRA);
@@ -56,6 +57,7 @@ public class JokalariaBot extends Jokalaria {
 				bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
 			}
 		}
+		// Ausazko karta
 		else if(karta==null)
 		{
 			while(!aukeratuta) {
@@ -69,7 +71,7 @@ public class JokalariaBot extends Jokalaria {
 		return karta;
 	}
 	
-	//Strategic metodos
+	//Strategic metodos, elementu berdinak kolore desberdinak irabazi sahiatu
 	
 	private ArrayList<Karta> elementuBerdinak(ElementuMota pElemetua) 
 	{
