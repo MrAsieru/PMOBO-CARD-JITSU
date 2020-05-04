@@ -15,7 +15,7 @@ public abstract class Jokalaria {
 		
 		//gainerako metodoak
 		public void gehituJolastekoKarta (Karta pKarta) {
-			if (jolastekoKartak.getTamaina() <= 5) {
+			if (jolastekoKartak.getTamaina() < 5) {
 				this.jolastekoKartak.gehituKarta(pKarta);
 			} else {
 				Kontsola.getKontsola().imprimatu("Ezin dira izan 5 karta baino gehiago!");

@@ -11,7 +11,7 @@ public class JokalariaTest {
 	
 	Jokalaria j1;
 	ListaKartak gk,jk;
-	Karta k1,k2,k3;
+	Karta k1,k2,k3,k4,k5,k6;
 	
 	@BeforeClass
 	public static void setUpClass() throws Exception {
@@ -26,6 +26,9 @@ public class JokalariaTest {
 		k1=KartaSorta.getKartaSorta().getKarta();
 		k2=KartaSorta.getKartaSorta().getKarta();
 		k3=KartaSorta.getKartaSorta().getKarta();
+		k4=KartaSorta.getKartaSorta().getKarta();
+		k5=KartaSorta.getKartaSorta().getKarta();
+		k6=KartaSorta.getKartaSorta().getKarta();
 	}
 
 	@After
@@ -46,12 +49,15 @@ public class JokalariaTest {
 	@Test
 	public void testGehituJolastekoKarta() {
 		assertEquals(j1.jolastekoKartenKantitatea(),0);
-		j1.kenduGordetakoKarta(k2);
-		j1.kenduGordetakoKarta(k1);
-		assertEquals(j1.jolastekoKartenKantitatea(),1);
-		j1.gehituJolastekoKarta(k1);
+		j1.gehituJolastekoKarta(k2);
+		j1.gehituJolastekoKarta(k3);
 		assertEquals(j1.jolastekoKartenKantitatea(),2);
-		
+		j1.gehituJolastekoKarta(k1);
+		assertEquals(j1.jolastekoKartenKantitatea(),3);
+		j1.gehituJolastekoKarta(k4);
+		j1.gehituJolastekoKarta(k5);
+		assertEquals(j1.jolastekoKartenKantitatea(),5);
+		j1.gehituJolastekoKarta(k6);
 	}
 
 	@Test
@@ -90,8 +96,8 @@ public class JokalariaTest {
 	public void testLortuJolastekoKartaPosz() {
 		j1.gehituJolastekoKarta(k1);
 		j1.gehituJolastekoKarta(k2);
-		assertEquals(j1.lortuJolastekoKartaPosz(1),k1);
-		assertEquals(j1.lortuJolastekoKartaPosz(2),k2);
+		assertEquals(j1.lortuJolastekoKartaPosz(0),k1);
+		assertEquals(j1.lortuJolastekoKartaPosz(1),k2);
 	}
 
 	@Test
