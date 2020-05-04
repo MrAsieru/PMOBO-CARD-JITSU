@@ -104,7 +104,8 @@ public class JokalariaTest {
 		j1.gehituGordetakoKarta(k3);
 		j1.gehituGordetakoKarta(k1);
 		assertEquals(j1.gordetakoKartenKantitatea(),2);
-		j1.kenduGordetakoKarta(k2);
+		j1.kenduGordetakoKarta(k3);
+		assertEquals(j1.gordetakoKartenKantitatea(),1);
 	}
 
 	@Test
