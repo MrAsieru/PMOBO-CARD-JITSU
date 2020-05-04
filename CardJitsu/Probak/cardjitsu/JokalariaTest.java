@@ -30,10 +30,12 @@ public class JokalariaTest {
 
 	@After
 	public void tearDown() throws Exception {
-		j1=null;
-		k1=null;
-		k2=null;
-		k3=null;
+		while(j1.jolastekoKartenKantitatea()>0) {
+			j1.kenduJolastekoKarta(j1.lortuJolastekoKartaPosz(0));
+		}
+		while(j1.gordetakoKartenKantitatea()>0) {
+			j1.kenduGordetakoKarta(j1.lortuGordetakoKartaPosz(0));
+		}
 	}
 
 	@Test
