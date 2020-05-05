@@ -42,19 +42,19 @@ public class JokalariaBot extends Jokalaria {
 			ArrayList<Karta> elem = elementuBerdinak(ElementuMota.ELURRA);
 			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
 			{
-				bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
+				karta =bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
 			}
 			
 			elem = elementuBerdinak(ElementuMota.SUA);
 			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
 			{
-				bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
+				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
 			}
 			
 			elem = elementuBerdinak(ElementuMota.URA);
 			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
 			{
-				bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
+				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
 			}
 		}
 		// Ausazko karta
