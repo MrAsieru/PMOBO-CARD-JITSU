@@ -42,7 +42,7 @@ public class JokalariaBot extends Jokalaria {
 			ArrayList<Karta> elem = elementuBerdinak(ElementuMota.ELURRA);
 			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
 			{
-				karta =bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
+				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
 			}
 			
 			elem = elementuBerdinak(ElementuMota.SUA);
@@ -58,7 +58,7 @@ public class JokalariaBot extends Jokalaria {
 			}
 		}
 		// Ausazko karta
-		else if(karta==null)
+		if(karta==null)
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
