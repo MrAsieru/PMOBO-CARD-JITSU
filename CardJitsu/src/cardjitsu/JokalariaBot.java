@@ -255,7 +255,7 @@ public class JokalariaBot extends Jokalaria {
 		if(logikoa==false) 
 		{
 			float randomness = new Random().nextFloat();
-			if(randomness<=0.8) 
+			if(randomness<=0.6) 
 			{
 				logikoa = true;
 			}
