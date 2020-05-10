@@ -37,25 +37,10 @@ public class JokalariaBot extends Jokalaria {
 		Karta karta = null;
 		float randomness = new Random().nextFloat();
 		//Elementu berdina kolore desberdina irabazi sahiatu
-		if(randomness<=0.65 & (elementuBerdinak(ElementuMota.ELURRA).size()>=2 || elementuBerdinak(ElementuMota.SUA).size()>=2 || elementuBerdinak(ElementuMota.URA).size()>=2)) 
+		if(randomness<=0.75 & (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
-			ArrayList<Karta> elem = elementuBerdinak(ElementuMota.ELURRA);
-			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
-			{
-				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
-			}
-			
-			elem = elementuBerdinak(ElementuMota.SUA);
-			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
-			{
-				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
-			}
-			
-			elem = elementuBerdinak(ElementuMota.URA);
-			if(elem.size()>=2 & koloreDesberdinak(elem).size()>=2) 
-			{
-				karta = bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(elem, koloreDesberdinak(elem));
-			}
+			kartaErabaki(sortuMatrizeKartakElemDes());
+			kartaErabaki(sortuMatrizeKartakElemBer());
 		}
 		// Ausazko karta
 		if(karta==null)
@@ -73,51 +58,75 @@ public class JokalariaBot extends Jokalaria {
 	
 	//Strategic metodos, elementu berdinak kolore desberdinak irabazi sahiatu
 	
-	private ArrayList<Karta> elementuBerdinak(ElementuMota pElemetua) 
+	private Karta kartaErabaki(ArrayList<ArrayList<Karta>> p1) 
 	{
-		ArrayList<Karta> elementuKartak = new ArrayList<Karta>();
-		for(int i=0;i<this.gordetakoKartenKantitatea();i++) 
-		{
-			if(this.lortuGordetakoKartaPosz(i).getElementua()==pElemetua) 
-			{
-				elementuKartak.add(this.lortuGordetakoKartaPosz(i));
-			}
-		}
-		return elementuKartak;
-	}
-	
-	private ArrayList<KoloreMota> koloreDesberdinak(ArrayList<Karta> p1) 
-	{
-		ArrayList<KoloreMota> koloreak = new ArrayList<KoloreMota>();
+		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
 		for(int i=0;i<p1.size();i++) 
 		{
-			if(!koloreak.contains(p1.get(i).getKolorea()))
+			for(int x=0;x<5;x++) 
 			{
-				koloreak.add(p1.get(i).getKolorea());
-			}
-		}
-		return koloreak;
-	}
-	
-	private Karta bilatuAukeratzekKarta_ElementuBerdinak_KoloreDesberdinak(ArrayList<Karta> p1, ArrayList<KoloreMota> p2) 
-	{
-		Karta karta = null;
-		for(int i=0;i<5;i++) 
-		{
-			if(p1.get(1).getElementua().equals(this.lortuJolastekoKartaPosz(i).getElementua())) 
-			{
-				for(int z=0;z<p2.size();z++) 
+				if(p1.get(i).get(0).getElementua()!=p1.get(i).get(1).getElementua() &
+						p1.get(i).get(0).getElementua()!=lortuJolastekoKartaPosz(x).getElementua() &
+						p1.get(i).get(1).getElementua()!=lortuJolastekoKartaPosz(x).getElementua() &
+						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
+						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
+						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa()) 
 				{
-					if(p2.get(z)!=this.lortuJolastekoKartaPosz(i).getKolorea()) 
-					{
-						if(karta.getBalioa()<this.lortuJolastekoKartaPosz(i).getBalioa()) 
-						{
-							karta = this.lortuJolastekoKartaPosz(i);
-						}
-					}
+					karta = lortuJolastekoKartaPosz(x);
+				}
+				if(p1.get(i).get(0).getElementua()==p1.get(i).get(1).getElementua() &
+						p1.get(i).get(0).getElementua()==lortuJolastekoKartaPosz(x).getElementua() &
+						p1.get(i).get(1).getElementua()==lortuJolastekoKartaPosz(x).getElementua() &
+						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
+						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
+						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa()) 
+				{
+					karta = lortuJolastekoKartaPosz(x);
 				}
 			}
 		}
 		return karta;
+	}
+	
+	private ArrayList<ArrayList<Karta>> sortuMatrizeKartakElemDes()
+	{
+		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
+		for(int i=0;i<gordetakoKartenKantitatea();i++) 
+		{
+			for(int x=0;x<gordetakoKartenKantitatea();x++) 
+			{
+				if(lortuGordetakoKartaPosz(i).getElementua()!=lortuGordetakoKartaPosz(x).getElementua() &
+						lortuGordetakoKartaPosz(i).getKolorea()!=lortuGordetakoKartaPosz(x).getKolorea() &
+						x!=i) 
+				{
+					ArrayList<Karta> kartak = new ArrayList<Karta>();
+					kartak.add(lortuGordetakoKartaPosz(i));
+					kartak.add(lortuGordetakoKartaPosz(x));
+					LisKartak.add(kartak);
+				}
+			}
+		}
+		return LisKartak;
+	}
+	
+	private ArrayList<ArrayList<Karta>> sortuMatrizeKartakElemBer()
+	{
+		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
+		for(int i=0;i<gordetakoKartenKantitatea();i++) 
+		{
+			for(int x=0;x<gordetakoKartenKantitatea();x++) 
+			{
+				if(lortuGordetakoKartaPosz(i).getElementua()==lortuGordetakoKartaPosz(x).getElementua() &
+						lortuGordetakoKartaPosz(i).getKolorea()!=lortuGordetakoKartaPosz(x).getKolorea() &
+						x!=i) 
+				{
+					ArrayList<Karta> kartak = new ArrayList<Karta>();
+					kartak.add(lortuGordetakoKartaPosz(i));
+					kartak.add(lortuGordetakoKartaPosz(x));
+					LisKartak.add(kartak);
+				}
+			}
+		}
+		return LisKartak;
 	}
 }
