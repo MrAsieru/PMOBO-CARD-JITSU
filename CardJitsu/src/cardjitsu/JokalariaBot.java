@@ -39,13 +39,13 @@ public class JokalariaBot extends Jokalaria {
 		float randomness1 = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
-		if(randomness1<=0.75 & (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
+		if(randomness1<=0.8 & (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
 			kartaErabaki(sortuMatrizeKartakElemDes());
 			kartaErabaki(sortuMatrizeKartakElemBer());
 		}
 		//Basic counter
-		if(randomness<=0.5  & karta.getBalioa()==-1 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
+		if(randomness<=0.6  & karta.getBalioa()==-1 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
 		{
 			if(irabaziNahiDu().contains(ElementuMota.SUA)) 
 			{
