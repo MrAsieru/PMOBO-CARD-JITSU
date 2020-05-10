@@ -83,7 +83,7 @@ public class JokalariaBot extends Jokalaria {
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
-				if(karta.getErabilgarria()) {
+				if(karta.getErabilgarria() & logikoa(karta)) {
 					aukeratuta = true;
 				}
 			}
@@ -204,5 +204,89 @@ public class JokalariaBot extends Jokalaria {
 			}
 		}
 		return elem;
+	}
+	
+	private boolean logikoa(Karta p1) 
+	{
+		boolean logikoa = true;
+		if(p1 instanceof KartaBerezia) 
+		{
+			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA & !elementuHauDuenKartaDu(ElementuMota.SUA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA & !elementuHauDuenKartaDu(ElementuMota.URA)) 
+			{
+				logikoa = false;
+			}
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA & !elementuHauDuenKartaDu(ElementuMota.ELURRA)) 
+			{
+				logikoa = false;
+			}
+		}
+		if(logikoa==false) 
+		{
+			float randomness = new Random().nextFloat();
+			if(randomness<=0.8) 
+			{
+				logikoa = true;
+			}
+		}
+		return logikoa;
+	}
+	
+	private boolean koloreHauDuenKartaDu(KoloreMota p) 
+	{
+		boolean du = false;
+		JokalariaLokala j = JokalariaLokala.getNireJokalaria();
+		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
+		{
+			if(j.lortuGordetakoKartaPosz(i).getKolorea()==p) 
+			{
+				du=true;
+			}
+		}
+		return du;
+	}
+	private boolean elementuHauDuenKartaDu(ElementuMota p) 
+	{
+		boolean du = false;
+		JokalariaLokala j = JokalariaLokala.getNireJokalaria();
+		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
+		{
+			if(j.lortuGordetakoKartaPosz(i).getElementua()==p) 
+			{
+				du=true;
+			}
+		}
+		return du;
 	}
 }
