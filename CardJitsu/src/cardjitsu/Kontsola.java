@@ -1,11 +1,17 @@
 package cardjitsu;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+import com.diogonunes.jcdp.color.ColoredPrinter;
+import com.diogonunes.jcdp.color.api.Ansi.Attribute;
+import com.diogonunes.jcdp.color.api.Ansi.*;
 
 public class Kontsola {
 	private static Kontsola nireKontsola;
 	Scanner sc = new Scanner(System.in);
+	ColoredPrinter cp = new ColoredPrinter.Builder(1, false).build();
 	
 	private Kontsola(){}
 	//Hecho
@@ -31,15 +37,180 @@ public class Kontsola {
 				sarrera = Integer.parseInt(sc.nextLine());
 				datuOna = true;
 			} catch (NumberFormatException e) {
-				imprimatu("Zenbaki bat sartu");
+				inprimatuLinea("Zenbaki bat sartu","","hor","");
+			} catch (NoSuchElementException e) {
+				inprimatuLinea("Zenbaki bat sartu","","hor","");
 			}
 		}
 		return sarrera;
 	}
 	//Hecho
 	
-	public void imprimatu(String pTestua) {
+	public void inprimatuLinea(String pTestua) {
 		System.out.println(pTestua);
+	}
+	public void inprimatuLinea(String pTestua, String pTestuMota, String pKolAur, String pKolAtz) {
+		String config = "[";
+		//Ansi nola erabili https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf
+		switch(pTestuMota) {
+		case "azp"://Azpimarratu
+			config = config+"4;";
+			break;
+		}
+		
+		switch (pKolAur) {
+		case "ber"://Berdea
+			config = config+"38;2;98;184;71;";
+			break;
+		case "gor"://Gorria
+			config = config+"38;2;227;60;37;";
+			break;
+		case "hor"://Horia
+			config = config+"38;2;251;234;44;";
+			break;
+		case "lar"://Laranja
+			config = config+"38;2;248;149;43;";
+			break;
+		case "mor"://Morea
+			config = config+"38;2;163;153;202;";
+			break;
+		case "urd"://Urdina
+			config = config+"38;2;16;72;160;";
+			break;
+		case "mag":
+			config = config+"38;2;255;0;255;";
+			break;
+		case "zia":
+			config = config+"38;2;0;255;255;";
+			break;
+		case "bel"://Beltza
+			config = config+"38;2;0;0;0;";
+			break;
+		case "zur":
+		default:
+			config = config+"38;2;255;255;255;";
+			break;
+		}
+		
+		switch (pKolAtz) {
+		case "ber"://Berdea
+			config = config+"48;2;98;184;71";
+			break;
+		case "gor"://Gorria
+			config = config+"48;2;227;60;37";
+			break;
+		case "hor"://Horia
+			config = config+"48;2;251;234;44";
+			break;
+		case "lar"://Laranja
+			config = config+"48;2;248;149;43";
+			break;
+		case "mor"://Morea
+			config = config+"48;2;163;153;202";
+			break;
+		case "urd"://Urdina
+			config = config+"48;2;16;72;160";
+			break;
+		case "mag":
+			config = config+"48;2;255;0;255";
+			break;
+		case "zia":
+			config = config+"48;2;0;255;255";
+			break;
+		case "zur"://Beltza
+			config = config+"48;2;255;255;255";
+			break;
+		case "bel":
+		default:
+			config = config+"48;2;0;0;0";
+			break;
+		}
+		
+		this.inprimatuLinea(config+"m"+pTestua+"[0m");
+	}
+	
+	public void inprimatu(String pTestua) {
+		System.out.print(pTestua);
+	}
+	
+	public void inprimatu(String pTestua, String pTestuMota, String pKolAur, String pKolAtz) {
+		String config = "[";
+		//Ansi nola erabili https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf
+		switch(pTestuMota) {
+		case "azp"://Azpimarratu
+			config = config+"4;";
+			break;
+		}
+		
+		switch (pKolAur) {
+		case "ber"://Berdea
+			config = config+"38;2;98;184;71;";
+			break;
+		case "gor"://Gorria
+			config = config+"38;2;227;60;37;";
+			break;
+		case "hor"://Horia
+			config = config+"38;2;251;234;44;";
+			break;
+		case "lar"://Laranja
+			config = config+"38;2;248;149;43;";
+			break;
+		case "mor"://Morea
+			config = config+"38;2;163;153;202;";
+			break;
+		case "urd"://Urdina
+			config = config+"38;2;16;72;160;";
+			break;
+		case "mag":
+			config = config+"38;2;255;0;255;";
+			break;
+		case "zia":
+			config = config+"38;2;0;255;255;";
+			break;
+		case "bel"://Beltza
+			config = config+"38;2;0;0;0;";
+			break;
+		case "zur":
+		default:
+			config = config+"38;2;255;255;255;";
+			break;
+		}
+		
+		switch (pKolAtz) {
+		case "ber"://Berdea
+			config = config+"48;2;98;184;71";
+			break;
+		case "gor"://Gorria
+			config = config+"48;2;227;60;37";
+			break;
+		case "hor"://Horia
+			config = config+"48;2;251;234;44";
+			break;
+		case "lar"://Laranja
+			config = config+"48;2;248;149;43";
+			break;
+		case "mor"://Morea
+			config = config+"48;2;163;153;202";
+			break;
+		case "urd"://Urdina
+			config = config+"48;2;16;72;160";
+			break;
+		case "mag":
+			config = config+"48;2;255;0;255";
+			break;
+		case "zia":
+			config = config+"48;2;0;255;255";
+			break;
+		case "zur"://Beltza
+			config = config+"48;2;255;255;255";
+			break;
+		case "bel":
+		default:
+			config = config+"48;2;0;0;0";
+			break;
+		}
+		
+		this.inprimatu(config+"m"+pTestua+"[0m");
 	}
 	//Hecho
 	

@@ -38,5 +38,5 @@ public abstract class Karta {
 		return this.erabilgarria;
 	}
 	
-	public abstract void imprimatu();
+	public abstract void inprimatu();
 }

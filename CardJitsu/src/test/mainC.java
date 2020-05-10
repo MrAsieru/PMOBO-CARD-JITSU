@@ -1,5 +1,6 @@
 package test;
 
+import java.awt.SystemColor;
 import java.util.Random;
 
 import com.diogonunes.jcdp.color.ColoredPrinter;
@@ -10,41 +11,36 @@ import cardjitsu.*;
 public class mainC {
 	
 	public static void main(String[] args) {
-		// =======================================================
-		// Example of a Colored terminal Printer (WINDOWS or UNIX)
-		// =======================================================
-		System.out.println("");
-
-		//setting a format for all messages
-		ColoredPrinter cp = new ColoredPrinter.Builder(0, false)
-		        .foreground(FColor.WHITE).background(BColor.BLUE)   //setting format
-		        .build();
-		cp.println(cp);
-		cp.println("This printer will always format text with WHITE font on BLUE background.");
-		cp.setAttribute(Attribute.REVERSE);
-		cp.println("From now on, that format is reversed.");
-		System.out.println("ColoredPrinters do not affect System.* format.");
-		cp.print("Even if");
-		System.out.print(" you mix ");
-		cp.println("the two.");
-
-		//using multiple printers for diff purposes
-		ColoredPrinter cpWarn = new ColoredPrinter.Builder(1, true)
-		        .foreground(FColor.YELLOW)
-		        .build();
-		ColoredPrinter cpInfo = new ColoredPrinter.Builder(1, true)
-		        .foreground(FColor.CYAN)
-		        .build();
-		cpWarn.println("This printer displays timestamps and warning messages.");
-		cpInfo.println("And this printer can be used for info messages.");
-
-		//overriding format per message
-		cp = new ColoredPrinter.Builder(1, false)
-		        .build();
-		cp.print("This example used JCDP 4.0.0   ");
-		cp.print("\tMADE ", Attribute.BOLD, FColor.YELLOW, BColor.GREEN);
-		cp.println("IN PORTUGAL", Attribute.BOLD, FColor.YELLOW, BColor.RED);
-		cp.println("I hope you find it useful ;)");
+		ColoredPrinter cp = new ColoredPrinter.Builder(1, false).build();
+		//System.out.println("[48;2;255;165;0mYess[0m");
+		/*
+		 * GORRIA,
+	URDINA,
+	HORIA,
+	BERDEA,
+	LARANJA,
+	MOREA
+		 */
+		/*cp.println("GORRIA", Attribute.BOLD, FColor.RED, BColor.BLACK);
+		cp.println("URDINA", Attribute.BOLD, FColor.BLUE, BColor.BLACK);
+		cp.println("HORIA", Attribute.BOLD, FColor.YELLOW, BColor.BLACK);
+		cp.println("BERDEA", Attribute.BOLD, FColor.GREEN, BColor.BLACK);
+		cp.println("LARANJA", Attribute.BOLD, FColor.WHITE, BColor.BLACK);
+		cp.println("MOREA", Attribute.BOLD, FColor.MAGENTA, BColor.BLACK);*/
+		
+		/*
+		 * 1-ez hasi, bold
+		 * 38-z hasi foreground; 2 rgb 24bit izateko; r;g;b
+		 * 48-z hasi background; 2 rgb 24bit izateko; r;g;b
+		 */
+		/*String kol[] = new String[] {"ber","gor","hor","lar","mor","urd","bel","zur"};
+		for(int i = 0;i<kol.length;i++) {
+			for(int j = 0;j<kol.length;j++) {
+				Kontsola.getKontsola().inprimatuLinea("LOL","", kol[i], kol[j]);
+			}
+		}*/
+		String h = "aaa<bbb>ccc";
+		System.out.print(h.split(">")[1]);
 	}
 
 }

@@ -18,7 +18,7 @@ public abstract class Jokalaria {
 			if (jolastekoKartak.getTamaina() < 5) {
 				this.jolastekoKartak.gehituKarta(pKarta);
 			} else {
-				Kontsola.getKontsola().imprimatu("Ezin dira izan 5 karta baino gehiago!");
+				Kontsola.getKontsola().inprimatuLinea("Ezin dira izan 5 karta baino gehiago!","","gor","");
 			}			
 		}
 		

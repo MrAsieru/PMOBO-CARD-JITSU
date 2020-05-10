@@ -31,10 +31,10 @@ public class JokalariaLokala extends Jokalaria {
 				if (aukeraketa.getErabilgarria()) {
 					lortuta = true;
 				} else {
-					Kontsola.getKontsola().imprimatu("Erabili ahal den karta bat aukeratu mesedez.");
+					Kontsola.getKontsola().inprimatuLinea("Erabili ahal den karta bat aukeratu mesedez.","","hor","");
 				}
 			} else {
-				Kontsola.getKontsola().imprimatu("1-etik 5-era den zenbaki bat sartu mesedez.");
+				Kontsola.getKontsola().inprimatuLinea("1-etik 5-era den zenbaki bat sartu mesedez.","","hor","");
 			}
 		}
 		this.kenduJolastekoKarta(aukeraketa);

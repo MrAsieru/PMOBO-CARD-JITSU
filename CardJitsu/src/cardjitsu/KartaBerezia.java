@@ -21,8 +21,8 @@ public class KartaBerezia extends Karta {
 		return this.deskripzioa;
 	}
 	
-	public void imprimatu() {
+	public void inprimatu() {
 		Kontsola k = Kontsola.getKontsola();
-		k.imprimatu(String.format("E: %s B: %s K: %s Ef: %s D: %s", this.getElementua(), this.getBalioa(), this.getKolorea(), this.getEfektua(), this.getDeskripzioa()));
+		k.inprimatuLinea(String.format("E: %s B: %s K: %s Ef: %s D: %s", this.getElementua(), this.getBalioa(), this.getKolorea(), this.getEfektua(), this.getDeskripzioa()));
 	}
 }
