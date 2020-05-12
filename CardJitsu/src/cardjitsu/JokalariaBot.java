@@ -34,7 +34,7 @@ public class JokalariaBot extends Jokalaria {
 	{
 		
 		boolean aukeratuta = false;
-		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,-1,KoloreMota.BERDEA);
+		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
 		float randomness = new Random().nextFloat();
 		float randomness1 = new Random().nextFloat();
 		
@@ -43,18 +43,18 @@ public class JokalariaBot extends Jokalaria {
 		{
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
-			if(karta1.getBalioa()>=karta2.getBalioa()) 
+			if(karta1.getBalioa()>karta2.getBalioa()) 
 			{
 				karta = karta1;
 			}
-			else if (karta1.getBalioa()<=karta2.getBalioa()) 
+			else if (karta1.getBalioa()<karta2.getBalioa()) 
 			{
 				karta = karta2;
 			}
 			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
 		//Basic counter
-		if(randomness<=0.6  & karta.getBalioa()==-1 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
+		if(randomness<=0.6  & karta.getBalioa()==0 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
 		{
 			if(irabaziNahiDu().contains(ElementuMota.SUA)) 
 			{
@@ -88,7 +88,7 @@ public class JokalariaBot extends Jokalaria {
 			}
 		}
 		// Ausazko karta
-		if(karta.getBalioa()==-1)
+		if(karta.getBalioa()==0)
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
