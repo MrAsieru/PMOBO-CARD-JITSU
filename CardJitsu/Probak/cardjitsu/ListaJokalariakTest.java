@@ -18,7 +18,7 @@ public class ListaJokalariakTest {
 	@Before
 	public void setUp() {
 		listaJ = ListaJokalariak.getNireListaJokalariak();
-		jok = JokalariaLokala.getNireJokalaria("Izena");
+		jok = new JokalariaLokala("Izena");
 	}
 
 	@After

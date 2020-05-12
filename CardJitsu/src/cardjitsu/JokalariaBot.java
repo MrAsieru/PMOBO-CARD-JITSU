@@ -30,7 +30,7 @@ public class JokalariaBot extends Jokalaria {
 		return nireJokalariaBot;
 	}
 	
-	public Karta kartaAukeratu(Jokalaria j) 
+	public Karta kartaAukeratu(JokalariaLokala j) 
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
@@ -178,7 +178,7 @@ public class JokalariaBot extends Jokalaria {
 		return LisKartak;
 	}
 	
-	private ArrayList<ElementuMota> irabaziNahiDu(Jokalaria j) 
+	private ArrayList<ElementuMota> irabaziNahiDu(JokalariaLokala j) 
 	{
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
 		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
@@ -196,20 +196,20 @@ public class JokalariaBot extends Jokalaria {
 			}	
 		}
 		
-		for(int i=0;i<LisKartak.size();i++) 
+		for(int z=0;z<LisKartak.size();z++) 
 		{
-			if(LisKartak.get(i).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(i).get(1).getElementua()==ElementuMota.URA 
-					|| LisKartak.get(i).get(0).getElementua()==ElementuMota.URA & LisKartak.get(i).get(1).getElementua()==ElementuMota.SUA) 
+			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(z).get(1).getElementua()==ElementuMota.URA 
+					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.URA & LisKartak.get(z).get(1).getElementua()==ElementuMota.SUA) 
 			{
 				if(!elem.contains(ElementuMota.ELURRA)) {elem.add(ElementuMota.ELURRA);}
 			}
-			if(LisKartak.get(i).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(i).get(1).getElementua()==ElementuMota.ELURRA 
-					|| LisKartak.get(i).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(i).get(1).getElementua()==ElementuMota.SUA) 
+			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(z).get(1).getElementua()==ElementuMota.ELURRA 
+					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(z).get(1).getElementua()==ElementuMota.SUA) 
 			{
 				if(!elem.contains(ElementuMota.URA)) {elem.add(ElementuMota.URA);}
 			}
-			if(LisKartak.get(i).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(i).get(1).getElementua()==ElementuMota.URA 
-					|| LisKartak.get(i).get(0).getElementua()==ElementuMota.URA & LisKartak.get(i).get(1).getElementua()==ElementuMota.ELURRA) 
+			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(z).get(1).getElementua()==ElementuMota.URA 
+					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.URA & LisKartak.get(z).get(1).getElementua()==ElementuMota.ELURRA) 
 			{
 				if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
 			}
@@ -217,7 +217,7 @@ public class JokalariaBot extends Jokalaria {
 		return elem;
 	}
 	
-	private boolean logikoa(Karta p1,Jokalaria j) 
+	private boolean logikoa(Karta p1,JokalariaLokala j) 
 	{
 		boolean logikoa = true;
 		if(p1 instanceof KartaBerezia) 
@@ -274,7 +274,7 @@ public class JokalariaBot extends Jokalaria {
 		return logikoa;
 	}
 	
-	private boolean koloreHauDuenKartaDu(KoloreMota p,Jokalaria j) 
+	private boolean koloreHauDuenKartaDu(KoloreMota p,JokalariaLokala j) 
 	{
 		boolean du = false;
 		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
@@ -286,7 +286,7 @@ public class JokalariaBot extends Jokalaria {
 		}
 		return du;
 	}
-	private boolean elementuHauDuenKartaDu(ElementuMota p,Jokalaria j) 
+	private boolean elementuHauDuenKartaDu(ElementuMota p,JokalariaLokala j) 
 	{
 		boolean du = false;
 		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 

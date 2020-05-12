@@ -20,7 +20,7 @@ public class JokalariaTest {
 
 	@Before
 	public void setUp() throws Exception {
-		j1=  JokalariaLokala.getNireJokalaria("Lorena");
+		j1 =  new JokalariaLokala("Lorena");
 		jk=new ListaKartak();
 		gk=new ListaKartak();
 		k1=KartaSorta.getKartaSorta().getKarta();

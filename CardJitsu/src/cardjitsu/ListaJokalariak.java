@@ -188,7 +188,7 @@ public class ListaJokalariak {
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
-		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu(jokalariak[0]);
+		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
 		//TODO kendu inprimatu hau
 		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
 		
@@ -848,8 +848,8 @@ public class ListaJokalariak {
 	
 	void aldatuAurrekoIrabazlea(int p1) 
 	{
-		if(p1==0) {aurrekoTxandakoIrabazlea=JokalariaLokala.getNireJokalaria("");}
-		if(p1==1) {aurrekoTxandakoIrabazlea=JokalariaBot.getNireJokalaria("Sensei");}
+		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
+		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
 	}
 	
 	void aldatuZenbakiTxikiarenEfektua(boolean p1) 
