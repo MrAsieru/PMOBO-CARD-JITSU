@@ -56,8 +56,8 @@ public class ListaJokalariak {
 		String izena = kontsola.testuaIrakurri();
 		
 		//Jokalariak sortu
-		jokalariak[0] = JokalariaLokala.getNireJokalaria(izena);
-		jokalariak[1] = JokalariaBot.getNireJokalaria("Sensei");
+		jokalariak[0] = (JokalariaLokala) new JokalariaLokala(izena);
+		jokalariak[1] = (JokalariaBot) new JokalariaBot("Sensei");
 		
 		//KartaSorta hasieratu
 		kSorta.jsonetikKartetara();
@@ -187,8 +187,8 @@ public class ListaJokalariak {
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		
-		jokalariLokalaKarta = jokalariak[0].kartaAukeratu();
-		jokalariBotKarta = jokalariak[1].kartaAukeratu();
+		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
+		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu(jokalariak[0]);
 		//TODO kendu inprimatu hau
 		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
 		

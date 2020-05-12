@@ -30,9 +30,8 @@ public class JokalariaBot extends Jokalaria {
 		return nireJokalariaBot;
 	}
 	
-	public Karta kartaAukeratu() 
+	public Karta kartaAukeratu(Jokalaria j) 
 	{
-		
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
 		float randomness = new Random().nextFloat();
@@ -56,9 +55,9 @@ public class JokalariaBot extends Jokalaria {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili zuzenki
 		//Basic counter
-		if(randomness<=0.6  & karta.getBalioa()==0 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
+		if(randomness<=0.6  & karta.getBalioa()==0 & irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
 		{
-			if(irabaziNahiDu().contains(ElementuMota.SUA)) 
+			if(irabaziNahiDu(j).contains(ElementuMota.SUA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -68,7 +67,7 @@ public class JokalariaBot extends Jokalaria {
 					}
 				}
 			}
-			else if(irabaziNahiDu().contains(ElementuMota.URA)) 
+			else if(irabaziNahiDu(j).contains(ElementuMota.URA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -78,7 +77,7 @@ public class JokalariaBot extends Jokalaria {
 					}
 				}
 			}
-			else if(irabaziNahiDu().contains(ElementuMota.ELURRA)) 
+			else if(irabaziNahiDu(j).contains(ElementuMota.ELURRA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -94,7 +93,7 @@ public class JokalariaBot extends Jokalaria {
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
-				if(karta.getErabilgarria() & logikoa(karta)) {
+				if(karta.getErabilgarria() & logikoa(karta,j)) {
 					aukeratuta = true;
 				}
 			}
@@ -179,9 +178,8 @@ public class JokalariaBot extends Jokalaria {
 		return LisKartak;
 	}
 	
-	private ArrayList<ElementuMota> irabaziNahiDu() 
+	private ArrayList<ElementuMota> irabaziNahiDu(Jokalaria j) 
 	{
-		Jokalaria j = getNireJokalaria(); 
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
 		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
 		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
@@ -219,48 +217,48 @@ public class JokalariaBot extends Jokalaria {
 		return elem;
 	}
 	
-	private boolean logikoa(Karta p1) 
+	private boolean logikoa(Karta p1,Jokalaria j) 
 	{
 		boolean logikoa = true;
 		if(p1 instanceof KartaBerezia) 
 		{
-			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK & !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA & !elementuHauDuenKartaDu(ElementuMota.SUA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA & !elementuHauDuenKartaDu(ElementuMota.SUA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA & !elementuHauDuenKartaDu(ElementuMota.URA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA & !elementuHauDuenKartaDu(ElementuMota.URA,j)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA & !elementuHauDuenKartaDu(ElementuMota.ELURRA)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA & !elementuHauDuenKartaDu(ElementuMota.ELURRA,j)) 
 			{
 				logikoa = false;
 			}
@@ -276,10 +274,9 @@ public class JokalariaBot extends Jokalaria {
 		return logikoa;
 	}
 	
-	private boolean koloreHauDuenKartaDu(KoloreMota p) 
+	private boolean koloreHauDuenKartaDu(KoloreMota p,Jokalaria j) 
 	{
 		boolean du = false;
-		JokalariaLokala j = JokalariaLokala.getNireJokalaria();
 		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
 		{
 			if(j.lortuGordetakoKartaPosz(i).getKolorea()==p) 
@@ -289,10 +286,9 @@ public class JokalariaBot extends Jokalaria {
 		}
 		return du;
 	}
-	private boolean elementuHauDuenKartaDu(ElementuMota p) 
+	private boolean elementuHauDuenKartaDu(ElementuMota p,Jokalaria j) 
 	{
 		boolean du = false;
-		JokalariaLokala j = JokalariaLokala.getNireJokalaria();
 		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
 		{
 			if(j.lortuGordetakoKartaPosz(i).getElementua()==p) 
