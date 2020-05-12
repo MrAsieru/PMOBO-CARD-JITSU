@@ -75,16 +75,25 @@ public class Kontsola {
 			config = config+"38;2;163;153;202;";
 			break;
 		case "urd"://Urdina
-			config = config+"38;2;16;72;160;";
+			config = config+"38;2;30;144;255;";
 			break;
-		case "mag":
+		case "mag"://Magenta
 			config = config+"38;2;255;0;255;";
 			break;
-		case "zia":
+		case "zia"://Zian
 			config = config+"38;2;0;255;255;";
 			break;
 		case "bel"://Beltza
 			config = config+"38;2;0;0;0;";
+			break;
+		case "sua"://Sua
+			config = config+"38;2;255;87;0;";
+			break;
+		case "ura"://Ura
+			config = config+"38;2;65;105;255;";
+			break;
+		case "elu"://Elurra
+			config = config+"38;2;255;255;255;";
 			break;
 		case "zur":
 		default:
@@ -109,7 +118,7 @@ public class Kontsola {
 			config = config+"48;2;163;153;202";
 			break;
 		case "urd"://Urdina
-			config = config+"48;2;16;72;160";
+			config = config+"48;2;30;144;255;";
 			break;
 		case "mag":
 			config = config+"48;2;255;0;255";
@@ -118,6 +127,15 @@ public class Kontsola {
 			config = config+"48;2;0;255;255";
 			break;
 		case "zur"://Beltza
+			config = config+"48;2;255;255;255";
+			break;
+		case "sua"://Sua
+			config = config+"48;2;255;87;0";
+			break;
+		case "ura"://Ura
+			config = config+"48;2;65;105;255";
+			break;
+		case "elu"://Elurra
 			config = config+"48;2;255;255;255";
 			break;
 		case "bel":
@@ -159,7 +177,7 @@ public class Kontsola {
 			config = config+"38;2;163;153;202;";
 			break;
 		case "urd"://Urdina
-			config = config+"38;2;16;72;160;";
+			config = config+"38;2;30;144;255;";
 			break;
 		case "mag":
 			config = config+"38;2;255;0;255;";
@@ -169,6 +187,15 @@ public class Kontsola {
 			break;
 		case "bel"://Beltza
 			config = config+"38;2;0;0;0;";
+			break;
+		case "sua"://Sua
+			config = config+"38;2;255;87;0;";
+			break;
+		case "ura"://Ura
+			config = config+"38;2;65;105;255;";
+			break;
+		case "elu"://Elurra
+			config = config+"38;2;255;255;255;";
 			break;
 		case "zur":
 		default:
@@ -193,7 +220,7 @@ public class Kontsola {
 			config = config+"48;2;163;153;202";
 			break;
 		case "urd"://Urdina
-			config = config+"48;2;16;72;160";
+			config = config+"48;2;30;144;255";
 			break;
 		case "mag":
 			config = config+"48;2;255;0;255";
@@ -202,6 +229,15 @@ public class Kontsola {
 			config = config+"48;2;0;255;255";
 			break;
 		case "zur"://Beltza
+			config = config+"48;2;255;255;255";
+			break;
+		case "sua"://Sua
+			config = config+"48;2;255;87;0";
+			break;
+		case "ura"://Ura
+			config = config+"48;2;65;105;255";
+			break;
+		case "elu"://Elurra
 			config = config+"48;2;255;255;255";
 			break;
 		case "bel":

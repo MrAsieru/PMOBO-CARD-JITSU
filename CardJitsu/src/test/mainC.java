@@ -39,8 +39,9 @@ public class mainC {
 				Kontsola.getKontsola().inprimatuLinea("LOL","", kol[i], kol[j]);
 			}
 		}*/
-		String h = "aaa<bbb>ccc";
-		System.out.print(h.split(">")[1]);
+		Kontsola.getKontsola().inprimatuLinea("URDINA", "", "urd", "");
+		Kontsola.getKontsola().inprimatuLinea("URA", "", "ura", "");
+		Kontsola.getKontsola().inprimatuLinea("ZIAN", "", "zia", "");
 	}
 
 }

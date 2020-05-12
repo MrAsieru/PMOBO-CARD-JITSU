@@ -69,8 +69,8 @@ public class ListaJokalariak {
 		
 		Jokalaria irabazlea = this.txandaBerria();
 		
-		//Irabazleari zorionak eman
-		kontsola.inprimatuLinea("                      ","","","zur");
+		//Irabazleari zorionak eman 
+		kontsola.inprimatuLinea("----------------------","","","zur");
 		kontsola.inprimatuLinea(jokalariak[0].getIzena()+":","","zia","");
 		gordetakoKartakImprimatu(jokalariak[0]);
 		kontsola.inprimatuLinea(" ");
@@ -124,9 +124,9 @@ public class ListaJokalariak {
 			
 			if(karta instanceof KartaBerezia) {
 				if(((KartaBerezia) karta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")) {
-					kontsola.inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<")[0]);
+					efektuaKoloreztatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[0]);
 					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-					kontsola.inprimatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split(">")[1]);
+					efektuaKoloreztatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[1]);			
 				} else {
 					kontsola.inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0]);
 				}
@@ -157,6 +157,8 @@ public class ListaJokalariak {
 		
 		jokalariLokalaKarta = jokalariak[0].kartaAukeratu();
 		jokalariBotKarta = jokalariak[1].kartaAukeratu();
+		//TODO kendu inprimatu hau
+		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();
@@ -171,13 +173,13 @@ public class ListaJokalariak {
 			if(jokalariLokalaKarta instanceof KartaBerezia) {	
 				kontsola.inprimatu(", ");
 				if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].contains("<jokalaria>")) {
-					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
+					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
 					kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
+					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
 				} else if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
-					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
+					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
 					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
+					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
 				} else {
 					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1]);
 				}
@@ -195,13 +197,13 @@ public class ListaJokalariak {
 			if(jokalariBotKarta instanceof KartaBerezia) {	
 				kontsola.inprimatu(", ");
 				if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].contains("<jokalaria>")) {
-					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
+					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
 					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
+					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
 				} else if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
-					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
+					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
 					kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
+					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
 				} else {
 					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1]);
 				}
@@ -584,7 +586,6 @@ public class ListaJokalariak {
 		}
 		
 		//Imprimaketa
-		kontsola.inprimatuLinea(jokalariak[0].getIzena()+": E:"+elementuaL+" B:"+balioaL+" K:"+jokalariLokalaKarta.getKolorea()+((jokalariLokalaKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalariak[0].getIzena()).replaceFirst("<jokalariaL>", jokalariak[1].getIzena()):""));
 		kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
 		kontsola.inprimatu(": E:");
 		elementuKoloreduna(elementuaL);
@@ -594,20 +595,19 @@ public class ListaJokalariak {
 		if(jokalariLokalaKarta instanceof KartaBerezia) {	
 			kontsola.inprimatu(" Ef:");
 			if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].contains("<jokalaria>")) {
-				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
+				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
 				kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
-			} else if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
-				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
+				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
+			} else if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")){
+				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
 				kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
+				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
 			} else {
 				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0]);
 			}
 		}
 		kontsola.inprimatuLinea("");
 		
-		kontsola.inprimatuLinea(jokalariak[1].getIzena()+": E:"+elementuaB+" B:"+balioaB+" K:"+jokalariBotKarta.getKolorea()+((jokalariBotKarta instanceof KartaBerezia) ? " Ef:"+((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].replaceFirst("<jokalaria>", jokalariak[1].getIzena()).replaceFirst("<jokalariaL>", jokalariak[0].getIzena()):""));
 		kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
 		kontsola.inprimatu(": E:");
 		elementuKoloreduna(elementuaB);
@@ -618,13 +618,13 @@ public class ListaJokalariak {
 		if(jokalariBotKarta instanceof KartaBerezia) {		
 			kontsola.inprimatu(" Ef:");
 			if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].contains("<jokalaria>")) {
-				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
+				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
 				kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
-			} else if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
-				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
+				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
+			} else if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")){
+				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
 				kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
+				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
 			} else {
 				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0]);
 			}
@@ -679,11 +679,11 @@ public class ListaJokalariak {
 		Iterator<Karta> itrUr = urKartak.iterator();
 		Iterator<Karta> itrElur = elurKartak.iterator();
 		
-		kontsola.inprimatu("SUA","azp","","");
+		kontsola.inprimatu("SUA","azp","sua","");
 		kontsola.inprimatu("\t");
-		kontsola.inprimatu("URA","azp","","");
+		kontsola.inprimatu("URA","azp","ura","");
 		kontsola.inprimatu("\t");
-		kontsola.inprimatu("ELURRA","azp","","");
+		kontsola.inprimatu("ELURRA","azp","elu","");
 		kontsola.inprimatuLinea("");
 		while(itrSu.hasNext() || itrUr.hasNext() || itrElur.hasNext()) {
 			Karta karta;
@@ -748,14 +748,56 @@ public class ListaJokalariak {
 	private void elementuKoloreduna(ElementuMota pElementua) {
 		switch(pElementua) {
 		case ELURRA:
-			kontsola.inprimatu("ELURRA","","zur","");
+			kontsola.inprimatu("ELURRA","","elu","");
 			break;
 		case SUA:
-			kontsola.inprimatu("SUA","","lar","");
+			kontsola.inprimatu("SUA","","sua","");
 			break;
 		case URA:
-			kontsola.inprimatu("URA","","urd","");
+			kontsola.inprimatu("URA","","ura","");
 			break;			
+		}
+	}
+	
+	private void efektuaKoloreztatu(String pTestua) {
+		if(pTestua.contains("gorria")) {
+			efektuaKoloreztatu(pTestua.split("gorria")[0]);
+			kontsola.inprimatu("gorria","","gor","");
+			efektuaKoloreztatu(pTestua.split("gorria")[1]);
+		} else if (pTestua.contains("urdina")) {
+			efektuaKoloreztatu(pTestua.split("urdina")[0]);
+			kontsola.inprimatu("urdina","","urd","");
+			kontsola.inprimatu(pTestua.split("urdina")[1]);
+		} else if (pTestua.contains("horia")) {
+			efektuaKoloreztatu(pTestua.split("horia")[0]);
+			kontsola.inprimatu("horia","","hor","");
+			efektuaKoloreztatu(pTestua.split("horia")[1]);
+		} else if (pTestua.contains("berdea")) {
+			efektuaKoloreztatu(pTestua.split("berdea")[0]);
+			kontsola.inprimatu("berdea","","ber","");
+			efektuaKoloreztatu(pTestua.split("berdea")[1]);
+		} else if (pTestua.contains("laranja")) {
+			efektuaKoloreztatu(pTestua.split("laranja")[0]);
+			kontsola.inprimatu("laranja","","lar","");
+			efektuaKoloreztatu(pTestua.split("laranja")[1]);
+		} else if (pTestua.contains("morea")) {
+			efektuaKoloreztatu(pTestua.split("morea")[0]);
+			kontsola.inprimatu("morea","","mor","");
+			efektuaKoloreztatu(pTestua.split("morea")[1]);
+		} else if (pTestua.contains("sua")) {
+			efektuaKoloreztatu(pTestua.split("sua")[0]);
+			kontsola.inprimatu("sua","","sua","");
+			efektuaKoloreztatu(pTestua.split("sua")[1]);
+		} else if (pTestua.contains("ura")) {
+			efektuaKoloreztatu(pTestua.split("ura")[0]);
+			kontsola.inprimatu("ura","","ura","");
+			efektuaKoloreztatu(pTestua.split("ura")[1]);
+		} else if (pTestua.contains("elurra")) {
+			efektuaKoloreztatu(pTestua.split("elurra")[0]);
+			kontsola.inprimatu("elurra","","elu","");
+			efektuaKoloreztatu(pTestua.split("elurra")[1]);
+		} else {
+			kontsola.inprimatu(pTestua);
 		}
 	}
 	
