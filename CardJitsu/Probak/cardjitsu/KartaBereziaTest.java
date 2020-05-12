@@ -20,7 +20,7 @@ public class KartaBereziaTest {
 
 	@Test
 	public void testImprimatu() {
-		k1.imprimatu();
+		k1.inprimatu();
 	}
 
 	@Test

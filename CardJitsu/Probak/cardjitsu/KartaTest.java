@@ -59,8 +59,8 @@ public class KartaTest {
 
 	@Test
 	public void testImprimatu() {
-		k1.imprimatu();
-		k2.imprimatu();
+		k1.inprimatu();
+		k2.inprimatu();
 	}
 
 }
