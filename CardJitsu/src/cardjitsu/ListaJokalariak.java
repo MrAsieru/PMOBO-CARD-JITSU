@@ -79,7 +79,11 @@ public class ListaJokalariak {
 		gordetakoKartakImprimatu(jokalariak[1]);
 		kontsola.inprimatuLinea(" ");
 		kontsola.inprimatuLinea("Zorionak "+irabazlea.getIzena()+", partida irabazi duzu!","","bel","zur");
-		kontsola.enterTekla();
+		
+		kontsola.inprimatuLinea("Partida amaitu egin da, beste bat jokatu nahi duzu? [b/e]","","hor","");
+		if("b".equals(kontsola.testuaIrakurri())) {
+			new ListaJokalariak().partidaBerriaHasi();
+		}
 	}
 
 	private Jokalaria txandaBerria() { 
