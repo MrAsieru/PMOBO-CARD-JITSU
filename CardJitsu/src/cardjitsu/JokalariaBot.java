@@ -53,6 +53,8 @@ public class JokalariaBot extends Jokalaria {
 			}
 			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
+		
+		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili zuzenki
 		//Basic counter
 		if(randomness<=0.6  & karta.getBalioa()==0 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
 		{
