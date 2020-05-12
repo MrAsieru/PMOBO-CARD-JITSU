@@ -43,6 +43,7 @@ public class JokalariaBot extends Jokalaria {
 		{
 			karta = kartaErabaki(sortuMatrizeKartakElemDes());
 			karta = kartaErabaki(sortuMatrizeKartakElemBer());
+			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
 		//Basic counter
 		if(randomness<=0.6  & karta.getBalioa()==-1 & irabaziNahiDu().size()==1 || irabaziNahiDu().size()==2) 
@@ -87,8 +88,8 @@ public class JokalariaBot extends Jokalaria {
 					aukeratuta = true;
 				}
 			}
-			this.kenduJolastekoKarta(karta);
 		}
+		this.kenduJolastekoKarta(karta);
 		return karta;
 	}
 	
