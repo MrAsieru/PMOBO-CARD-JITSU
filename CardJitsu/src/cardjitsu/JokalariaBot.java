@@ -41,8 +41,16 @@ public class JokalariaBot extends Jokalaria {
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
 		if(randomness1<=0.7 & (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
-			karta = kartaErabaki(sortuMatrizeKartakElemDes());
-			karta = kartaErabaki(sortuMatrizeKartakElemBer());
+			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
+			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
+			if(karta1.getBalioa()>=karta2.getBalioa()) 
+			{
+				karta = karta1;
+			}
+			else if (karta1.getBalioa()<=karta2.getBalioa()) 
+			{
+				karta = karta2;
+			}
 			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
 		//Basic counter
@@ -107,7 +115,8 @@ public class JokalariaBot extends Jokalaria {
 						p1.get(i).get(1).getElementua()!=lortuJolastekoKartaPosz(x).getElementua() &
 						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
 						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
-						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa()) 
+						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &
+						lortuJolastekoKartaPosz(x).getErabilgarria()) 
 				{
 					karta = lortuJolastekoKartaPosz(x);
 				}
@@ -116,7 +125,8 @@ public class JokalariaBot extends Jokalaria {
 						p1.get(i).get(1).getElementua()==lortuJolastekoKartaPosz(x).getElementua() &
 						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
 						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &
-						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa()) 
+						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &
+						lortuJolastekoKartaPosz(x).getErabilgarria()) 
 				{
 					karta = lortuJolastekoKartaPosz(x);
 				}
