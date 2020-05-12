@@ -136,7 +136,7 @@ public class ListaJokalariak {
 		}
 		
 		//TODO Sensei-ren kartak ez aurkeztu
-		for(int i=1;i<6;i++) {
+		for(int i=1;i<jokalariak[1].jolastekoKartenKantitatea()+1;i++) {
 			Karta karta = null;
 			karta = jokalariak[1].lortuJolastekoKartaPosz(i-1);
 			//kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
