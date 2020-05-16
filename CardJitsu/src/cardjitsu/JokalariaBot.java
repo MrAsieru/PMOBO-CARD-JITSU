@@ -55,19 +55,9 @@ public class JokalariaBot extends Jokalaria {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili zuzenki
 		//Basic counter
-		if(randomness<=0.6  && karta.getBalioa()==0 && irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
+		if(irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
 		{
 			if(irabaziNahiDu(j).contains(ElementuMota.SUA)) 
-			{
-				for(int i=0;i<5;i++) 
-				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
-					{
-						karta=lortuJolastekoKartaPosz(i);
-					}
-				}
-			}
-			else if(irabaziNahiDu(j).contains(ElementuMota.URA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -77,11 +67,21 @@ public class JokalariaBot extends Jokalaria {
 					}
 				}
 			}
-			else if(irabaziNahiDu(j).contains(ElementuMota.ELURRA)) 
+			else if(irabaziNahiDu(j).contains(ElementuMota.URA) ) 
 			{
 				for(int i=0;i<5;i++) 
 				{
 					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					{
+						karta=lortuJolastekoKartaPosz(i);
+					}
+				}
+			}
+			else if(irabaziNahiDu(j).contains(ElementuMota.ELURRA)) 
+			{
+				for(int i=0;i<5;i++) 
+				{
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
