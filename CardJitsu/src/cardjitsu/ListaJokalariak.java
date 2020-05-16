@@ -860,4 +860,5 @@ public class ListaJokalariak {
 		aurrekoTxandakoEfektuaZenbakia = p1;
 	}
 }
+//Que leches pasa que no me deja subir >:v
 
