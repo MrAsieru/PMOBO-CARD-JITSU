@@ -35,10 +35,9 @@ public class JokalariaBot extends Jokalaria {
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
 		float randomness = new Random().nextFloat();
-		float randomness1 = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
-		if(randomness1<=0.7 && (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
+		if(randomness<=0.7 && (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
@@ -53,7 +52,7 @@ public class JokalariaBot extends Jokalaria {
 			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
 		
-		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili zuzenki
+		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili estrategikoki
 		//Basic counter
 		if(irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
 		{
