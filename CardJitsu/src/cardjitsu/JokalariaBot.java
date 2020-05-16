@@ -38,7 +38,7 @@ public class JokalariaBot extends Jokalaria {
 		float randomness1 = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
-		if(randomness1<=0.7 & (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
+		if(randomness1<=0.7 && (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
@@ -55,7 +55,7 @@ public class JokalariaBot extends Jokalaria {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili zuzenki
 		//Basic counter
-		if(randomness<=0.6  & karta.getBalioa()==0 & irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
+		if(randomness<=0.6  && karta.getBalioa()==0 && irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
 		{
 			if(irabaziNahiDu(j).contains(ElementuMota.SUA)) 
 			{
@@ -181,38 +181,29 @@ public class JokalariaBot extends Jokalaria {
 	private ArrayList<ElementuMota> irabaziNahiDu(JokalariaLokala j) 
 	{
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
-		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
-		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
+		for(int i=0;i<j.gordetakoKartenKantitatea();i++)
 		{
-			for(int x=0;x<j.gordetakoKartenKantitatea();x++) 
+			for(int x=0;x<j.gordetakoKartenKantitatea();x++)
 			{
 				if(j.lortuGordetakoKartaPosz(i).getElementua()!=j.lortuGordetakoKartaPosz(x).getElementua() & x!=i) 
 				{
-					ArrayList<Karta> kartak = new ArrayList<Karta>();
-					kartak.add(lortuGordetakoKartaPosz(i));
-					kartak.add(lortuGordetakoKartaPosz(x));
-					LisKartak.add(kartak);
+					if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.SUA & j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.URA)
+							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA & j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					{
+						if(!elem.contains(ElementuMota.ELURRA)) {elem.add(ElementuMota.ELURRA);}
+					}
+					else if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.SUA & j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.ELURRA) 
+							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA & j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					{
+						if(!elem.contains(ElementuMota.URA)) {elem.add(ElementuMota.URA);}
+					} 
+					else if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA & j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA) 
+							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA & j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA)) 
+					{
+						if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
+					}
 				}
 			}	
-		}
-		
-		for(int z=0;z<LisKartak.size();z++) 
-		{
-			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(z).get(1).getElementua()==ElementuMota.URA 
-					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.URA & LisKartak.get(z).get(1).getElementua()==ElementuMota.SUA) 
-			{
-				if(!elem.contains(ElementuMota.ELURRA)) {elem.add(ElementuMota.ELURRA);}
-			}
-			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.SUA & LisKartak.get(z).get(1).getElementua()==ElementuMota.ELURRA 
-					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(z).get(1).getElementua()==ElementuMota.SUA) 
-			{
-				if(!elem.contains(ElementuMota.URA)) {elem.add(ElementuMota.URA);}
-			}
-			if(LisKartak.get(z).get(0).getElementua()==ElementuMota.ELURRA & LisKartak.get(z).get(1).getElementua()==ElementuMota.URA 
-					|| LisKartak.get(z).get(0).getElementua()==ElementuMota.URA & LisKartak.get(z).get(1).getElementua()==ElementuMota.ELURRA) 
-			{
-				if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
-			}
 		}
 		return elem;
 	}
@@ -299,3 +290,4 @@ public class JokalariaBot extends Jokalaria {
 		return du;
 	}
 }
+//a ver si asi
