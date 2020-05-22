@@ -83,6 +83,7 @@ public class ListaJokalariak {
 		
 		//Jokalariak sortu
 		jokalariak[0] = (JokalariaLokala) new JokalariaLokala(izena);
+		jokalariak[1] = null;
 		switch (zailtazuna) {
 			case 1:
 				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy("Sensei");
