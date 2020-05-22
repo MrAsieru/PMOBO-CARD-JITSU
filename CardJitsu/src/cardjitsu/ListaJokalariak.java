@@ -45,6 +45,7 @@ public class ListaJokalariak {
 	
 	public void partidaBerriaHasi() {
 		//Titulua inprimatu
+		kontsola.kontsolaGarbitu();
 		kontsola.inprimatuLinea("   ____              _           _ _ _             ","","lar","");
 		kontsola.inprimatuLinea("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ","","lar","");
 		kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
@@ -55,9 +56,44 @@ public class ListaJokalariak {
 		kontsola.inprimatuLinea("Sartu izena:");
 		String izena = kontsola.testuaIrakurri();
 		
+		//Zailtazuna eskatu
+		boolean zailtazunalortu = false;
+		int zailtazuna = 0;
+		while(!zailtazunalortu) 
+		{
+			kontsola.kontsolaGarbitu();
+			kontsola.inprimatuLinea("   ____              _           _ _ _             ","","lar","");
+			kontsola.inprimatuLinea("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ","","lar","");
+			kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
+			kontsola.inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
+			kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
+			
+			kontsola.inprimatuLinea("Sartu zailtazuna (1=Erreza, 2=Normal eta 3=Zaila):");
+			zailtazuna = kontsola.zenbakiaIrakurri();
+			if(zailtazuna==1 | zailtazuna==2 | zailtazuna==3) 
+			{
+				zailtazunalortu = true;
+			}
+			else
+			{
+				kontsola.inprimatuLinea("Zailtazuna ondo esarri.");
+				kontsola.enterTekla();
+			}
+		}
+		
 		//Jokalariak sortu
 		jokalariak[0] = (JokalariaLokala) new JokalariaLokala(izena);
-		jokalariak[1] = (JokalariaBot) new JokalariaBot("Sensei");
+		switch (zailtazuna) {
+			case 1:
+				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy("Sensei");
+				break;
+			case 2:
+				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal("Sensei");
+				break;
+			case 3:
+				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard("Sensei");
+				break;
+		}
 		
 		//KartaSorta hasieratu
 		kSorta.jsonetikKartetara();
@@ -86,7 +122,7 @@ public class ListaJokalariak {
 		}
 	}
 
-	private Jokalaria txandaBerria() { 
+	private Jokalaria txandaBerria() {
 		kontsola.kontsolaGarbitu();
 		Jokalaria irabazlea;
 		//Kartak banatu
@@ -188,7 +224,10 @@ public class ListaJokalariak {
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
-		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotEasy) ? ((JokalariaBotEasy)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
+		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotNormal) ? ((JokalariaBotNormal)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
+		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotHard) ? ((JokalariaBotHard)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
+		
 		//TODO kendu inprimatu hau
 		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
 		
@@ -846,11 +885,11 @@ public class ListaJokalariak {
 		jokalariBotKarta = p2;
 	}
 	
-	void aldatuAurrekoIrabazlea(int p1) 
-	{
-		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
-		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
-	}
+//	void aldatuAurrekoIrabazlea(int p1) 
+//	{
+//		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
+//		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
+//	}
 	
 	void aldatuZenbakiTxikiarenEfektua(boolean p1) 
 	{aurrekoTxandakoEfektuaZenbakia=p1;}
