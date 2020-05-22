@@ -3,6 +3,7 @@ package cardjitsu;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.io.File;
 
 import javax.naming.PartialResultException;
 
@@ -51,15 +52,20 @@ public class ListaJokalariak {
 		kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
 		kontsola.inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
 		kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
+		kontsola.inprimatuLinea("","","lar","");
+		
 		
 		//Izena eskatu
-		kontsola.inprimatuLinea("Sartu zure izena lehenengoz eta ondoren zure aurkariarena:");
+		kontsola.inprimatuLinea("Sartu izenak");
+		kontsola.inprimatu("Jokalaria: ");
 		String izena = kontsola.testuaIrakurri();
+		kontsola.inprimatu("Aurkaria: ");
 		String izenaSensei = kontsola.testuaIrakurri();
 		
 		//Zailtazuna eskatu
 		boolean zailtazunalortu = false;
-		int zailtazuna = 0;
+		int zailtazunaZenb = 0;
+		String zailtazunaStr = "";
 		while(!zailtazunalortu) 
 		{
 			kontsola.kontsolaGarbitu();
@@ -68,10 +74,16 @@ public class ListaJokalariak {
 			kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
 			kontsola.inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
 			kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
+			kontsola.inprimatuLinea("","","lar","");
 			
-			kontsola.inprimatuLinea("Sartu zailtazuna (1=Erreza, 2=Normal eta 3=Zaila):");
-			zailtazuna = kontsola.zenbakiaIrakurri();
-			if(zailtazuna==1 | zailtazuna==2 | zailtazuna==3) 
+			
+			kontsola.inprimatuLinea("Erabaki zailtazuna zenbakiaren arabera");
+			kontsola.inprimatuLinea("1. Erreza");
+			kontsola.inprimatuLinea("2. Normala");
+			kontsola.inprimatuLinea("3. Zaila");
+			kontsola.inprimatu("Zailtazuna? ");
+			zailtazunaZenb = kontsola.zenbakiaIrakurri();
+			if(zailtazunaZenb==1 | zailtazunaZenb==2 | zailtazunaZenb==3) 
 			{
 				zailtazunalortu = true;
 			}
@@ -85,7 +97,7 @@ public class ListaJokalariak {
 		//Jokalariak sortu
 		jokalariak[0] = (JokalariaLokala) new JokalariaLokala(izena);
 		jokalariak[1] = null;
-		switch (zailtazuna) {
+		switch (zailtazunaZenb) {
 			case 1:
 				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy(izenaSensei);
 				break;
