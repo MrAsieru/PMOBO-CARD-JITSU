@@ -53,8 +53,9 @@ public class ListaJokalariak {
 		kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
 		
 		//Izena eskatu
-		kontsola.inprimatuLinea("Sartu izena:");
+		kontsola.inprimatuLinea("Sartu zure izena lehenengoz eta ondoren zure aurkariarena:");
 		String izena = kontsola.testuaIrakurri();
+		String izenaSensei = kontsola.testuaIrakurri();
 		
 		//Zailtazuna eskatu
 		boolean zailtazunalortu = false;
@@ -86,13 +87,13 @@ public class ListaJokalariak {
 		jokalariak[1] = null;
 		switch (zailtazuna) {
 			case 1:
-				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy("Sensei");
+				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy(izenaSensei);
 				break;
 			case 2:
-				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal("Sensei");
+				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal(izenaSensei);
 				break;
 			case 3:
-				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard("Sensei");
+				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard(izenaSensei);
 				break;
 		}
 		
@@ -225,9 +226,18 @@ public class ListaJokalariak {
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
-		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotEasy) ? ((JokalariaBotEasy)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
-		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotNormal) ? ((JokalariaBotNormal)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
-		jokalariBotKarta = (jokalariak[1] instanceof JokalariaBotHard) ? ((JokalariaBotHard)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : null;
+		if(jokalariak[1] instanceof JokalariaBotEasy) 
+		{
+			jokalariBotKarta = ((JokalariaBotEasy)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		}
+		else if(jokalariak[1] instanceof JokalariaBotNormal) 
+		{
+			jokalariBotKarta = ((JokalariaBotNormal)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		}
+		else if(jokalariak[1] instanceof JokalariaBotHard) 
+		{
+			jokalariBotKarta = ((JokalariaBotHard)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		}
 		
 		//TODO kendu inprimatu hau
 		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
