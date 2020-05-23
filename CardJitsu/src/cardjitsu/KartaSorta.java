@@ -1,10 +1,6 @@
 package cardjitsu;
 
-import java.io.FileReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 
 import org.json.simple.parser.JSONParser;
@@ -48,7 +44,6 @@ public class KartaSorta {
 					ElementuMota elementua = null;
 					int balioa;
 					KoloreMota kolorea = null;
-					boolean erabilgarria;
 					EfektuMota efektua = null;
 					String deskripzioa;
 					boolean kartaBereziaDa = true;
@@ -97,9 +92,6 @@ public class KartaSorta {
 					default:
 						break;
 					}
-					
-					//Erabilgarria
-					erabilgarria = true;
 					
 					//Efektu mota
 					switch(Integer.parseInt((String) karta.get("power_id"))) {

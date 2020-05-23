@@ -1,6 +1,5 @@
 package cardjitsu;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class JokalariaBotEasy extends Jokalaria {

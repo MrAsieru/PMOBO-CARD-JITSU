@@ -1,8 +1,5 @@
 package cardjitsu;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
-
 
 public class ListaKartak {
 	
@@ -12,11 +9,6 @@ public class ListaKartak {
 	//metodo eraikitzailea
 	public ListaKartak() {
 		this.lista= new ArrayList<Karta>();
-	}
-	
-	//gainerako metodoak
-	private Iterator<Karta> getIteradorea(){
-		return this.lista.iterator();
 	}
 	
 	public void  gehituKarta (Karta pKarta) {

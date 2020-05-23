@@ -1,12 +1,7 @@
 package cardjitsu;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.io.File;
-
-import javax.naming.PartialResultException;
-
 
 public class ListaJokalariak {
 	
@@ -58,54 +53,65 @@ public class ListaJokalariak {
 		//Izena eskatu
 		kontsola.inprimatuLinea("Sartu izenak");
 		kontsola.inprimatu("Jokalaria: ");
-		String izena = kontsola.testuaIrakurri();
+		String izenaLokala = kontsola.testuaIrakurri();
+		if (izenaLokala.isEmpty()) izenaLokala = "Jokalaria";
 		kontsola.inprimatu("Aurkaria: ");
-		String izenaSensei = kontsola.testuaIrakurri();
+		String izenaBot = kontsola.testuaIrakurri();
+		if (izenaBot.isEmpty()) izenaBot = "Sensei";
 		
-		//Zailtazuna eskatu
-		boolean zailtazunalortu = false;
-		int zailtazunaZenb = 0;
-		String zailtazunaStr = "";
-		while(!zailtazunalortu) 
+		
+		//zailtasuna eskatu
+		boolean zailtasunalortu = false;
+		int zailtasunaZenb = 0;
+		while(!zailtasunalortu) 
 		{
 			kontsola.kontsolaGarbitu();
-			kontsola.inprimatuLinea("   ____              _           _ _ _             ","","lar","");
-			kontsola.inprimatuLinea("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ","","lar","");
-			kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
-			kontsola.inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
-			kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
-			kontsola.inprimatuLinea("","","lar","");
-			
-			
-			kontsola.inprimatuLinea("Erabaki zailtazuna zenbakiaren arabera");
-			kontsola.inprimatuLinea("1. Erreza");
-			kontsola.inprimatuLinea("2. Normala");
-			kontsola.inprimatuLinea("3. Zaila");
-			kontsola.inprimatu("Zailtazuna? ");
-			zailtazunaZenb = kontsola.zenbakiaIrakurri();
-			if(zailtazunaZenb==1 | zailtazunaZenb==2 | zailtazunaZenb==3) 
+			kontsola.inprimatuLinea("Erabaki zailtasuna zenbakiaren arabera:");
+			kontsola.inprimatu("[1]: ");
+			kontsola.inprimatuLinea("Erraza", "","ber","");
+			kontsola.inprimatu("[2]: ");
+			kontsola.inprimatuLinea("Normala", "","hor","");
+			kontsola.inprimatu("[3]: ");
+			kontsola.inprimatuLinea("Zaila", "","gor","");
+			kontsola.inprimatuLinea("Sartu nahi duzun zailtasuna:");
+			zailtasunaZenb = kontsola.zenbakiaIrakurri();
+			if(zailtasunaZenb==1 || zailtasunaZenb==2 || zailtasunaZenb==3) 
 			{
-				zailtazunalortu = true;
+				zailtasunalortu = true;
+				kontsola.inprimatu("Zailtasun ");
+				switch(zailtasunaZenb) {
+				case 1:
+					kontsola.inprimatu("ERRAZA","","ber","");
+					break;
+				case 2:
+					kontsola.inprimatu("NORMALA","","hor","");
+					break;
+				case 3:
+					kontsola.inprimatu("ZAILA","","gor","");
+					break;
+				}
+				kontsola.inprimatuLinea(" aukeratu da.");
+				
 			}
 			else
 			{
-				kontsola.inprimatuLinea("Zailtazuna ondo esarri.");
+				kontsola.inprimatuLinea("Ez da zailtasunik aukeratu, honetarako 1, 2 edo 3 zenbakiak sartu.");
 				kontsola.enterTekla();
 			}
 		}
 		
 		//Jokalariak sortu
-		jokalariak[0] = (JokalariaLokala) new JokalariaLokala(izena);
+		jokalariak[0] = new JokalariaLokala(izenaLokala);
 		jokalariak[1] = null;
-		switch (zailtazunaZenb) {
+		switch (zailtasunaZenb) {
 			case 1:
-				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy(izenaSensei);
+				jokalariak[1] = new JokalariaBotEasy(izenaBot);
 				break;
 			case 2:
-				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal(izenaSensei);
+				jokalariak[1] = new JokalariaBotNormal(izenaBot);
 				break;
 			case 3:
-				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard(izenaSensei);
+				jokalariak[1] = new JokalariaBotHard(izenaBot);
 				break;
 		}
 		
@@ -517,6 +523,9 @@ public class ListaJokalariak {
 					i++;
 				}
 				break;
+			default:
+				//beste efektuak ez dira kontuan izan behar
+				break;
 			}
 		}
 	}
@@ -552,6 +561,9 @@ public class ListaJokalariak {
 				case BIKENDU:
 					balioaB = balioaB-2;
 					break;
+				default:
+					//beste efektuak ez dira kontuan izan behar
+					break;
 				}
 				break;
 			case 0:
@@ -562,6 +574,9 @@ public class ListaJokalariak {
 					break;
 				case BIKENDU:
 					balioaL = balioaL-2;
+					break;
+				default:
+					//beste efektuak ez dira kontuan izan behar
 					break;
 				}
 				break;
@@ -593,6 +608,9 @@ public class ListaJokalariak {
 				case SUTIKELURRARA:
 					if(elementuaB==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
 					break;
+				default:
+					//beste efektuak ez dira kontuan izan behar
+					break;
 				}
 			}
 		}
@@ -612,6 +630,9 @@ public class ListaJokalariak {
 					break;
 				case SUTIKELURRARA:
 					if(elementuaL==ElementuMota.SUA) {elementuaL=ElementuMota.ELURRA;}
+					break;
+				default:
+					//beste efektuak ez dira kontuan izan behar
 					break;
 				}
 			}

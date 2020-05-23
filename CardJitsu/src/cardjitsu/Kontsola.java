@@ -4,14 +4,9 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import com.diogonunes.jcdp.color.ColoredPrinter;
-import com.diogonunes.jcdp.color.api.Ansi.Attribute;
-import com.diogonunes.jcdp.color.api.Ansi.*;
-
 public class Kontsola {
 	private static Kontsola nireKontsola;
 	Scanner sc = new Scanner(System.in);
-	ColoredPrinter cp = new ColoredPrinter.Builder(1, false).build();
 	
 	private Kontsola(){}
 	//Hecho
