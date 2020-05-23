@@ -101,13 +101,13 @@ public class ListaJokalariak {
 		jokalariak[1] = null;
 		switch (zailtasunaZenb) {
 			case 1:
-				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy(izenaBot);
+				jokalariak[1] = new JokalariaBotEasy(izenaBot);
 				break;
 			case 2:
-				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal(izenaBot);
+				jokalariak[1] = new JokalariaBotNormal(izenaBot);
 				break;
 			case 3:
-				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard(izenaBot);
+				jokalariak[1] = new JokalariaBotHard(izenaBot);
 				break;
 		}
 		
@@ -238,7 +238,6 @@ public class ListaJokalariak {
 		}
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
-		
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
 		jokalariBotKarta = jokalariak[1] instanceof JokalariaBotEasy ? ((JokalariaBotEasy)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) :
 						   jokalariak[1] instanceof JokalariaBotNormal ? ((JokalariaBotNormal)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : 
@@ -914,11 +913,13 @@ public class ListaJokalariak {
 		jokalariBotKarta = p2;
 	}
 	
-//	void aldatuAurrekoIrabazlea(int p1) 
-//	{
-//		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
-//		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
-//	}
+	void aldatuAurrekoIrabazlea(int p1) 
+	{
+		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
+		if(p1==1) {aurrekoTxandakoIrabazlea= jokalariak[1] instanceof JokalariaBotEasy ? (JokalariaBotEasy)jokalariak[1] :
+											 jokalariak[1] instanceof JokalariaBotNormal ? (JokalariaBotNormal)jokalariak[1] : 
+											 (JokalariaBotHard) jokalariak[1];}
+	}
 	
 	private void aldatuZenbakiTxikiarenEfektua(boolean p1) 
 	{aurrekoTxandakoEfektuaZenbakia=p1;}

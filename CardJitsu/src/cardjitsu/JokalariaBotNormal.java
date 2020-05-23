@@ -63,6 +63,7 @@ public class JokalariaBotNormal extends Jokalaria {
 	}
 	
 	//Strategic metodos, elementu berdinak kolore desberdinak irabazi sahiatu
+	
 	private ArrayList<ElementuMota> irabaziNahiDu(JokalariaLokala j) 
 	{
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
@@ -87,6 +88,10 @@ public class JokalariaBotNormal extends Jokalaria {
 					{
 						if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
 					}
+				}
+				if(j.lortuGordetakoKartaPosz(i).getElementua()==j.lortuGordetakoKartaPosz(x).getElementua() && j.lortuGordetakoKartaPosz(i).getKolorea()!=j.lortuGordetakoKartaPosz(x).getKolorea())
+				{
+					elem.add(j.lortuGordetakoKartaPosz(i).getElementua());
 				}
 			}	
 		}

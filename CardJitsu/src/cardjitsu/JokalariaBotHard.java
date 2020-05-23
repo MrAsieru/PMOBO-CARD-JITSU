@@ -14,7 +14,6 @@ public class JokalariaBotHard extends Jokalaria {
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
-		boolean erabakia = false;
 		float randomness = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
@@ -23,7 +22,7 @@ public class JokalariaBotHard extends Jokalaria {
 			Kontsola.getKontsola().inprimatuLinea("Bot-ak irabazi egin nahi du!");
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
-			if(karta1.getBalioa()>karta2.getBalioa()) 
+			if(karta1.getBalioa()>=karta2.getBalioa()) 
 			{
 				karta = karta1;
 			}
@@ -36,10 +35,11 @@ public class JokalariaBotHard extends Jokalaria {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili estrategikoki
 		//Basic counter
-		if(irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
+		ArrayList<ElementuMota> irabazinahidu = irabaziNahiDu(j);
+		if(irabazinahidu.size()==1 || irabazinahidu.size()==2) 
 		{
 			Kontsola.getKontsola().inprimatuLinea("Bot-ak daki irabazi nahi duzula!");
-			if(irabaziNahiDu(j).contains(ElementuMota.SUA)) 
+			if(irabazinahidu.contains(ElementuMota.SUA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -49,7 +49,7 @@ public class JokalariaBotHard extends Jokalaria {
 					}
 				}
 			}
-			else if(irabaziNahiDu(j).contains(ElementuMota.URA) ) 
+			else if(irabazinahidu.contains(ElementuMota.URA) ) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -59,7 +59,7 @@ public class JokalariaBotHard extends Jokalaria {
 					}
 				}
 			}
-			else if(irabaziNahiDu(j).contains(ElementuMota.ELURRA)) 
+			else if(irabazinahidu.contains(ElementuMota.ELURRA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
@@ -185,6 +185,10 @@ public class JokalariaBotHard extends Jokalaria {
 					{
 						if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
 					}
+				}
+				if(j.lortuGordetakoKartaPosz(i).getElementua()==j.lortuGordetakoKartaPosz(x).getElementua() && j.lortuGordetakoKartaPosz(i).getKolorea()!=j.lortuGordetakoKartaPosz(x).getKolorea())
+				{
+					elem.add(j.lortuGordetakoKartaPosz(i).getElementua());
 				}
 			}	
 		}
