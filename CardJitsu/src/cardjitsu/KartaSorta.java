@@ -185,7 +185,10 @@ public class KartaSorta {
 					lista.gehituKarta(kartaB);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Kontsola.getKontsola().inprimatuLinea("Ez da aurkitu karten lista", "", "gor", "");
+				Kontsola.getKontsola().enterTekla();
+				System.exit(0);
+				
 			}			
 		}
 	}
