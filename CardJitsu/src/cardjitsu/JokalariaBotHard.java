@@ -14,11 +14,13 @@ public class JokalariaBotHard extends Jokalaria {
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
+		boolean erabakia = false;
 		float randomness = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
-		if(randomness<=0.7 && (sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
+		if((sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
+			Kontsola.getKontsola().inprimatuLinea("Bot-ak irabazi egin nahi du!");
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
 			if(karta1.getBalioa()>karta2.getBalioa()) 
@@ -36,6 +38,7 @@ public class JokalariaBotHard extends Jokalaria {
 		//Basic counter
 		if(irabaziNahiDu(j).size()==1 || irabaziNahiDu(j).size()==2) 
 		{
+			Kontsola.getKontsola().inprimatuLinea("Bot-ak daki irabazi nahi duzula!");
 			if(irabaziNahiDu(j).contains(ElementuMota.SUA)) 
 			{
 				for(int i=0;i<5;i++) 
@@ -70,6 +73,7 @@ public class JokalariaBotHard extends Jokalaria {
 		// Ausazko karta
 		if(karta.getBalioa()==0)
 		{
+			Kontsola.getKontsola().inprimatuLinea("Bot-ak aleatorio egingo du!");
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
 				if(karta.getErabilgarria() & logikoa(karta,j)) {

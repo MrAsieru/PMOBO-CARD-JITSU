@@ -101,13 +101,13 @@ public class ListaJokalariak {
 		jokalariak[1] = null;
 		switch (zailtasunaZenb) {
 			case 1:
-				jokalariak[1] = new JokalariaBotEasy(izenaBot);
+				jokalariak[1] = (JokalariaBotEasy) new JokalariaBotEasy(izenaBot);
 				break;
 			case 2:
-				jokalariak[1] = new JokalariaBotNormal(izenaBot);
+				jokalariak[1] = (JokalariaBotNormal) new JokalariaBotNormal(izenaBot);
 				break;
 			case 3:
-				jokalariak[1] = new JokalariaBotHard(izenaBot);
+				jokalariak[1] = (JokalariaBotHard) new JokalariaBotHard(izenaBot);
 				break;
 		}
 		
