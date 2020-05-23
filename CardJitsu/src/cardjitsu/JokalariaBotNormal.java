@@ -4,21 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class JokalariaBotNormal extends Jokalaria {
-
-	private static JokalariaBotNormal nireJokalariaBot;
 	
-	protected JokalariaBotNormal(String pIzena)
+	public JokalariaBotNormal(String pIzena)
 	{
 		super(pIzena);
-	}
-	
-	public static JokalariaBotNormal getNireJokalaria(String pIzena) 
-	{
-		if(nireJokalariaBot==null) 
-		{
-			nireJokalariaBot = new JokalariaBotNormal(pIzena);
-		}
-		return nireJokalariaBot;
 	}
 	
 	public Karta kartaAukeratu(JokalariaLokala j) 

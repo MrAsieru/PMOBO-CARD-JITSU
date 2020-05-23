@@ -12,8 +12,6 @@ public class ListaJokalariak {
 	private Karta jokalariLokalaKarta;
 	private Karta jokalariBotKarta;
 	private static ListaJokalariak nireListaJokalariak;
-	private Kontsola kontsola;
-	private KartaSorta kSorta;
 	
 	private ListaJokalariak() 
 	{
@@ -22,8 +20,6 @@ public class ListaJokalariak {
 		this.jokalariBotKarta = null;
 		this.jokalariLokalaKarta = null;
 		this.aurrekoTxandakoEfektuaZenbakia = false;
-		kontsola = Kontsola.getKontsola();
-		kSorta = KartaSorta.getKartaSorta();
 	}
 	
 	public static ListaJokalariak getNireListaJokalariak() 
@@ -41,22 +37,22 @@ public class ListaJokalariak {
 	
 	public void partidaBerriaHasi() {
 		//Titulua inprimatu
-		kontsola.kontsolaGarbitu();
-		kontsola.inprimatuLinea("   ____              _           _ _ _             ","","lar","");
-		kontsola.inprimatuLinea("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ","","lar","");
-		kontsola.inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
-		kontsola.inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
-		kontsola.inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
-		kontsola.inprimatuLinea("","","lar","");
+		Kontsola.getKontsola().kontsolaGarbitu();
+		Kontsola.getKontsola().inprimatuLinea("   ____              _           _ _ _             ","","lar","");
+		Kontsola.getKontsola().inprimatuLinea("  / ___|__ _ _ __ __| |         | (_) |_ ___ _   _ ","","lar","");
+		Kontsola.getKontsola().inprimatuLinea(" | |   / _` | '__/ _` |_____ _  | | | __/ __| | | |","","lar","");
+		Kontsola.getKontsola().inprimatuLinea(" | |__| (_| | | | (_| |_____| |_| | | |_\\__ \\ |_| |","","lar","");
+		Kontsola.getKontsola().inprimatuLinea("  \\____\\__,_|_|  \\__,_|      \\___/|_|\\__|___/\\__,_|","","lar","");
+		Kontsola.getKontsola().inprimatuLinea("","","lar","");
 		
 		
 		//Izena eskatu
-		kontsola.inprimatuLinea("Sartu izenak");
-		kontsola.inprimatu("Jokalaria: ");
-		String izenaLokala = kontsola.testuaIrakurri();
+		Kontsola.getKontsola().inprimatuLinea("Sartu izenak");
+		Kontsola.getKontsola().inprimatu("Jokalaria: ");
+		String izenaLokala = Kontsola.getKontsola().testuaIrakurri();
 		if (izenaLokala.isEmpty()) izenaLokala = "Jokalaria";
-		kontsola.inprimatu("Aurkaria: ");
-		String izenaBot = kontsola.testuaIrakurri();
+		Kontsola.getKontsola().inprimatu("Aurkaria: ");
+		String izenaBot = Kontsola.getKontsola().testuaIrakurri();
 		if (izenaBot.isEmpty()) izenaBot = "Sensei";
 		
 		
@@ -65,38 +61,38 @@ public class ListaJokalariak {
 		int zailtasunaZenb = 0;
 		while(!zailtasunalortu) 
 		{
-			kontsola.kontsolaGarbitu();
-			kontsola.inprimatuLinea("Erabaki zailtasuna zenbakiaren arabera:");
-			kontsola.inprimatu("[1]: ");
-			kontsola.inprimatuLinea("Erraza", "","ber","");
-			kontsola.inprimatu("[2]: ");
-			kontsola.inprimatuLinea("Normala", "","hor","");
-			kontsola.inprimatu("[3]: ");
-			kontsola.inprimatuLinea("Zaila", "","gor","");
-			kontsola.inprimatuLinea("Sartu nahi duzun zailtasuna:");
-			zailtasunaZenb = kontsola.zenbakiaIrakurri();
+			Kontsola.getKontsola().kontsolaGarbitu();
+			Kontsola.getKontsola().inprimatuLinea("Erabaki zailtasuna zenbakiaren arabera:");
+			Kontsola.getKontsola().inprimatu("[1]: ");
+			Kontsola.getKontsola().inprimatuLinea("Erraza", "","ber","");
+			Kontsola.getKontsola().inprimatu("[2]: ");
+			Kontsola.getKontsola().inprimatuLinea("Normala", "","hor","");
+			Kontsola.getKontsola().inprimatu("[3]: ");
+			Kontsola.getKontsola().inprimatuLinea("Zaila", "","gor","");
+			Kontsola.getKontsola().inprimatuLinea("Sartu nahi duzun zailtasuna:");
+			zailtasunaZenb = Kontsola.getKontsola().zenbakiaIrakurri();
 			if(zailtasunaZenb==1 || zailtasunaZenb==2 || zailtasunaZenb==3) 
 			{
 				zailtasunalortu = true;
-				kontsola.inprimatu("Zailtasun ");
+				Kontsola.getKontsola().inprimatu("Zailtasun ");
 				switch(zailtasunaZenb) {
 				case 1:
-					kontsola.inprimatu("ERRAZA","","ber","");
+					Kontsola.getKontsola().inprimatu("ERRAZA","","ber","");
 					break;
 				case 2:
-					kontsola.inprimatu("NORMALA","","hor","");
+					Kontsola.getKontsola().inprimatu("NORMALA","","hor","");
 					break;
 				case 3:
-					kontsola.inprimatu("ZAILA","","gor","");
+					Kontsola.getKontsola().inprimatu("ZAILA","","gor","");
 					break;
 				}
-				kontsola.inprimatuLinea(" aukeratu da.");
+				Kontsola.getKontsola().inprimatuLinea(" aukeratu da.");
 				
 			}
 			else
 			{
-				kontsola.inprimatuLinea("Ez da zailtasunik aukeratu, honetarako 1, 2 edo 3 zenbakiak sartu.");
-				kontsola.enterTekla();
+				Kontsola.getKontsola().inprimatuLinea("Ez da zailtasunik aukeratu, honetarako 1, 2 edo 3 zenbakiak sartu.");
+				Kontsola.getKontsola().enterTekla();
 			}
 		}
 		
@@ -116,7 +112,7 @@ public class ListaJokalariak {
 		}
 		
 		//KartaSorta hasieratu
-		kSorta.jsonetikKartetara();
+		KartaSorta.getKartaSorta().jsonetikKartetara();
 		
 		//Kartakbanatu
 		for (int i = 0; i<4;i++) {
@@ -126,24 +122,24 @@ public class ListaJokalariak {
 		Jokalaria irabazlea = this.txandaBerria();
 		
 		//Irabazleari zorionak eman 
-		kontsola.inprimatuLinea("----------------------","","","zur");
-		kontsola.inprimatuLinea(jokalariak[0].getIzena()+":","","zia","");
+		Kontsola.getKontsola().inprimatuLinea("----------------------","","","zur");
+		Kontsola.getKontsola().inprimatuLinea(jokalariak[0].getIzena()+":","","zia","");
 		gordetakoKartakImprimatu(jokalariak[0]);
-		kontsola.inprimatuLinea(" ");
+		Kontsola.getKontsola().inprimatuLinea(" ");
 		
-		kontsola.inprimatuLinea(jokalariak[1].getIzena()+":","","mag","");
+		Kontsola.getKontsola().inprimatuLinea(jokalariak[1].getIzena()+":","","mag","");
 		gordetakoKartakImprimatu(jokalariak[1]);
-		kontsola.inprimatuLinea(" ");
-		kontsola.inprimatuLinea("Zorionak "+irabazlea.getIzena()+", partida irabazi duzu!","","bel","zur");
+		Kontsola.getKontsola().inprimatuLinea(" ");
+		Kontsola.getKontsola().inprimatuLinea("Zorionak "+irabazlea.getIzena()+", partida irabazi duzu!","","bel","zur");
 		
-		kontsola.inprimatuLinea("Partida amaitu egin da, beste bat jokatu nahi duzu? [b/e]","","hor","");
-		if("b".equals(kontsola.testuaIrakurri())) {
+		Kontsola.getKontsola().inprimatuLinea("Partida amaitu egin da, beste bat jokatu nahi duzu? [b/e]","","hor","");
+		if("b".equals(Kontsola.getKontsola().testuaIrakurri())) {
 			new ListaJokalariak().partidaBerriaHasi();
 		}
 	}
 
 	private Jokalaria txandaBerria() {
-		kontsola.kontsolaGarbitu();
+		Kontsola.getKontsola().kontsolaGarbitu();
 		Jokalaria irabazlea;
 		//Kartak banatu
 		this.kartakBanatu();
@@ -159,85 +155,85 @@ public class ListaJokalariak {
 		}
 		
 		//Txanda imprimatu
-		kontsola.inprimatuLinea(jokalariak[0].getIzena()+":","","zia","");
+		Kontsola.getKontsola().inprimatuLinea(jokalariak[0].getIzena()+":","","zia","");
 		gordetakoKartakImprimatu(jokalariak[0]);
-		kontsola.inprimatuLinea(" ");
+		Kontsola.getKontsola().inprimatuLinea(" ");
 		
-		kontsola.inprimatuLinea(jokalariak[1].getIzena()+":","","mag","");
+		Kontsola.getKontsola().inprimatuLinea(jokalariak[1].getIzena()+":","","mag","");
 		gordetakoKartakImprimatu(jokalariak[1]);
-		kontsola.inprimatuLinea(" ");
-		kontsola.inprimatu("Zure txanda ");
-		kontsola.inprimatuLinea(jokalariak[0].getIzena(),"","zia","");
+		Kontsola.getKontsola().inprimatuLinea(" ");
+		Kontsola.getKontsola().inprimatu("Zure txanda ");
+		Kontsola.getKontsola().inprimatuLinea(jokalariak[0].getIzena(),"","zia","");
 		for(int i=1;i<6;i++) {
 			Karta karta = null;
 			karta = jokalariak[0].lortuJolastekoKartaPosz(i-1);
-			//kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
+			//Kontsola.getKontsola().imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
 			
-			kontsola.inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:");
+			Kontsola.getKontsola().inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:");
 			
 			elementuKoloreduna(karta.getElementua());
-			kontsola.inprimatu("\tB:"+karta.getBalioa()+"\tK:");
+			Kontsola.getKontsola().inprimatu("\tB:"+karta.getBalioa()+"\tK:");
 
 			kartaKoloreduna(karta.getKolorea());
 			
-			kontsola.inprimatu("  ");//Tabuladorea ondo funtzionatzeko
+			Kontsola.getKontsola().inprimatu("  ");//Tabuladorea ondo funtzionatzeko
 			
 			if(karta instanceof KartaBerezia) {
 				if(((KartaBerezia) karta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")) {
 					efektuaKoloreztatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[0]);
-					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 					efektuaKoloreztatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[1]);			
 				} else {
-					kontsola.inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0]);
+					Kontsola.getKontsola().inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0]);
 				}
 				
 			}
-			kontsola.inprimatuLinea("");
+			Kontsola.getKontsola().inprimatuLinea("");
 		}
 		
 		//TODO Sensei-ren kartak ez aurkeztu
 		for(int i=1;i<jokalariak[1].jolastekoKartenKantitatea()+1;i++) {
 			Karta karta = null;
 			karta = jokalariak[1].lortuJolastekoKartaPosz(i-1);
-			//kontsola.imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
+			//Kontsola.getKontsola().imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
 			
-			kontsola.inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:","","gor","");
+			Kontsola.getKontsola().inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:","","gor","");
 			
 			elementuKoloreduna(karta.getElementua());
-			kontsola.inprimatu("\tB:"+karta.getBalioa()+"\tK:","","gor","");
+			Kontsola.getKontsola().inprimatu("\tB:"+karta.getBalioa()+"\tK:","","gor","");
 
 			kartaKoloreduna(karta.getKolorea());
 			
-			kontsola.inprimatu("  ");//Tabuladorea ondo funtzionatzeko
+			Kontsola.getKontsola().inprimatu("  ");//Tabuladorea ondo funtzionatzeko
 			
 			if(karta instanceof KartaBerezia) {
 				if(((KartaBerezia) karta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")) {
 					efektuaKoloreztatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[0]);
-					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 					efektuaKoloreztatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[1]);			
 				} else {
-					kontsola.inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0],"","gor","");
+					Kontsola.getKontsola().inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0],"","gor","");
 				}
 				
 			}
-			kontsola.inprimatuLinea("");
+			Kontsola.getKontsola().inprimatuLinea("");
 		}
 		
-		kontsola.inprimatuLinea("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");
+		Kontsola.getKontsola().inprimatuLinea("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");
 		
 		//Karta erabilgarriak daudela konprobatu
 		if(!erabilgarritasunaKonprobatu(jokalariak[0])) {
-			kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-			kontsola.inprimatu(" ezin du kartak erabili, ");
-			kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-			kontsola.inprimatuLinea(" irabazi du partida.");
+			Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
+			Kontsola.getKontsola().inprimatu(" ezin du kartak erabili, ");
+			Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
+			Kontsola.getKontsola().inprimatuLinea(" irabazi du partida.");
 			return jokalariak[1];
 		}
 		if(!erabilgarritasunaKonprobatu(jokalariak[1])) {
-			kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-			kontsola.inprimatu(" ezin du kartak erabili, ");
-			kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-			kontsola.inprimatuLinea(" irabazi du partida.");
+			Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
+			Kontsola.getKontsola().inprimatu(" ezin du kartak erabili, ");
+			Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
+			Kontsola.getKontsola().inprimatuLinea(" irabazi du partida.");
 			return jokalariak[0];
 		}
 		
@@ -262,59 +258,59 @@ public class ListaJokalariak {
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();
-		kontsola.inprimatuLinea("");
+		Kontsola.getKontsola().inprimatuLinea("");
 		
 		if(txJok == JokalariMota.LOKALA) {
 			aurrekoTxandakoEfektua = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua():null;
 			aurrekoTxandakoIrabazlea = jokalariak[0];
 			jokalariak[0].gehituGordetakoKarta(jokalariLokalaKarta);
-			kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-			kontsola.inprimatu(" irabazi du");
+			Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
+			Kontsola.getKontsola().inprimatu(" irabazi du");
 			if(jokalariLokalaKarta instanceof KartaBerezia) {	
-				kontsola.inprimatu(", ");
+				Kontsola.getKontsola().inprimatu(", ");
 				if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].contains("<jokalaria>")) {
 					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
-					kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
+					Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
 					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
 				} else if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
 					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split("<")[0]);
-					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 					efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
 				} else {
-					kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1]);
+					Kontsola.getKontsola().inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[1]);
 				}
-				kontsola.inprimatuLinea("");
+				Kontsola.getKontsola().inprimatuLinea("");
 			} else {
-				kontsola.inprimatuLinea(".");
+				Kontsola.getKontsola().inprimatuLinea(".");
 			}
 			
 		} else if (txJok == JokalariMota.BOT) {
 			aurrekoTxandakoEfektua = (jokalariBotKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariBotKarta).getEfektua():null;
 			aurrekoTxandakoIrabazlea = jokalariak[1];
 			jokalariak[1].gehituGordetakoKarta(jokalariBotKarta);
-			kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-			kontsola.inprimatu(" irabazi du");
+			Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
+			Kontsola.getKontsola().inprimatu(" irabazi du");
 			if(jokalariBotKarta instanceof KartaBerezia) {	
-				kontsola.inprimatu(", ");
+				Kontsola.getKontsola().inprimatu(", ");
 				if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].contains("<jokalaria>")) {
 					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
-					kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);					
 				} else if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].contains("<jokalariaL>")){
 					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split("<")[0]);
-					kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
+					Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
 					efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1].split(">")[1]);	
 				} else {
-					kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1]);
+					Kontsola.getKontsola().inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[1]);
 				}
-				kontsola.inprimatuLinea("");
+				Kontsola.getKontsola().inprimatuLinea("");
 			} else {
-				kontsola.inprimatuLinea(".");
+				Kontsola.getKontsola().inprimatuLinea(".");
 			}
 		} else {
 			aurrekoTxandakoEfektua = null;
 			aurrekoTxandakoIrabazlea = null;
-			kontsola.inprimatuLinea("Berdinketa bat egon da.");
+			Kontsola.getKontsola().inprimatuLinea("Berdinketa bat egon da.");
 		}
 		
 		//Erabilgarri ez diren kartak erabilgarri izatera bueltatu
@@ -328,14 +324,14 @@ public class ListaJokalariak {
 			irabazlea = jokalariak[1];
 		} else {
 			//Errekurtsibitatea
-			kontsola.enterTekla();
+			Kontsola.getKontsola().enterTekla();
 			irabazlea = this.txandaBerria();
 		}
 		
 		return irabazlea;
 	}
 
-	boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
+	private boolean partidarenIrabazleaKonprobatu(Jokalaria pJokalaria) 
 	{
 		boolean irabaziDu = false;
 		
@@ -416,8 +412,8 @@ public class ListaJokalariak {
 
 	private void kartakBanatu() 
 	{
-		jokalariak[0].gehituJolastekoKarta(kSorta.getKarta());
-		jokalariak[1].gehituJolastekoKarta(kSorta.getKarta());
+		jokalariak[0].gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta());
+		jokalariak[1].gehituJolastekoKarta(KartaSorta.getKartaSorta().getKarta());
 	}
 	
 	private boolean erabilgarritasunaKonprobatu(Jokalaria pJokalaria) {
@@ -437,7 +433,7 @@ public class ListaJokalariak {
 		}		
 	}
 
-	void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
+	private void aplikatuAurrekoEfektua(Jokalaria pJokalaria) 
 	{
 		
 		int listaTam = pJokalaria.gordetakoKartenKantitatea(); 
@@ -530,7 +526,7 @@ public class ListaJokalariak {
 		}
 	}
 
-	JokalariMota kartakKonprobatu() 
+	private JokalariMota kartakKonprobatu() 
 	{
 		//Baloreak gorde
 		
@@ -539,8 +535,6 @@ public class ListaJokalariak {
 		ElementuMota elementuaB = jokalariBotKarta.getElementua();
 		int balioaL =  jokalariLokalaKarta.getBalioa();
 		int balioaB =  jokalariBotKarta.getBalioa();
-		EfektuMota efektuL = (jokalariLokalaKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariLokalaKarta).getEfektua() : null;
-		EfektuMota efektuB = (jokalariBotKarta instanceof KartaBerezia) ? ((KartaBerezia) jokalariBotKarta).getEfektua() : null;
 		boolean minwin = false;
 		int finala = -1;
 		
@@ -701,55 +695,55 @@ public class ListaJokalariak {
 		}
 		
 		//Imprimaketa
-		kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
-		kontsola.inprimatu(": E:");
+		Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
+		Kontsola.getKontsola().inprimatu(": E:");
 		elementuKoloreduna(elementuaL);
-		kontsola.inprimatu(" B:"+balioaL+" K:");
+		Kontsola.getKontsola().inprimatu(" B:"+balioaL+" K:");
 		kartaKoloreduna(jokalariLokalaKarta.getKolorea());
 		
 		if(jokalariLokalaKarta instanceof KartaBerezia) {	
-			kontsola.inprimatu(" Ef:");
+			Kontsola.getKontsola().inprimatu(" Ef:");
 			if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].contains("<jokalaria>")) {
 				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
-				kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
+				Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
 				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
 			} else if(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")){
 				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split("<")[0]);
-				kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+				Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 				efektuaKoloreztatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
 			} else {
-				kontsola.inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0]);
+				Kontsola.getKontsola().inprimatu(((KartaBerezia) jokalariLokalaKarta).getDeskripzioa().split("#")[0]);
 			}
 		}
-		kontsola.inprimatuLinea("");
+		Kontsola.getKontsola().inprimatuLinea("");
 		
-		kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
-		kontsola.inprimatu(": E:");
+		Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
+		Kontsola.getKontsola().inprimatu(": E:");
 		elementuKoloreduna(elementuaB);
-		kontsola.inprimatu(" B:"+balioaB+" K:");
+		Kontsola.getKontsola().inprimatu(" B:"+balioaB+" K:");
 		kartaKoloreduna(jokalariBotKarta.getKolorea());
 		
 		
 		if(jokalariBotKarta instanceof KartaBerezia) {		
-			kontsola.inprimatu(" Ef:");
+			Kontsola.getKontsola().inprimatu(" Ef:");
 			if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].contains("<jokalaria>")) {
 				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
-				kontsola.inprimatu(jokalariak[1].getIzena(),"","mag","");
+				Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
 				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);					
 			} else if(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")){
 				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split("<")[0]);
-				kontsola.inprimatu(jokalariak[0].getIzena(),"","zia","");
+				Kontsola.getKontsola().inprimatu(jokalariak[0].getIzena(),"","zia","");
 				efektuaKoloreztatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0].split(">")[1]);	
 			} else {
-				kontsola.inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0]);
+				Kontsola.getKontsola().inprimatu(((KartaBerezia) jokalariBotKarta).getDeskripzioa().split("#")[0]);
 			}
 		}
-		kontsola.inprimatuLinea("");
+		Kontsola.getKontsola().inprimatuLinea("");
 		
 		return irabazlea;
 	}
 
-	boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
+	private boolean elementuaIrabazi(ElementuMota pElementua1,ElementuMota pElementua2) 
 	{	boolean irabazi=false;
 		if(pElementua1==ElementuMota.SUA && pElementua2==ElementuMota.ELURRA) {
 			irabazi=true;
@@ -794,12 +788,12 @@ public class ListaJokalariak {
 		Iterator<Karta> itrUr = urKartak.iterator();
 		Iterator<Karta> itrElur = elurKartak.iterator();
 		
-		kontsola.inprimatu("SUA","azp","sua","");
-		kontsola.inprimatu("\t");
-		kontsola.inprimatu("URA","azp","ura","");
-		kontsola.inprimatu("\t");
-		kontsola.inprimatu("ELURRA","azp","elu","");
-		kontsola.inprimatuLinea("");
+		Kontsola.getKontsola().inprimatu("SUA","azp","sua","");
+		Kontsola.getKontsola().inprimatu("\t");
+		Kontsola.getKontsola().inprimatu("URA","azp","ura","");
+		Kontsola.getKontsola().inprimatu("\t");
+		Kontsola.getKontsola().inprimatu("ELURRA","azp","elu","");
+		Kontsola.getKontsola().inprimatuLinea("");
 		while(itrSu.hasNext() || itrUr.hasNext() || itrElur.hasNext()) {
 			Karta karta;
 			Karta sua;
@@ -826,13 +820,13 @@ public class ListaJokalariak {
 				elurra = null;
 			}
 			
-			//kontsola.inprimatuLinea(sua+((sua.length()!=0)?("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra))):("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra)))));
+			//Kontsola.getKontsola().inprimatuLinea(sua+((sua.length()!=0)?("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra))):("\t"+ura+((ura.length()!=0)?("\t"+elurra):("\t"+elurra)))));
 			if(sua!=null)kartaKoloreduna(sua.getKolorea());
-			kontsola.inprimatu("\t");
+			Kontsola.getKontsola().inprimatu("\t");
 			if(ura!=null)kartaKoloreduna(ura.getKolorea());
-			kontsola.inprimatu("\t");
+			Kontsola.getKontsola().inprimatu("\t");
 			if(elurra!=null)kartaKoloreduna(elurra.getKolorea());
-			kontsola.inprimatuLinea("");
+			Kontsola.getKontsola().inprimatuLinea("");
 		}
 		
 	}
@@ -840,22 +834,22 @@ public class ListaJokalariak {
 	private void kartaKoloreduna(KoloreMota pKolorea) {
 		switch(pKolorea) {
 		case BERDEA:
-			kontsola.inprimatu("BERDEA","","ber","");
+			Kontsola.getKontsola().inprimatu("BERDEA","","ber","");
 			break;
 		case GORRIA:
-			kontsola.inprimatu("GORRIA","","gor","");
+			Kontsola.getKontsola().inprimatu("GORRIA","","gor","");
 			break;
 		case HORIA:
-			kontsola.inprimatu("HORIA","","hor","");
+			Kontsola.getKontsola().inprimatu("HORIA","","hor","");
 			break;
 		case LARANJA:
-			kontsola.inprimatu("LARANJA","","lar","");
+			Kontsola.getKontsola().inprimatu("LARANJA","","lar","");
 			break;
 		case MOREA:
-			kontsola.inprimatu("MOREA","","mor","");
+			Kontsola.getKontsola().inprimatu("MOREA","","mor","");
 			break;
 		case URDINA:
-			kontsola.inprimatu("URDINA","","urd","");
+			Kontsola.getKontsola().inprimatu("URDINA","","urd","");
 			break;
 		}
 	}
@@ -863,13 +857,13 @@ public class ListaJokalariak {
 	private void elementuKoloreduna(ElementuMota pElementua) {
 		switch(pElementua) {
 		case ELURRA:
-			kontsola.inprimatu("ELURRA","","elu","");
+			Kontsola.getKontsola().inprimatu("ELURRA","","elu","");
 			break;
 		case SUA:
-			kontsola.inprimatu("SUA","","sua","");
+			Kontsola.getKontsola().inprimatu("SUA","","sua","");
 			break;
 		case URA:
-			kontsola.inprimatu("URA","","ura","");
+			Kontsola.getKontsola().inprimatu("URA","","ura","");
 			break;			
 		}
 	}
@@ -877,53 +871,53 @@ public class ListaJokalariak {
 	private void efektuaKoloreztatu(String pTestua) {
 		if(pTestua.contains("gorria")) {
 			efektuaKoloreztatu(pTestua.split("gorria")[0]);
-			kontsola.inprimatu("gorria","","gor","");
+			Kontsola.getKontsola().inprimatu("gorria","","gor","");
 			efektuaKoloreztatu(pTestua.split("gorria")[1]);
 		} else if (pTestua.contains("urdina")) {
 			efektuaKoloreztatu(pTestua.split("urdina")[0]);
-			kontsola.inprimatu("urdina","","urd","");
-			kontsola.inprimatu(pTestua.split("urdina")[1]);
+			Kontsola.getKontsola().inprimatu("urdina","","urd","");
+			Kontsola.getKontsola().inprimatu(pTestua.split("urdina")[1]);
 		} else if (pTestua.contains("horia")) {
 			efektuaKoloreztatu(pTestua.split("horia")[0]);
-			kontsola.inprimatu("horia","","hor","");
+			Kontsola.getKontsola().inprimatu("horia","","hor","");
 			efektuaKoloreztatu(pTestua.split("horia")[1]);
 		} else if (pTestua.contains("berdea")) {
 			efektuaKoloreztatu(pTestua.split("berdea")[0]);
-			kontsola.inprimatu("berdea","","ber","");
+			Kontsola.getKontsola().inprimatu("berdea","","ber","");
 			efektuaKoloreztatu(pTestua.split("berdea")[1]);
 		} else if (pTestua.contains("laranja")) {
 			efektuaKoloreztatu(pTestua.split("laranja")[0]);
-			kontsola.inprimatu("laranja","","lar","");
+			Kontsola.getKontsola().inprimatu("laranja","","lar","");
 			efektuaKoloreztatu(pTestua.split("laranja")[1]);
 		} else if (pTestua.contains("morea")) {
 			efektuaKoloreztatu(pTestua.split("morea")[0]);
-			kontsola.inprimatu("morea","","mor","");
+			Kontsola.getKontsola().inprimatu("morea","","mor","");
 			efektuaKoloreztatu(pTestua.split("morea")[1]);
 		} else if (pTestua.contains("sua")) {
 			efektuaKoloreztatu(pTestua.split("sua")[0]);
-			kontsola.inprimatu("sua","","sua","");
+			Kontsola.getKontsola().inprimatu("sua","","sua","");
 			efektuaKoloreztatu(pTestua.split("sua")[1]);
 		} else if (pTestua.contains("ura")) {
 			efektuaKoloreztatu(pTestua.split("ura")[0]);
-			kontsola.inprimatu("ura","","ura","");
+			Kontsola.getKontsola().inprimatu("ura","","ura","");
 			efektuaKoloreztatu(pTestua.split("ura")[1]);
 		} else if (pTestua.contains("elurra")) {
 			efektuaKoloreztatu(pTestua.split("elurra")[0]);
-			kontsola.inprimatu("elurra","","elu","");
+			Kontsola.getKontsola().inprimatu("elurra","","elu","");
 			efektuaKoloreztatu(pTestua.split("elurra")[1]);
 		} else {
-			kontsola.inprimatu(pTestua);
+			Kontsola.getKontsola().inprimatu(pTestua);
 		}
 	}
 	
 	//Junitak erabiltzen duten metodoak
 	
-	void aldatuEfektua(EfektuMota pEfektua) 
+	private void aldatuEfektua(EfektuMota pEfektua) 
 	{
 		aurrekoTxandakoEfektua = pEfektua;
 	}
 	
-	void kartakAldatu(Karta p1,Karta p2) 
+	private void kartakAldatu(Karta p1,Karta p2) 
 	{
 		jokalariLokalaKarta = p1;
 		jokalariBotKarta = p2;
@@ -935,10 +929,10 @@ public class ListaJokalariak {
 //		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
 //	}
 	
-	void aldatuZenbakiTxikiarenEfektua(boolean p1) 
+	private void aldatuZenbakiTxikiarenEfektua(boolean p1) 
 	{aurrekoTxandakoEfektuaZenbakia=p1;}
 	
-	void aldatuZenbakiEfektua (boolean p1) 
+	private void aldatuZenbakiEfektua (boolean p1) 
 	{
 		aurrekoTxandakoEfektuaZenbakia = p1;
 	}

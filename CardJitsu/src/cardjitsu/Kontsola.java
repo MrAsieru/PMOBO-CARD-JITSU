@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Kontsola {
 	private static Kontsola nireKontsola;
-	Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in);
 	
 	private Kontsola(){}
 	//Hecho

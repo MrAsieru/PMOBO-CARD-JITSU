@@ -3,21 +3,10 @@ package cardjitsu;
 import java.util.Random;
 
 public class JokalariaBotEasy extends Jokalaria {
-
-	private static JokalariaBotEasy nireJokalariaBot;
 	
-	protected JokalariaBotEasy(String pIzena)
+	public JokalariaBotEasy(String pIzena)
 	{
 		super(pIzena);
-	}
-	
-	public static JokalariaBotEasy getNireJokalaria(String pIzena) 
-	{
-		if(nireJokalariaBot==null) 
-		{
-			nireJokalariaBot = new JokalariaBotEasy(pIzena);
-		}
-		return nireJokalariaBot;
 	}
 	
 	public Karta kartaAukeratu(JokalariaLokala j) 
