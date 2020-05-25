@@ -6,9 +6,11 @@ import java.util.Scanner;
 
 public class Kontsola {
 	private static Kontsola nireKontsola;
-	private Scanner sc = new Scanner(System.in);
+	private Scanner sc;
 	
-	private Kontsola(){}
+	private Kontsola(){
+		sc = new Scanner(System.in);
+	}
 	//Hecho
 	
 	public static Kontsola getKontsola() {

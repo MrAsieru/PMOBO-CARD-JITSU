@@ -900,7 +900,7 @@ public class ListaJokalariak {
 	}
 	
 	//Junitak erabiltzen duten metodoak
-	
+	/*
 	private void aldatuEfektua(EfektuMota pEfektua) 
 	{
 		aurrekoTxandakoEfektua = pEfektua;
@@ -926,7 +926,5 @@ public class ListaJokalariak {
 	private void aldatuZenbakiEfektua (boolean p1) 
 	{
 		aurrekoTxandakoEfektuaZenbakia = p1;
-	}
+	}*/
 }
-//Que leches pasa que no me deja subir >:v
-
