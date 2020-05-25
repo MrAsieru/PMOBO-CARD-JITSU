@@ -19,7 +19,6 @@ public class JokalariaBotHard extends Jokalaria {
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
 		if((sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
-			Kontsola.getKontsola().inprimatuLinea("Bot-ak irabazi egin nahi du!");
 			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
 			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
 			if(karta1.getBalioa()>=karta2.getBalioa()) 
@@ -38,12 +37,11 @@ public class JokalariaBotHard extends Jokalaria {
 		ArrayList<ElementuMota> irabazinahidu = irabaziNahiDu(j);
 		if(irabazinahidu.size()==1 || irabazinahidu.size()==2) 
 		{
-			Kontsola.getKontsola().inprimatuLinea("Bot-ak daki irabazi nahi duzula!");
 			if(irabazinahidu.contains(ElementuMota.SUA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA && karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
@@ -53,7 +51,7 @@ public class JokalariaBotHard extends Jokalaria {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
@@ -63,7 +61,7 @@ public class JokalariaBotHard extends Jokalaria {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
@@ -73,7 +71,6 @@ public class JokalariaBotHard extends Jokalaria {
 		// Ausazko karta
 		if(karta.getBalioa()==0)
 		{
-			Kontsola.getKontsola().inprimatuLinea("Bot-ak aleatorio egingo du!");
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
 				if(karta.getErabilgarria() & logikoa(karta,j)) {

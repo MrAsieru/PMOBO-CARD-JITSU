@@ -21,7 +21,7 @@ public class JokalariaBotNormal extends Jokalaria {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
@@ -31,7 +31,7 @@ public class JokalariaBotNormal extends Jokalaria {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
@@ -41,7 +41,7 @@ public class JokalariaBotNormal extends Jokalaria {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa()) 
+					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA & karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
 						karta=lortuJolastekoKartaPosz(i);
 					}
