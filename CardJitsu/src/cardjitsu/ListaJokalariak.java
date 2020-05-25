@@ -240,9 +240,7 @@ public class ListaJokalariak {
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
-		jokalariBotKarta = jokalariak[1] instanceof JokalariaBotEasy ? ((JokalariaBotEasy)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) :
-						   jokalariak[1] instanceof JokalariaBotNormal ? ((JokalariaBotNormal)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]) : 
-						   ((JokalariaBotHard)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
 
 		//TODO kendu inprimatu hau
 		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");

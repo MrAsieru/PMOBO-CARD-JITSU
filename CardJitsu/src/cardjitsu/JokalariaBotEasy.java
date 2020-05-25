@@ -2,7 +2,7 @@ package cardjitsu;
 
 import java.util.Random;
 
-public class JokalariaBotEasy extends Jokalaria {
+public class JokalariaBotEasy extends JokalariaBot {
 	
 	public JokalariaBotEasy(String pIzena)
 	{
