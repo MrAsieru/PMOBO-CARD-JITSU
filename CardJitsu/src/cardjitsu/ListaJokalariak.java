@@ -915,9 +915,7 @@ public class ListaJokalariak {
 	void aldatuAurrekoIrabazlea(int p1) 
 	{
 		if(p1==0) {aurrekoTxandakoIrabazlea= (JokalariaLokala) jokalariak[0];}
-		if(p1==1) {aurrekoTxandakoIrabazlea= jokalariak[1] instanceof JokalariaBotEasy ? (JokalariaBotEasy)jokalariak[1] :
-											 jokalariak[1] instanceof JokalariaBotNormal ? (JokalariaBotNormal)jokalariak[1] : 
-											 (JokalariaBotHard) jokalariak[1];}
+		if(p1==1) {aurrekoTxandakoIrabazlea= (JokalariaBot) jokalariak[1];}
 	}
 	
 	private void aldatuZenbakiTxikiarenEfektua(boolean p1) 
