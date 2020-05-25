@@ -17,9 +17,10 @@ public class ListaJokalariak {
 	{
 		this.jokalariak = new Jokalaria[2];
 		this.aurrekoTxandakoEfektua = null;
-		this.jokalariBotKarta = null;
-		this.jokalariLokalaKarta = null;
 		this.aurrekoTxandakoEfektuaZenbakia = false;
+		this.aurrekoTxandakoIrabazlea = null;
+		this.jokalariLokalaKarta = null;
+		this.jokalariBotKarta = null;		
 	}
 	
 	public static ListaJokalariak getNireListaJokalariak() 
@@ -32,7 +33,7 @@ public class ListaJokalariak {
 	}
 	
 	public static void main(String[] args) {
-		new ListaJokalariak().partidaBerriaHasi();
+		getNireListaJokalariak().partidaBerriaHasi();
 	}
 	
 	public void partidaBerriaHasi() {
