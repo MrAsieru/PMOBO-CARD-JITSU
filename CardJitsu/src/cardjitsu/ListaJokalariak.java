@@ -193,32 +193,32 @@ public class ListaJokalariak {
 		}
 		
 		//TODO Sensei-ren kartak ez aurkeztu
-		for(int i=1;i<jokalariak[1].jolastekoKartenKantitatea()+1;i++) {
-			Karta karta = null;
-			karta = jokalariak[1].lortuJolastekoKartaPosz(i-1);
-			//Kontsola.getKontsola().imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
-			
-			Kontsola.getKontsola().inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:","","gor","");
-			
-			elementuKoloreduna(karta.getElementua());
-			Kontsola.getKontsola().inprimatu("\tB:"+karta.getBalioa()+"\tK:","","gor","");
-
-			kartaKoloreduna(karta.getKolorea());
-			
-			Kontsola.getKontsola().inprimatu("  ");//Tabuladorea ondo funtzionatzeko
-			
-			if(karta instanceof KartaBerezia) {
-				if(((KartaBerezia) karta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")) {
-					efektuaKoloreztatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[0]);
-					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
-					efektuaKoloreztatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[1]);			
-				} else {
-					Kontsola.getKontsola().inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0],"","gor","");
-				}
-				
-			}
-			Kontsola.getKontsola().inprimatuLinea("");
-		}
+//		for(int i=1;i<jokalariak[1].jolastekoKartenKantitatea()+1;i++) {
+//			Karta karta = null;
+//			karta = jokalariak[1].lortuJolastekoKartaPosz(i-1);
+//			//Kontsola.getKontsola().imprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E: "+karta.getElementua().name()+"\tB: "+karta.getBalioa()+"\tK: "+karta.getKolorea().name()+"\t"+((karta instanceof KartaBerezia) ? "Ef: "+((KartaBerezia) karta).getDeskripzioa().split("#")[0].replaceFirst("<jokalariaL>",  jokalariak[1].getIzena()):""));
+//			
+//			Kontsola.getKontsola().inprimatu("["+((karta.getErabilgarria()) ? i:"#")+"] E:","","gor","");
+//			
+//			elementuKoloreduna(karta.getElementua());
+//			Kontsola.getKontsola().inprimatu("\tB:"+karta.getBalioa()+"\tK:","","gor","");
+//
+//			kartaKoloreduna(karta.getKolorea());
+//			
+//			Kontsola.getKontsola().inprimatu("  ");//Tabuladorea ondo funtzionatzeko
+//			
+//			if(karta instanceof KartaBerezia) {
+//				if(((KartaBerezia) karta).getDeskripzioa().split("#")[0].contains("<jokalariaL>")) {
+//					efektuaKoloreztatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[0]);
+//					Kontsola.getKontsola().inprimatu(jokalariak[1].getIzena(),"","mag","");
+//					efektuaKoloreztatu(((KartaBerezia) karta).getDeskripzioa().split("#")[0].split("<jokalariaL>")[1]);			
+//				} else {
+//					Kontsola.getKontsola().inprimatu("\tEf:"+((KartaBerezia) karta).getDeskripzioa().split("#")[0],"","gor","");
+//				}
+//				
+//			}
+//			Kontsola.getKontsola().inprimatuLinea("");
+//		}
 		
 		Kontsola.getKontsola().inprimatuLinea("Gogoratu: E = Elementua. B = Balioa. K = Kolorea. Ef = Efektua.");
 		
@@ -241,9 +241,6 @@ public class ListaJokalariak {
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
 		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
-
-		//TODO kendu inprimatu hau
-		Kontsola.getKontsola().inprimatuLinea("[INFO-Sensei]: E:"+jokalariBotKarta.getElementua()+" B:"+jokalariBotKarta.getBalioa()+" K:"+jokalariBotKarta.getKolorea(),"","gor","");
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();

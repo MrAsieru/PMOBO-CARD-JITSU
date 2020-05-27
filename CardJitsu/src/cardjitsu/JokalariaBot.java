@@ -6,8 +6,5 @@ public abstract class JokalariaBot extends Jokalaria {
 	{
 		super(pIzena);
 	}
-	public Karta kartaAukeratu(JokalariaLokala j) 
-	{
-		return null;
-	}
+	public abstract Karta kartaAukeratu(JokalariaLokala j);
 }
