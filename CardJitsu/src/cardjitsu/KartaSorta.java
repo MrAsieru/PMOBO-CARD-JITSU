@@ -8,7 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class KartaSorta {
-	private ListaKartak lista = null;
+	private ListaKartak lista;
 	private static KartaSorta nireKartaSorta;
 	
 	private KartaSorta() {
