@@ -10,11 +10,10 @@ public class JokalariaBotHard extends JokalariaBot {
 		super(pIzena);
 	}
 	
-	public Karta kartaAukeratu(JokalariaLokala j) 
+	public Karta kartaAukeratu(ListaKartak gordetaKartak) 
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
-		float randomness = new Random().nextFloat();
 		
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
 		if((sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
@@ -34,7 +33,7 @@ public class JokalariaBotHard extends JokalariaBot {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili estrategikoki
 		//Basic counter
-		ArrayList<ElementuMota> irabazinahidu = irabaziNahiDu(j);
+		ArrayList<ElementuMota> irabazinahidu = irabaziNahiDu(gordetaKartak);
 		if(irabazinahidu.size()==1 || irabazinahidu.size()==2) 
 		{
 			if(irabazinahidu.contains(ElementuMota.SUA)) 
@@ -73,7 +72,7 @@ public class JokalariaBotHard extends JokalariaBot {
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
-				if(karta.getErabilgarria() && logikoa(karta,j)) {
+				if(karta.getErabilgarria() && logikoa(karta,gordetaKartak)) {
 					aukeratuta = true;
 				}
 			}
@@ -158,82 +157,82 @@ public class JokalariaBotHard extends JokalariaBot {
 		return LisKartak;
 	}
 	
-	private ArrayList<ElementuMota> irabaziNahiDu(JokalariaLokala j) 
+	private ArrayList<ElementuMota> irabaziNahiDu(ListaKartak gordetaKartak) 
 	{
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
-		for(int i=0;i<j.gordetakoKartenKantitatea();i++)
+		for(int i=0;i<gordetaKartak.getTamaina();i++)
 		{
-			for(int x=0;x<j.gordetakoKartenKantitatea();x++)
+			for(int x=0;x<gordetaKartak.getTamaina();x++)
 			{
-				if(j.lortuGordetakoKartaPosz(i).getElementua()!=j.lortuGordetakoKartaPosz(x).getElementua() && x!=i) 
+				if(gordetaKartak.lortuKartaPosz(i).getElementua()!=gordetaKartak.lortuKartaPosz(x).getElementua() & x!=i) 
 				{
-					if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.SUA && j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.URA)
-							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA && j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA)
+							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
 					{
 						if(!elem.contains(ElementuMota.ELURRA)) {elem.add(ElementuMota.ELURRA);}
 					}
-					else if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.SUA && j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.ELURRA) 
-							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA && j.lortuGordetakoKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					else if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA) 
+							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
 					{
 						if(!elem.contains(ElementuMota.URA)) {elem.add(ElementuMota.URA);}
 					} 
-					else if((j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA && j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA) 
-							|| (j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.URA && j.lortuGordetakoKartaPosz(i).getElementua()==ElementuMota.ELURRA)) 
+					else if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA) 
+							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA)) 
 					{
 						if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
 					}
 				}
-				if(j.lortuGordetakoKartaPosz(i).getElementua()==j.lortuGordetakoKartaPosz(x).getElementua() && j.lortuGordetakoKartaPosz(i).getKolorea()!=j.lortuGordetakoKartaPosz(x).getKolorea())
+				if(gordetaKartak.lortuKartaPosz(i).getElementua()==gordetaKartak.lortuKartaPosz(x).getElementua() && gordetaKartak.lortuKartaPosz(i).getKolorea()!=gordetaKartak.lortuKartaPosz(x).getKolorea())
 				{
-					elem.add(j.lortuGordetakoKartaPosz(i).getElementua());
+					elem.add(gordetaKartak.lortuKartaPosz(i).getElementua());
 				}
 			}	
 		}
 		return elem;
 	}
 	
-	private boolean logikoa(Karta p1,JokalariaLokala j) 
+	private boolean logikoa(Karta p1,ListaKartak gordetaKartak) 
 	{
 		boolean logikoa = true;
 		if(p1 instanceof KartaBerezia) 
 		{
-			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA && !elementuHauDuenKartaDu(ElementuMota.SUA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA && !elementuHauDuenKartaDu(ElementuMota.SUA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA && !elementuHauDuenKartaDu(ElementuMota.URA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA && !elementuHauDuenKartaDu(ElementuMota.URA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA && !elementuHauDuenKartaDu(ElementuMota.ELURRA,j)) 
+			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA && !elementuHauDuenKartaDu(ElementuMota.ELURRA,gordetaKartak)) 
 			{
 				logikoa = false;
 			}
@@ -249,24 +248,24 @@ public class JokalariaBotHard extends JokalariaBot {
 		return logikoa;
 	}
 	
-	private boolean koloreHauDuenKartaDu(KoloreMota p,JokalariaLokala j) 
+	private boolean koloreHauDuenKartaDu(KoloreMota p,ListaKartak gordetaKartak) 
 	{
 		boolean du = false;
-		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
+		for(int i=0;i<gordetaKartak.getTamaina();i++) 
 		{
-			if(j.lortuGordetakoKartaPosz(i).getKolorea()==p) 
+			if(gordetaKartak.lortuKartaPosz(i).getKolorea()==p) 
 			{
 				du=true;
 			}
 		}
 		return du;
 	}
-	private boolean elementuHauDuenKartaDu(ElementuMota p,JokalariaLokala j) 
+	private boolean elementuHauDuenKartaDu(ElementuMota p,ListaKartak gordetaKartak) 
 	{
 		boolean du = false;
-		for(int i=0;i<j.gordetakoKartenKantitatea();i++) 
+		for(int i=0;i<gordetaKartak.getTamaina();i++) 
 		{
-			if(j.lortuGordetakoKartaPosz(i).getElementua()==p) 
+			if(gordetaKartak.lortuKartaPosz(i).getElementua()==p) 
 			{
 				du=true;
 			}

@@ -24,4 +24,9 @@ public class JokalariaLokala extends Jokalaria {
 		this.kenduJolastekoKarta(aukeraketa);
 		return aukeraketa;
 	}
+	
+	public ListaKartak getGordetakoKartak() 
+	{
+		return this.gordetakoKartak;
+	}
 }

@@ -3,7 +3,7 @@ package cardjitsu;
 public abstract class Jokalaria {
 		//atributuak
 		private String izena;
-		private ListaKartak gordetakoKartak;
+		protected ListaKartak gordetakoKartak;
 		private ListaKartak jolastekoKartak;
 
 		//metodo eraikitzailea

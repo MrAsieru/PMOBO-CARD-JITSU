@@ -240,7 +240,7 @@ public class ListaJokalariak {
 		
 		//Jokalariak karta bat aukeratu hau jokatzeko
 		jokalariLokalaKarta = ((JokalariaLokala)jokalariak[0]).kartaAukeratu();
-		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu((JokalariaLokala)jokalariak[0]);
+		jokalariBotKarta = ((JokalariaBot)jokalariak[1]).kartaAukeratu(((JokalariaLokala)jokalariak[0]).getGordetakoKartak());
 		
 		//Txandan jokatutako kartak konprobatu eta karten emaitza imprimatu
 		JokalariMota txJok = this.kartakKonprobatu();
