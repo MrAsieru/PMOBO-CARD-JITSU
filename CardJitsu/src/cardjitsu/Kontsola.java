@@ -93,8 +93,9 @@ public class Kontsola {
 			config = config+"38;2;255;255;255;";
 			break;
 		case "zur":
-		default:
 			config = config+"38;2;255;255;255;";
+			break;
+		default:
 			break;
 		}
 		
@@ -136,8 +137,9 @@ public class Kontsola {
 			config = config+"48;2;255;255;255";
 			break;
 		case "bel":
-		default:
 			config = config+"48;2;0;0;0";
+			break;
+		default:
 			break;
 		}
 		
@@ -195,8 +197,9 @@ public class Kontsola {
 			config = config+"38;2;255;255;255;";
 			break;
 		case "zur":
-		default:
 			config = config+"38;2;255;255;255;";
+			break;
+		default:
 			break;
 		}
 		
@@ -238,8 +241,9 @@ public class Kontsola {
 			config = config+"48;2;255;255;255";
 			break;
 		case "bel":
-		default:
 			config = config+"48;2;0;0;0";
+			break;
+		default:
 			break;
 		}
 		

@@ -22,7 +22,7 @@ public class KartaSorta {
 		return nireKartaSorta;
 	}
 	
-	public void jsonetikKartetara() {
+	public void jsonetikKartetara() throws KartakEzAurkitutaException {
 		if (this.getTamaina() == 0) {
 			JSONParser parser = new JSONParser();
 			
@@ -45,7 +45,7 @@ public class KartaSorta {
 					int balioa;
 					KoloreMota kolorea = null;
 					EfektuMota efektua = null;
-					String deskripzioa;
+					String deskribapena;
 					boolean kartaBereziaDa = true;
 					
 					//Elementua
@@ -172,23 +172,20 @@ public class KartaSorta {
 						break;
 					}
 					
-					//Deskripzioa
-					deskripzioa = (String) karta.get("description");
+					//Deskribapena
+					deskribapena = (String) karta.get("description");
 					
 					//Karta sartu
 					Karta kartaB;
 					if(kartaBereziaDa) {
-						kartaB = new KartaBerezia(elementua,balioa,kolorea,efektua,deskripzioa);
+						kartaB = new KartaBerezia(elementua,balioa,kolorea,efektua,deskribapena);
 					} else {
 						kartaB = (Karta) new KartaNormala(elementua,balioa,kolorea);
 					}
 					lista.gehituKarta(kartaB);
 				}
 			} catch (Exception e) {
-				Kontsola.getKontsola().inprimatuLinea("Ez da aurkitu karten lista", "", "gor", "");
-				Kontsola.getKontsola().enterTekla();
-				System.exit(0);
-				
+				throw new KartakEzAurkitutaException();
 			}			
 		}
 	}
