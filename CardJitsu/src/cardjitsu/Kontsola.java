@@ -9,9 +9,8 @@ public class Kontsola {
 	private Scanner sc;
 	
 	private Kontsola(){
-		sc = new Scanner(System.in);
+		this.sc = new Scanner(System.in);
 	}
-	//Hecho
 	
 	public static Kontsola getKontsola() {
 		if(nireKontsola == null) {
@@ -21,17 +20,16 @@ public class Kontsola {
 	}
 	
 	public String testuaIrakurri() {
-		String sarrera = sc.nextLine();
+		String sarrera = this.sc.nextLine();
 		return sarrera;
 	}
-	//Hecho
 	
 	public int zenbakiaIrakurri() {
 		int sarrera = 0;
 		boolean datuOna = false;
 		while(!datuOna) {
 			try {
-				sarrera = Integer.parseInt(sc.nextLine());
+				sarrera = Integer.parseInt(this.sc.nextLine());
 				datuOna = true;
 			} catch (NumberFormatException e) {
 				inprimatuLinea("Zenbaki bat sartu","","hor","");
@@ -41,20 +39,18 @@ public class Kontsola {
 		}
 		return sarrera;
 	}
-	//Hecho
 	
 	public void inprimatuLinea(String pTestua) {
 		System.out.println(pTestua);
 	}
 	public void inprimatuLinea(String pTestua, String pTestuMota, String pKolAur, String pKolAtz) {
 		String config = "[";
-		//Ansi nola erabili https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf
 		switch(pTestuMota) {
 		case "azp"://Azpimarratu
 			config = config+"4;";
 			break;
 		}
-		
+		//Aurreko kolorea 38;2;r;g;b
 		switch (pKolAur) {
 		case "ber"://Berdea
 			config = config+"38;2;98;184;71;";
@@ -98,7 +94,7 @@ public class Kontsola {
 		default:
 			break;
 		}
-		
+		//Atzeko kolorea 48;2;r;g;b
 		switch (pKolAtz) {
 		case "ber"://Berdea
 			config = config+"48;2;98;184;71";
@@ -140,6 +136,7 @@ public class Kontsola {
 			config = config+"48;2;0;0;0";
 			break;
 		default:
+			config = (config.endsWith(";"))?config.substring(0,config.length()-1):config;
 			break;
 		}
 		
@@ -152,13 +149,12 @@ public class Kontsola {
 	
 	public void inprimatu(String pTestua, String pTestuMota, String pKolAur, String pKolAtz) {
 		String config = "[";
-		//Ansi nola erabili https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf
 		switch(pTestuMota) {
 		case "azp"://Azpimarratu
 			config = config+"4;";
 			break;
 		}
-		
+		//Aurreko kolorea 38;2;r;g;b
 		switch (pKolAur) {
 		case "ber"://Berdea
 			config = config+"38;2;98;184;71;";
@@ -203,6 +199,7 @@ public class Kontsola {
 			break;
 		}
 		
+		//Atzeko kolorea 48;2;r;g;b
 		switch (pKolAtz) {
 		case "ber"://Berdea
 			config = config+"48;2;98;184;71";
@@ -244,19 +241,18 @@ public class Kontsola {
 			config = config+"48;2;0;0;0";
 			break;
 		default:
+			config = (config.endsWith(";"))?config.substring(0,config.length()-1):config;
 			break;
 		}
 		
 		this.inprimatu(config+"m"+pTestua+"[0m");
 	}
-	//Hecho
 	
 	public  void kontsolaGarbitu() {
 		try {
 			if (System.getProperty("os.name").contains("Windows")) {
 				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-			}
-			else {
+			} else {
 			    Runtime.getRuntime().exec("clear");
 			}
 		} catch (IOException e) {
@@ -265,18 +261,16 @@ public class Kontsola {
 			e.printStackTrace();
 		}
 	}
-	//Hecho
 	
-	public void enterTekla()
-	 { 
-	        System.out.println("Pultsatu ENTER tekla jarraitzeko...");
-	        try
-	        {
-	            System.in.read();
-	        }  
-	        catch(Exception e)
-	        {
-	        	e.printStackTrace();
-	        }  
-	 }
+	public void enterTekla() { 
+		System.out.println("Pultsatu ENTER tekla jarraitzeko...");
+		try
+    	{
+			System.in.read();
+        }  
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }  
+	}
 }

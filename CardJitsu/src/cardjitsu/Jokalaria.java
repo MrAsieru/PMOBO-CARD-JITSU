@@ -1,19 +1,17 @@
 package cardjitsu;
 
 public abstract class Jokalaria {
-		//atributuak
+
 		private String izena;
 		protected ListaKartak gordetakoKartak;
 		private ListaKartak jolastekoKartak;
 
-		//metodo eraikitzailea
 		public Jokalaria (String pIzena) {
-			this.izena=pIzena;
-			this.gordetakoKartak= new ListaKartak();
-			this.jolastekoKartak= new ListaKartak();
+			this.izena = pIzena;
+			this.gordetakoKartak = new ListaKartak();
+			this.jolastekoKartak = new ListaKartak();
 		}
 		
-		//gainerako metodoak
 		public void gehituJolastekoKarta (Karta pKarta) {
 			if (jolastekoKartak.getTamaina() < 5) {
 				this.jolastekoKartak.gehituKarta(pKarta);
@@ -25,6 +23,7 @@ public abstract class Jokalaria {
 		public void kenduJolastekoKarta (Karta pKarta) {
 			this.jolastekoKartak.kenduKarta(pKarta);
 		}
+		
 		public void gehituGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.gehituKarta(pKarta);
 		}
@@ -32,12 +31,15 @@ public abstract class Jokalaria {
 		public void kenduGordetakoKarta (Karta pKarta) {
 			this.gordetakoKartak.kenduKarta(pKarta);
 		}
+		
 		public Karta lortuJolastekoKartaPosz(int pPos) {
 			return this.jolastekoKartak.lortuKartaPosz(pPos);
 		}
+		
 		public Karta lortuGordetakoKartaPosz(int pPos){
 			return this.gordetakoKartak.lortuKartaPosz(pPos);
 		}
+		
 		public int gordetakoKartenKantitatea() {
 			return this.gordetakoKartak.getTamaina();
 		}

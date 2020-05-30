@@ -12,7 +12,7 @@ public class KartaSorta {
 	private static KartaSorta nireKartaSorta;
 	
 	private KartaSorta() {
-		lista = new ListaKartak();
+		this.lista = new ListaKartak();
 	}
 	
 	public static KartaSorta getKartaSorta(){
@@ -26,18 +26,10 @@ public class KartaSorta {
 		if (this.getTamaina() == 0) {
 			JSONParser parser = new JSONParser();
 			
-			try {				
-				//JSONObject jsonObj = (JSONObject) parser.parse(new FileReader("/cards_eu.json"));
+			try {
 				JSONObject jsonObj = (JSONObject) parser.parse(new InputStreamReader(getClass().getResourceAsStream("/cards_eu.json"), "UTF-8"));
 				
-				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");
-				
-				/* BESTE ERA BAT
-				Iterator<JSONObject> itr = kartaLista.iterator();
-				while(itr.hasNext()) {
-					JSONObject karta = itr.next();
-					...
-				}*/				
+				JSONArray kartaLista = (JSONArray) jsonObj.get("KartenLista");		
 				
 				for(int i = 0; i < kartaLista.size(); i++) {
 					JSONObject karta = (JSONObject) kartaLista.get(i);
@@ -182,7 +174,7 @@ public class KartaSorta {
 					} else {
 						kartaB = (Karta) new KartaNormala(elementua,balioa,kolorea);
 					}
-					lista.gehituKarta(kartaB);
+					this.lista.gehituKarta(kartaB);
 				}
 			} catch (Exception e) {
 				throw new KartakEzAurkitutaException();
@@ -191,14 +183,14 @@ public class KartaSorta {
 	}
 	
 	public Karta getKarta(int pPos) {
-		return lista.lortuKartaPosz(pPos);
+		return this.lista.lortuKartaPosz(pPos);
 	}
 	
 	public Karta getKarta() {
-		return getKarta(new Random().nextInt(this.getTamaina()));
+		return this.getKarta(new Random().nextInt(this.getTamaina()));
 	}
 	
 	public int getTamaina() {
-		return lista.getTamaina();
+		return this.lista.getTamaina();
 	}
 }

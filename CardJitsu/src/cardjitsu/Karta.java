@@ -2,21 +2,17 @@ package cardjitsu;
 
 public abstract class Karta {
 
-	//atributuak
 	private ElementuMota elementua;
 	private int balioa;
 	private KoloreMota kolorea;
 	private boolean erabilgarria;
 	
-	//metodo eraikitzailea
 	public Karta (ElementuMota pElementua, int pBalioa, KoloreMota pKolorea) {
 		this.balioa=pBalioa;
 		this.elementua=pElementua;
 		this.kolorea=pKolorea;
 		this.erabilgarria=true;
 	}
-	
-	 //gainerako metodoa
 	
 	public ElementuMota getElementua() {
 		return this.elementua;

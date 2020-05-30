@@ -10,7 +10,7 @@ public class JokalariaBotHard extends JokalariaBot {
 		super(pIzena);
 	}
 	
-	public Karta kartaAukeratu(ListaKartak gordetaKartak) 
+	public Karta kartaAukeratu(ListaKartak pGordetaKartak) 
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
@@ -18,8 +18,8 @@ public class JokalariaBotHard extends JokalariaBot {
 		//Elementu berdina edo derberdina eta kolore desberdineko bi karta izatean, beste karta batekin irabazi ahala badu, hori bota
 		if((sortuMatrizeKartakElemDes().size()!=0 || sortuMatrizeKartakElemBer().size()!=0)) 
 		{
-			Karta karta1 = kartaErabaki(sortuMatrizeKartakElemDes());
-			Karta karta2 = kartaErabaki(sortuMatrizeKartakElemBer());
+			Karta karta1 = this.kartaErabaki(this.sortuMatrizeKartakElemDes());
+			Karta karta2 = this.kartaErabaki(this.sortuMatrizeKartakElemBer());
 			if(karta1.getBalioa()>=karta2.getBalioa()) 
 			{
 				karta = karta1;
@@ -33,16 +33,16 @@ public class JokalariaBotHard extends JokalariaBot {
 		
 		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili estrategikoki
 		//Basic counter
-		ArrayList<ElementuMota> irabazinahidu = irabaziNahiDu(gordetaKartak);
+		ArrayList<ElementuMota> irabazinahidu = this.irabaziNahiDu(pGordetaKartak);
 		if(irabazinahidu.size()==1 || irabazinahidu.size()==2) 
 		{
 			if(irabazinahidu.contains(ElementuMota.SUA)) 
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA && karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
+					if(this.lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.URA && karta.getBalioa()<=this.lortuJolastekoKartaPosz(i).getBalioa() && this.lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
-						karta=lortuJolastekoKartaPosz(i);
+						karta=this.lortuJolastekoKartaPosz(i);
 					}
 				}
 			}
@@ -50,9 +50,9 @@ public class JokalariaBotHard extends JokalariaBot {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA && karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
+					if(this.lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.ELURRA && karta.getBalioa()<=this.lortuJolastekoKartaPosz(i).getBalioa() && this.lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
-						karta=lortuJolastekoKartaPosz(i);
+						karta=this.lortuJolastekoKartaPosz(i);
 					}
 				}
 			}
@@ -60,9 +60,9 @@ public class JokalariaBotHard extends JokalariaBot {
 			{
 				for(int i=0;i<5;i++) 
 				{
-					if(lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA && karta.getBalioa()<=lortuJolastekoKartaPosz(i).getBalioa() && lortuJolastekoKartaPosz(i).getErabilgarria()) 
+					if(this.lortuJolastekoKartaPosz(i).getElementua()==ElementuMota.SUA && karta.getBalioa()<=this.lortuJolastekoKartaPosz(i).getBalioa() && this.lortuJolastekoKartaPosz(i).getErabilgarria()) 
 					{
-						karta=lortuJolastekoKartaPosz(i);
+						karta=this.lortuJolastekoKartaPosz(i);
 					}
 				}
 			}
@@ -72,7 +72,7 @@ public class JokalariaBotHard extends JokalariaBot {
 		{
 			while(!aukeratuta) {
 				karta = this.lortuJolastekoKartaPosz(new Random().nextInt(5));
-				if(karta.getErabilgarria() && logikoa(karta,gordetaKartak)) {
+				if(karta.getErabilgarria() && this.logikoa(karta,pGordetaKartak)) {
 					aukeratuta = true;
 				}
 			}
@@ -83,32 +83,32 @@ public class JokalariaBotHard extends JokalariaBot {
 	
 	//Strategic metodos, elementu berdinak kolore desberdinak irabazi sahiatu
 	
-	private Karta kartaErabaki(ArrayList<ArrayList<Karta>> p1) 
+	private Karta kartaErabaki(ArrayList<ArrayList<Karta>> pMatrizea) 
 	{
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
-		for(int i=0;i<p1.size();i++) 
+		for(int i=0;i<pMatrizea.size();i++) 
 		{
 			for(int x=0;x<5;x++) 
 			{
-				if(p1.get(i).get(0).getElementua()!=p1.get(i).get(1).getElementua() &&
-						p1.get(i).get(0).getElementua()!=lortuJolastekoKartaPosz(x).getElementua() &&
-						p1.get(i).get(1).getElementua()!=lortuJolastekoKartaPosz(x).getElementua() &&
-						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &&
-						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &&
-						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &&
-						lortuJolastekoKartaPosz(x).getErabilgarria()) 
+				if(pMatrizea.get(i).get(0).getElementua()!=pMatrizea.get(i).get(1).getElementua() &&
+						pMatrizea.get(i).get(0).getElementua()!=this.lortuJolastekoKartaPosz(x).getElementua() &&
+						pMatrizea.get(i).get(1).getElementua()!=this.lortuJolastekoKartaPosz(x).getElementua() &&
+						pMatrizea.get(i).get(0).getKolorea()!=this.lortuJolastekoKartaPosz(x).getKolorea() &&
+						pMatrizea.get(i).get(1).getKolorea()!=this.lortuJolastekoKartaPosz(x).getKolorea() &&
+						this.lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &&
+						this.lortuJolastekoKartaPosz(x).getErabilgarria()) 
 				{
 					karta = lortuJolastekoKartaPosz(x);
 				}
-				if(p1.get(i).get(0).getElementua()==p1.get(i).get(1).getElementua() &&
-						p1.get(i).get(0).getElementua()==lortuJolastekoKartaPosz(x).getElementua() &&
-						p1.get(i).get(1).getElementua()==lortuJolastekoKartaPosz(x).getElementua() &&
-						p1.get(i).get(0).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &&
-						p1.get(i).get(1).getKolorea()!=lortuJolastekoKartaPosz(x).getKolorea() &&
-						lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &&
-						lortuJolastekoKartaPosz(x).getErabilgarria()) 
+				if(pMatrizea.get(i).get(0).getElementua()==pMatrizea.get(i).get(1).getElementua() &&
+						pMatrizea.get(i).get(0).getElementua()==this.lortuJolastekoKartaPosz(x).getElementua() &&
+						pMatrizea.get(i).get(1).getElementua()==this.lortuJolastekoKartaPosz(x).getElementua() &&
+						pMatrizea.get(i).get(0).getKolorea()!=this.lortuJolastekoKartaPosz(x).getKolorea() &&
+						pMatrizea.get(i).get(1).getKolorea()!=this.lortuJolastekoKartaPosz(x).getKolorea() &&
+						this.lortuJolastekoKartaPosz(x).getBalioa()>karta.getBalioa() &&
+						this.lortuJolastekoKartaPosz(x).getErabilgarria()) 
 				{
-					karta = lortuJolastekoKartaPosz(x);
+					karta = this.lortuJolastekoKartaPosz(x);
 				}
 			}
 		}
@@ -118,17 +118,17 @@ public class JokalariaBotHard extends JokalariaBot {
 	private ArrayList<ArrayList<Karta>> sortuMatrizeKartakElemDes()
 	{
 		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
-		for(int i=0;i<gordetakoKartenKantitatea();i++) 
+		for(int i=0;i<this.gordetakoKartenKantitatea();i++) 
 		{
-			for(int x=0;x<gordetakoKartenKantitatea();x++) 
+			for(int x=0;x<this.gordetakoKartenKantitatea();x++) 
 			{
-				if(lortuGordetakoKartaPosz(i).getElementua()!=lortuGordetakoKartaPosz(x).getElementua() &&
-						lortuGordetakoKartaPosz(i).getKolorea()!=lortuGordetakoKartaPosz(x).getKolorea() &&
+				if(this.lortuGordetakoKartaPosz(i).getElementua()!=this.lortuGordetakoKartaPosz(x).getElementua() &&
+				   this.lortuGordetakoKartaPosz(i).getKolorea()!=this.lortuGordetakoKartaPosz(x).getKolorea() &&
 						x!=i) 
 				{
 					ArrayList<Karta> kartak = new ArrayList<Karta>();
-					kartak.add(lortuGordetakoKartaPosz(i));
-					kartak.add(lortuGordetakoKartaPosz(x));
+					kartak.add(this.lortuGordetakoKartaPosz(i));
+					kartak.add(this.lortuGordetakoKartaPosz(x));
 					LisKartak.add(kartak);
 				}
 			}
@@ -139,17 +139,17 @@ public class JokalariaBotHard extends JokalariaBot {
 	private ArrayList<ArrayList<Karta>> sortuMatrizeKartakElemBer()
 	{
 		ArrayList<ArrayList<Karta>> LisKartak = new ArrayList<ArrayList<Karta>>();
-		for(int i=0;i<gordetakoKartenKantitatea();i++) 
+		for(int i=0;i<this.gordetakoKartenKantitatea();i++) 
 		{
-			for(int x=0;x<gordetakoKartenKantitatea();x++) 
+			for(int x=0;x<this.gordetakoKartenKantitatea();x++) 
 			{
-				if(lortuGordetakoKartaPosz(i).getElementua()==lortuGordetakoKartaPosz(x).getElementua() &&
-						lortuGordetakoKartaPosz(i).getKolorea()!=lortuGordetakoKartaPosz(x).getKolorea() &&
+				if(this.lortuGordetakoKartaPosz(i).getElementua()==this.lortuGordetakoKartaPosz(x).getElementua() &&
+				   this.lortuGordetakoKartaPosz(i).getKolorea()!=this.lortuGordetakoKartaPosz(x).getKolorea() &&
 						x!=i) 
 				{
 					ArrayList<Karta> kartak = new ArrayList<Karta>();
-					kartak.add(lortuGordetakoKartaPosz(i));
-					kartak.add(lortuGordetakoKartaPosz(x));
+					kartak.add(this.lortuGordetakoKartaPosz(i));
+					kartak.add(this.lortuGordetakoKartaPosz(x));
 					LisKartak.add(kartak);
 				}
 			}
@@ -157,82 +157,82 @@ public class JokalariaBotHard extends JokalariaBot {
 		return LisKartak;
 	}
 	
-	private ArrayList<ElementuMota> irabaziNahiDu(ListaKartak gordetaKartak) 
+	private ArrayList<ElementuMota> irabaziNahiDu(ListaKartak pGordetaKartak) 
 	{
 		ArrayList<ElementuMota> elem = new  ArrayList<ElementuMota>();
-		for(int i=0;i<gordetaKartak.getTamaina();i++)
+		for(int i=0;i<pGordetaKartak.getTamaina();i++)
 		{
-			for(int x=0;x<gordetaKartak.getTamaina();x++)
+			for(int x=0;x<pGordetaKartak.getTamaina();x++)
 			{
-				if(gordetaKartak.lortuKartaPosz(i).getElementua()!=gordetaKartak.lortuKartaPosz(x).getElementua() & x!=i) 
+				if(pGordetaKartak.lortuKartaPosz(i).getElementua()!=pGordetaKartak.lortuKartaPosz(x).getElementua() & x!=i) 
 				{
-					if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA)
-							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					if((pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA)
+							|| (pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
 					{
 						if(!elem.contains(ElementuMota.ELURRA)) {elem.add(ElementuMota.ELURRA);}
 					}
-					else if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA) 
-							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
+					else if((pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.SUA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA) 
+							|| (pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.SUA)) 
 					{
 						if(!elem.contains(ElementuMota.URA)) {elem.add(ElementuMota.URA);}
 					} 
-					else if((gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA) 
-							|| (gordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && gordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA)) 
+					else if((pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.ELURRA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.URA) 
+							|| (pGordetaKartak.lortuKartaPosz(i).getElementua()==ElementuMota.URA && pGordetaKartak.lortuKartaPosz(x).getElementua()==ElementuMota.ELURRA)) 
 					{
 						if(!elem.contains(ElementuMota.SUA)) {elem.add(ElementuMota.SUA);}
 					}
 				}
-				if(gordetaKartak.lortuKartaPosz(i).getElementua()==gordetaKartak.lortuKartaPosz(x).getElementua() && gordetaKartak.lortuKartaPosz(i).getKolorea()!=gordetaKartak.lortuKartaPosz(x).getKolorea())
+				if(pGordetaKartak.lortuKartaPosz(i).getElementua()==pGordetaKartak.lortuKartaPosz(x).getElementua() && pGordetaKartak.lortuKartaPosz(i).getKolorea()!=pGordetaKartak.lortuKartaPosz(x).getKolorea())
 				{
-					elem.add(gordetaKartak.lortuKartaPosz(i).getElementua());
+					elem.add(pGordetaKartak.lortuKartaPosz(i).getElementua());
 				}
 			}	
 		}
 		return elem;
 	}
 	
-	private boolean logikoa(Karta p1,ListaKartak gordetaKartak) 
+	private boolean logikoa(Karta pKarta,ListaKartak pGordetaKartak) 
 	{
 		boolean logikoa = true;
-		if(p1 instanceof KartaBerezia) 
+		if(pKarta instanceof KartaBerezia) 
 		{
-			if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUBERDEBAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUBERDEGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUGORRIBAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUGORRIGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURDINGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUURDINBAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUURDINGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUHORIGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUHORIBAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUHORIGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUMOREGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUMOREBAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUMOREGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)p1).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !koloreHauDuenKartaDu(KoloreMota.BERDEA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDULARANJABAT || ((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDULARANJAGUZTIAK && !this.koloreHauDuenKartaDu(KoloreMota.BERDEA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUSUA && !elementuHauDuenKartaDu(ElementuMota.SUA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUSUA && !this.elementuHauDuenKartaDu(ElementuMota.SUA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUURA && !elementuHauDuenKartaDu(ElementuMota.URA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUURA && !this.elementuHauDuenKartaDu(ElementuMota.URA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
-			else if(((KartaBerezia)p1).getEfektua()==EfektuMota.KENDUELURRA && !elementuHauDuenKartaDu(ElementuMota.ELURRA,gordetaKartak)) 
+			else if(((KartaBerezia)pKarta).getEfektua()==EfektuMota.KENDUELURRA && !this.elementuHauDuenKartaDu(ElementuMota.ELURRA,pGordetaKartak)) 
 			{
 				logikoa = false;
 			}
@@ -248,24 +248,24 @@ public class JokalariaBotHard extends JokalariaBot {
 		return logikoa;
 	}
 	
-	private boolean koloreHauDuenKartaDu(KoloreMota p,ListaKartak gordetaKartak) 
+	private boolean koloreHauDuenKartaDu(KoloreMota pKolorea,ListaKartak pGordetaKartak) 
 	{
 		boolean du = false;
-		for(int i=0;i<gordetaKartak.getTamaina();i++) 
+		for(int i=0;i<pGordetaKartak.getTamaina();i++) 
 		{
-			if(gordetaKartak.lortuKartaPosz(i).getKolorea()==p) 
+			if(pGordetaKartak.lortuKartaPosz(i).getKolorea()==pKolorea) 
 			{
 				du=true;
 			}
 		}
 		return du;
 	}
-	private boolean elementuHauDuenKartaDu(ElementuMota p,ListaKartak gordetaKartak) 
+	private boolean elementuHauDuenKartaDu(ElementuMota pElementua,ListaKartak pGordetaKartak) 
 	{
 		boolean du = false;
-		for(int i=0;i<gordetaKartak.getTamaina();i++) 
+		for(int i=0;i<pGordetaKartak.getTamaina();i++) 
 		{
-			if(gordetaKartak.lortuKartaPosz(i).getElementua()==p) 
+			if(pGordetaKartak.lortuKartaPosz(i).getElementua()==pElementua) 
 			{
 				du=true;
 			}

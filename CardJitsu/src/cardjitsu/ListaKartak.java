@@ -3,10 +3,8 @@ import java.util.ArrayList;
 
 public class ListaKartak {
 	
-	//atributuak
 	private ArrayList<Karta> lista;
 	
-	//metodo eraikitzailea
 	public ListaKartak() {
 		this.lista= new ArrayList<Karta>();
 	}

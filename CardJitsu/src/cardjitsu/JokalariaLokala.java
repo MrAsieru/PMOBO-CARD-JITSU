@@ -1,8 +1,8 @@
 package cardjitsu;
 
 public class JokalariaLokala extends Jokalaria {	
-	public JokalariaLokala(String izena) {
-		super(izena);
+	public JokalariaLokala(String pIzena) {
+		super(pIzena);
 	}
 	
 	public Karta kartaAukeratu() {
