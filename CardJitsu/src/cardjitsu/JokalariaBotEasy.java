@@ -9,7 +9,7 @@ public class JokalariaBotEasy extends JokalariaBot {
 		super(pIzena);
 	}
 	
-	public Karta kartaAukeratu(ListaKartak gordetaKartak) 
+	public Karta kartaAukeratu(ListaKartak pGordetaKartak) //Beste jokalariaren kartak ez dira erabiltzen bot honekin
 	{
 		boolean aukeratuta = false;
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);
