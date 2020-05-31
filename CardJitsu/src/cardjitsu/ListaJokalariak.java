@@ -471,14 +471,16 @@ public class ListaJokalariak {
 	private JokalariMota kartakKonprobatu() 
 	{
 		//Baloreak gorde
-		
 		JokalariMota AurrekoIrabazlea = (this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? JokalariMota.LOKALA : JokalariMota.BOT;;
 		JokalariMota IrabazleFinala = null;
 		ElementuMota LokalaKartaElementua = this.jokalariLokalaKarta.getElementua();
 		ElementuMota BotKartaElementua = this.jokalariBotKarta.getElementua();
 		int LokalaKartaBalioa =  this.jokalariLokalaKarta.getBalioa();
 		int BotKartaBalioa =  this.jokalariBotKarta.getBalioa();
-		boolean ZenbakiTxikienaIrabazi = false;
+		
+		// Zenbaki txikiaren efektua aplikatu txanda honetarako
+		boolean ZenbakiTxikienaIrabazi = this.aurrekoTxandakoEfektuaZenbakia;
+		this.aurrekoTxandakoEfektuaZenbakia = false;
 		
 		//Aurreko irabazlearen arabera aplikatu aurreko efektua
 		if(this.aurrekoTxandakoEfektua != null) {
@@ -515,13 +517,6 @@ public class ListaJokalariak {
 			default:	
 				break;
 			}
-		}
-		
-		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
-		if(this.aurrekoTxandakoEfektuaZenbakia) 
-		{
-			ZenbakiTxikienaIrabazi=true;
-			this.aurrekoTxandakoEfektuaZenbakia = false;
 		}
 		
 		//Karta batek elementua aldatzen badu
@@ -588,11 +583,10 @@ public class ListaJokalariak {
 		else if(elementuaIrabazi(LokalaKartaElementua,BotKartaElementua)) {IrabazleFinala = JokalariMota.LOKALA;}
 		else if(elementuaIrabazi(BotKartaElementua,LokalaKartaElementua)) {IrabazleFinala = JokalariMota.BOT;}
 		
-		//Zenbaki txikiena aplikatzen de begiratu
+		//Zenbaki txikiena aplikatzen den begiratu
 		this.aurrekoTxandakoEfektuaZenbakia = this.jokalariLokalaKarta instanceof KartaBerezia && ((KartaBerezia)this.jokalariLokalaKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA ? true :
 											  this.jokalariBotKarta instanceof KartaBerezia && ((KartaBerezia)this.jokalariBotKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA ? true : false;
 
-		
 		//Inprimaketa
 		txandarenKartakInprimatu(0,this.jokalariLokalaKarta,LokalaKartaElementua,LokalaKartaBalioa);
 		txandarenKartakInprimatu(1,this.jokalariBotKarta,BotKartaElementua,BotKartaBalioa);
