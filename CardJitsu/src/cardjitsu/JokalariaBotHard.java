@@ -28,10 +28,7 @@ public class JokalariaBotHard extends JokalariaBot {
 			{
 				karta = karta2;
 			}
-			//TODO //Batzuetan karta honen elementua aldatu beste jokalariak zuk aterako duzun karta pentsatzen duen karta countereatzeko
 		}
-		
-		//TODO //Lortu irabazi ahalduen karta eta beste jokalariak nahi duen karta eta hauek erabili estrategikoki
 		//Basic counter
 		ArrayList<ElementuMota> irabazinahidu = this.irabaziNahiDu(pGordetaKartak);
 		if(irabazinahidu.size()==1 || irabazinahidu.size()==2) 
@@ -82,7 +79,6 @@ public class JokalariaBotHard extends JokalariaBot {
 	}
 	
 	//Strategic metodos, elementu berdinak kolore desberdinak irabazi sahiatu
-	
 	private Karta kartaErabaki(ArrayList<ArrayList<Karta>> pMatrizea) 
 	{
 		Karta karta = (Karta) new KartaNormala(ElementuMota.ELURRA,0,KoloreMota.BERDEA);

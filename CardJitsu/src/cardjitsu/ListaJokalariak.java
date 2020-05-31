@@ -321,10 +321,6 @@ public class ListaJokalariak {
 			}
 		}
 		
-		
-		
-		
-		
 		//Konprobatu elementu desberdineko kartak
 		if(!irabaziDu) {
 			KoloreMota suKolorea;
@@ -476,44 +472,45 @@ public class ListaJokalariak {
 	{
 		//Baloreak gorde
 		
-		int aurIrabazlea = -1;
-		ElementuMota elementuaL = this.jokalariLokalaKarta.getElementua();
-		ElementuMota elementuaB = this.jokalariBotKarta.getElementua();
-		int balioaL =  this.jokalariLokalaKarta.getBalioa();
-		int balioaB =  this.jokalariBotKarta.getBalioa();
-		boolean minwin = false;
-		int finala = -1;
+		JokalariMota AurrekoIrabazlea = null;
+		JokalariMota IrabazleFinala = null; //Irabazle IrabazleFinala
+		ElementuMota LokalaKartaElementua = this.jokalariLokalaKarta.getElementua();
+		ElementuMota BotKartaElementua = this.jokalariBotKarta.getElementua();
+		int LokalaKartaBalioa =  this.jokalariLokalaKarta.getBalioa();
+		int BotKartaBalioa =  this.jokalariBotKarta.getBalioa();
+		boolean ZenbakiTxikienaIrabazi = false;
+		
 		
 		//Aurreko jokaldia nork irabazi duen jakin
 		
-		aurIrabazlea = (this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? 1 : 0;
+		AurrekoIrabazlea = (this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? JokalariMota.LOKALA : JokalariMota.BOT;
 		
 		//Aurreko irabazlearen arabera aplikatu aurreko efektua
 		if(this.aurrekoTxandakoEfektua != null) {
-			switch(aurIrabazlea) 
+			switch(AurrekoIrabazlea) 
 			{
-			case 1:
+			case LOKALA:
 				switch(this.aurrekoTxandakoEfektua) 
 				{
 				case BIGEHITU:
-					balioaL = balioaL + 2;
+					LokalaKartaBalioa = LokalaKartaBalioa+2;
 					break;
 				case BIKENDU:
-					balioaB = balioaB-2;
+					BotKartaBalioa = BotKartaBalioa-2;
 					break;
 				default:
 					//beste efektuak ez dira kontuan izan behar
 					break;
 				}
 				break;
-			case 0:
+			case BOT:
 				switch(this.aurrekoTxandakoEfektua) 
 				{
 				case BIGEHITU:
-					balioaB = balioaB + 2;
+					BotKartaBalioa = BotKartaBalioa+2;
 					break;
 				case BIKENDU:
-					balioaL = balioaL-2;
+					LokalaKartaBalioa = LokalaKartaBalioa-2;
 					break;
 				default:
 					//beste efektuak ez dira kontuan izan behar
@@ -522,11 +519,11 @@ public class ListaJokalariak {
 				break;
 			}
 		}
-		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
 		
+		//aurrekoTxandakoEfektuaZenbakia erabili eta efektua kendu
 		if(this.aurrekoTxandakoEfektuaZenbakia) 
 		{
-			minwin=true;
+			ZenbakiTxikienaIrabazi=true;
 			this.aurrekoTxandakoEfektuaZenbakia = false;
 		}
 		
@@ -540,13 +537,13 @@ public class ListaJokalariak {
 				switch (efektua) 
 				{
 				case ELURRATIKURARA:
-					if(elementuaB==ElementuMota.ELURRA) {elementuaB=ElementuMota.URA;}
+					if(BotKartaElementua==ElementuMota.ELURRA) {BotKartaElementua=ElementuMota.URA;}
 					break;
 				case URATIKSURA:
-					if(elementuaB==ElementuMota.URA) {elementuaB=ElementuMota.SUA;}
+					if(BotKartaElementua==ElementuMota.URA) {BotKartaElementua=ElementuMota.SUA;}
 					break;
 				case SUTIKELURRARA:
-					if(elementuaB==ElementuMota.SUA) {elementuaB=ElementuMota.ELURRA;}
+					if(BotKartaElementua==ElementuMota.SUA) {BotKartaElementua=ElementuMota.ELURRA;}
 					break;
 				default:
 					//beste efektuak ez dira kontuan izan behar
@@ -563,13 +560,13 @@ public class ListaJokalariak {
 				switch (efektua) 
 				{
 				case ELURRATIKURARA:
-					if(elementuaL==ElementuMota.ELURRA) {elementuaL=ElementuMota.URA;}
+					if(LokalaKartaElementua==ElementuMota.ELURRA) {LokalaKartaElementua=ElementuMota.URA;}
 					break;
 				case URATIKSURA:
-					if(elementuaL==ElementuMota.URA) {elementuaL=ElementuMota.SUA;}
+					if(LokalaKartaElementua==ElementuMota.URA) {LokalaKartaElementua=ElementuMota.SUA;}
 					break;
 				case SUTIKELURRARA:
-					if(elementuaL==ElementuMota.SUA) {elementuaL=ElementuMota.ELURRA;}
+					if(LokalaKartaElementua==ElementuMota.SUA) {LokalaKartaElementua=ElementuMota.ELURRA;}
 					break;
 				default:
 					//beste efektuak ez dira kontuan izan behar
@@ -577,59 +574,59 @@ public class ListaJokalariak {
 				}
 			}
 		}
-		//Nork irabazten du?
 		
-		if(elementuaL==elementuaB) 
+		//Nork irabazten du?
+		if(LokalaKartaElementua==BotKartaElementua) 
 		{
-			if(balioaL>balioaB) 
+			if(LokalaKartaBalioa>BotKartaBalioa) 
 			{
-				if(!minwin) 
+				if(!ZenbakiTxikienaIrabazi) 
 				{
-					finala = 1;
+					IrabazleFinala = JokalariMota.LOKALA;
 				}
 				else 
 				{
-					finala = 2;
+					IrabazleFinala = JokalariMota.BERDINKETA;
 				}
 			}
-			else if(balioaL<balioaB) 
+			else if(LokalaKartaBalioa<BotKartaBalioa) 
 			{
-				if(!minwin) 
+				if(!ZenbakiTxikienaIrabazi) 
 				{
-					finala = 2;
+					IrabazleFinala = JokalariMota.BERDINKETA;
 				}
 				else 
 				{
-					finala = 1;
+					IrabazleFinala = JokalariMota.LOKALA;
 				}
 			}
 			else 
 			{
-				finala = 0;
+				IrabazleFinala = JokalariMota.BOT;
 			}
 		}
-		else if(elementuaIrabazi(elementuaL,elementuaB)) 
+		else if(elementuaIrabazi(LokalaKartaElementua,BotKartaElementua)) 
 		{
-			finala = 1;
+			IrabazleFinala = JokalariMota.LOKALA;
 		}
-		else if(elementuaIrabazi(elementuaB,elementuaL)) 
+		else if(elementuaIrabazi(BotKartaElementua,LokalaKartaElementua)) 
 		{
-			finala = 2;
+			IrabazleFinala = JokalariMota.BERDINKETA;
 		}
 		
 		//Balioak heman
 		
 		JokalariMota irabazlea = null;
 		
-		if(finala==1) 
+		if(IrabazleFinala==JokalariMota.LOKALA) 
 		{
 			irabazlea = JokalariMota.LOKALA;
 		}
-		else if(finala==2) 
+		else if(IrabazleFinala==JokalariMota.BERDINKETA) 
 		{
 			irabazlea = JokalariMota.BOT;
 		}
-		else if(finala==0) 
+		else if(IrabazleFinala==JokalariMota.BOT) 
 		{
 			irabazlea = JokalariMota.BERDINKETA;
 		}
@@ -641,9 +638,9 @@ public class ListaJokalariak {
 		}
 		
 		//Inprimaketa
-		txandarenKartakInprimatu(0,this.jokalariLokalaKarta,elementuaL,balioaL);
+		txandarenKartakInprimatu(0,this.jokalariLokalaKarta,LokalaKartaElementua,LokalaKartaBalioa);
 		
-		txandarenKartakInprimatu(1,this.jokalariBotKarta,elementuaB,balioaB);
+		txandarenKartakInprimatu(1,this.jokalariBotKarta,BotKartaElementua,BotKartaBalioa);
 		
 		return irabazlea;
 	}
