@@ -472,18 +472,13 @@ public class ListaJokalariak {
 	{
 		//Baloreak gorde
 		
-		JokalariMota AurrekoIrabazlea = null;
-		JokalariMota IrabazleFinala = null; //Irabazle IrabazleFinala
+		JokalariMota AurrekoIrabazlea = (this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? JokalariMota.LOKALA : JokalariMota.BOT;;
+		JokalariMota IrabazleFinala = null;
 		ElementuMota LokalaKartaElementua = this.jokalariLokalaKarta.getElementua();
 		ElementuMota BotKartaElementua = this.jokalariBotKarta.getElementua();
 		int LokalaKartaBalioa =  this.jokalariLokalaKarta.getBalioa();
 		int BotKartaBalioa =  this.jokalariBotKarta.getBalioa();
 		boolean ZenbakiTxikienaIrabazi = false;
-		
-		
-		//Aurreko jokaldia nork irabazi duen jakin
-		
-		AurrekoIrabazlea = (this.aurrekoTxandakoIrabazlea instanceof JokalariaLokala) ? JokalariMota.LOKALA : JokalariMota.BOT;
 		
 		//Aurreko irabazlearen arabera aplikatu aurreko efektua
 		if(this.aurrekoTxandakoEfektua != null) {
@@ -582,69 +577,27 @@ public class ListaJokalariak {
 		{
 			if(LokalaKartaBalioa>BotKartaBalioa) 
 			{
-				if(!ZenbakiTxikienaIrabazi) 
-				{
-					IrabazleFinala = JokalariMota.LOKALA;
-				}
-				else 
-				{
-					IrabazleFinala = JokalariMota.BERDINKETA;
-				}
+				if(!ZenbakiTxikienaIrabazi) {IrabazleFinala = JokalariMota.LOKALA;} else {IrabazleFinala = JokalariMota.BOT;}
 			}
 			else if(LokalaKartaBalioa<BotKartaBalioa) 
 			{
-				if(!ZenbakiTxikienaIrabazi) 
-				{
-					IrabazleFinala = JokalariMota.BERDINKETA;
-				}
-				else 
-				{
-					IrabazleFinala = JokalariMota.LOKALA;
-				}
+				if(!ZenbakiTxikienaIrabazi) {IrabazleFinala = JokalariMota.BOT;} else {IrabazleFinala = JokalariMota.LOKALA;}
 			}
-			else 
-			{
-				IrabazleFinala = JokalariMota.BOT;
-			}
+			else {IrabazleFinala = JokalariMota.BERDINKETA;}
 		}
-		else if(elementuaIrabazi(LokalaKartaElementua,BotKartaElementua)) 
-		{
-			IrabazleFinala = JokalariMota.LOKALA;
-		}
-		else if(elementuaIrabazi(BotKartaElementua,LokalaKartaElementua)) 
-		{
-			IrabazleFinala = JokalariMota.BERDINKETA;
-		}
+		else if(elementuaIrabazi(LokalaKartaElementua,BotKartaElementua)) {IrabazleFinala = JokalariMota.LOKALA;}
+		else if(elementuaIrabazi(BotKartaElementua,LokalaKartaElementua)) {IrabazleFinala = JokalariMota.BOT;}
 		
-		//Balioak heman
-		
-		JokalariMota irabazlea = null;
-		
-		if(IrabazleFinala==JokalariMota.LOKALA) 
-		{
-			irabazlea = JokalariMota.LOKALA;
-		}
-		else if(IrabazleFinala==JokalariMota.BERDINKETA) 
-		{
-			irabazlea = JokalariMota.BOT;
-		}
-		else if(IrabazleFinala==JokalariMota.BOT) 
-		{
-			irabazlea = JokalariMota.BERDINKETA;
-		}
-		
-		if((this.jokalariLokalaKarta instanceof KartaBerezia && ((KartaBerezia) this.jokalariLokalaKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA) 
-				|| (this.jokalariBotKarta instanceof KartaBerezia && ((KartaBerezia) this.jokalariBotKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA))
-		{
-			this.aurrekoTxandakoEfektuaZenbakia = true;
-		}
+		//Zenbaki txikiena aplikatzen de begiratu
+		this.aurrekoTxandakoEfektuaZenbakia = this.jokalariLokalaKarta instanceof KartaBerezia && ((KartaBerezia)this.jokalariLokalaKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA ? true :
+											  this.jokalariBotKarta instanceof KartaBerezia && ((KartaBerezia)this.jokalariBotKarta).getEfektua()==EfektuMota.ZENBAKIALDAKETA ? true : false;
+
 		
 		//Inprimaketa
 		txandarenKartakInprimatu(0,this.jokalariLokalaKarta,LokalaKartaElementua,LokalaKartaBalioa);
-		
 		txandarenKartakInprimatu(1,this.jokalariBotKarta,BotKartaElementua,BotKartaBalioa);
 		
-		return irabazlea;
+		return IrabazleFinala;
 	}
 	
 	private void txandarenKartakInprimatu(int pZenb, Karta pKar, ElementuMota pElem, int pBalioa) {
