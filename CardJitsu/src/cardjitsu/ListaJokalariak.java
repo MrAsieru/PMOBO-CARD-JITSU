@@ -141,7 +141,7 @@ public class ListaJokalariak {
 		
 		Kontsola.getKontsola().inprimatuLinea("Partida amaitu egin da, beste bat jokatu nahi duzu? [b/e]","","hor","");
 		if("b".equals(Kontsola.getKontsola().testuaIrakurri())) {
-			new ListaJokalariak().partidaBerriaHasi();
+			this.partidaBerriaHasi();
 		}
 	}
 
