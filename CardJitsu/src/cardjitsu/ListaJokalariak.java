@@ -128,8 +128,8 @@ public class ListaJokalariak {
 		
 		Jokalaria irabazlea = this.txandaBerria();
 		
-		//Irabazleari zorionak eman 
-		Kontsola.getKontsola().inprimatuLinea("----------------------","","","zur");
+		//Irabazleari zorionak eman      
+		Kontsola.getKontsola().inprimatuLinea("   Gordetako kartak   ","","bel","zur");
 		Kontsola.getKontsola().inprimatuLinea(this.jokalariak[0].getIzena()+":","","zia","");
 		gordetakoKartakImprimatu(this.jokalariak[0]);
 		Kontsola.getKontsola().inprimatuLinea(" ");
@@ -141,7 +141,14 @@ public class ListaJokalariak {
 		
 		Kontsola.getKontsola().inprimatuLinea("Partida amaitu egin da, beste bat jokatu nahi duzu? [b/e]","","hor","");
 		if("b".equals(Kontsola.getKontsola().testuaIrakurri())) {
-			this.partidaBerriaHasi();
+			//Atributuak berriro hasieratu
+			this.jokalariak = new Jokalaria[2];
+			this.aurrekoTxandakoEfektua = null;
+			this.aurrekoTxandakoEfektuaZenbakia = false;
+			this.aurrekoTxandakoIrabazlea = null;
+			this.jokalariLokalaKarta = null;
+			this.jokalariBotKarta = null;		
+			this.partidaBerriaHasi(); //Partida berria hasi
 		}
 	}
 
